@@ -54,13 +54,13 @@
                 <div class="col-sm-12" style="padding-right: 0px; padding-left: 0px;">
                     <ul class="nav nav-tabs font-weight-bold" style="background-color: #085f00; color: #fff; border: 1px solid #085f00; border-radius: 0;">
                         <li class="nav-item">
-                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == NULL ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => 1]) }}">Total</a>
+                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == NULL ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria]) }}">Total</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="border-radius: 0; background-color:  {{$tab == '1' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => 1, 'tab' => 1]) }}">Acasa</a>
+                            <a class="nav-link" style="border-radius: 0; background-color:  {{$tab == '1' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab' => 1]) }}">Acasa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == '2' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => 1, 'tab'=> 2]) }}">Deplasare</a>
+                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == '2' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 2]) }}">Deplasare</a>
                         </li>
                         <li class="nav-item d-block d-sm-none">
                             <a class="nav-link" style="border-radius: 0; background-color: {{$tab == '3' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => 1, 'tab'=> 3]) }}">Forma</a>
@@ -105,12 +105,22 @@
                                                 <div class="forma" style="background: #FFA500; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
                                                     {{$forma->forma}}
                                                 </div>
-                                            @else
-                                                <div class="forma" style="background: #DB4727; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
-                                                    î
-                                                </div>
-                                            @endif
-                                        @endforeach
+                                            @foreach($echipa->forma as $forma)
+                                                @if($forma->forma == 'V')
+                                                    <div class="forma" style="background: #28a745; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
+                                                        {{$forma->forma}}
+                                                    </div>
+                                                @elseif($forma->forma == 'E')
+                                                    <div class="forma" style="background: #FFA500; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
+                                                        {{$forma->forma}}
+                                                    </div>
+                                                @else
+                                                    <div class="forma" style="background: #DB4727; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
+                                                        î
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

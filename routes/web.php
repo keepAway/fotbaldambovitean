@@ -30,3 +30,6 @@ Route::get('/auth/facebook',          'Auth\SocialAuthController@redirect');
 Route::get('/auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
+
+Route::get('/parse-jquery/{liga}/{serie}/{etapa}', 'HomeController@parseJquery')->name('parse-jquery');
+
