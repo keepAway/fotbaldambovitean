@@ -51,7 +51,7 @@
                     <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Nord']) }}">Liga 6 Nord</a>
                 </li>
                 <li>
-                    <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Vest']) }}">Liga 6 Vest</a>
+                    <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Sud']) }}">Liga 6 Sud</a>
                 </li>
             </ul>
         </nav>
