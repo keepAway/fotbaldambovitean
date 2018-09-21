@@ -236,4 +236,13 @@ a.article:hover {
     .page-link {
         padding: .2rem .45rem;
     }
+    .table td {
+        padding: 0.40rem;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .team-name {
+        font-size: 10px;
+    }
 }

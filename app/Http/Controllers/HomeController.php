@@ -55,6 +55,10 @@ class HomeController extends Controller
                 $forma = $forma->where('forma.oaspeti', true);
             }
 
+            if(isset($tab) && $tab == '3') {
+                $forma = $forma;
+            }
+
             $forma = $forma->orderBy('forma.created_at', 'DESC')
                             ->take(5)
                             ->get();
@@ -77,7 +81,7 @@ class HomeController extends Controller
             });
         }
 
-        if($tab == NULL) {
+        if($tab == NULL || $tab == '3') {
             $echipe = $echipe->sortByDesc(function($echipe) {
                 return [$echipe->t_puncte, $echipe->t_golaveraj];
             });

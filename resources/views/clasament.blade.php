@@ -87,7 +87,7 @@
                                 @foreach($echipe as $echipa)
                                 <tr>
                                     <td class="font-weight-bold" style="width: 1%; background: #{{$i <= 2 ? '004682' : '000'}}; text-align: center; color: #fff;">{{$i++}}.</td>
-                                    <td class="text-left font-weight-bold">{{$echipa->echipa}}</td>
+                                    <td class="text-left font-weight-bold team-name">{{$echipa->echipa}}</td>
                                     <td class="{{$tab == 3 ? 'd-none' : ''}}">
                                         {{$tab == NULL ? $echipa->t_meciuri : ($tab == 1 ? $echipa->a_meciuri : $echipa->d_meciuri)}}
                                     </td>
@@ -173,7 +173,7 @@
                                     {{ csrf_field() }}
                                     <tr>
                                         <td>Etapa: {{$etapa->etapa}}</td>
-                                        <td>{{$etapa->data}} | {{$etapa->ora}}</td>
+                                        <td class="font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
                                         <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                         <td>
                                             @if(Auth::check())
@@ -225,7 +225,7 @@
                     Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
                     <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
                 </div>
-                <div class="col-sm-12" style="padding-right: 0px; padding-left: 0px;">
+                <div class="col-sm-12" style="padding-right: 5px; padding-left: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table table-hover text-center">
                             <tbody>
@@ -234,7 +234,7 @@
                                     {{ csrf_field() }}
                                     <tr style="background-color: #085f00; color: #fff;">
                                         <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                        <td class="text-right">{{$etapa->data}} | {{$etapa->ora}}</td>
+                                        <td class="text-right font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
                                     </tr>
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
