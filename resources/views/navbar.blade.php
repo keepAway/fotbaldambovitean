@@ -1,7 +1,7 @@
-<div class="col-xs-12" style="font-size: 14px;">
+<div class="col-xs-12 navbar-no-margins" style="font-size: 14px;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <button type="button" id="sidebarCollapse" class="btn btn-dark">
                 <i class="fas fa-align-left"></i>
                 <span>Meniu</span>
             </button>

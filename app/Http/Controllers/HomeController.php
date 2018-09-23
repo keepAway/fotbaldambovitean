@@ -7,6 +7,8 @@ use App\Echipe;
 use App\Etape;
 use App\Forma;
 
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
     /**
@@ -29,9 +31,10 @@ class HomeController extends Controller
         return view('home');
     }
 
+
     public function clasament(Int $liga, Request $request){
-        $data = $request->all();
-        
+        $data  = $request->all();
+        $tab   = isset($data['tab']) ? $data['tab'] : NULL;
         $serie = NULL;
 
         if(isset($data['seria']) && $data['seria'] != NULL){
@@ -42,21 +45,47 @@ class HomeController extends Controller
 
         $i=0;
         foreach ($echipe as $echipa) {
-            $forma = Forma::where('echipa', $echipa->echipa)
-                                        ->join('etape', 'forma.etapa_id', '=', 'etape.id')
-                                        ->orderBy('forma.created_at', 'DESC')
-                                        ->take(5)
-                                        ->get();
+            $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id');
+
+            if(isset($tab) && $tab == '1') {
+                $forma = $forma->where('forma.gazde', true);
+            }
+
+            if(isset($tab) && $tab == '2') {
+                $forma = $forma->where('forma.oaspeti', true);
+            }
+
+            if(isset($tab) && $tab == '3') {
+                $forma = $forma;
+            }
+
+            $forma = $forma->orderBy('forma.created_at', 'DESC')
+                            ->take(5)
+                            ->get();
+
             $echipe[$i]['forma'] = $forma;
             $i++;
         }
 
         $page   = (count($echipe) / 2);
 
-        $echipe = $echipe->sortByDesc(function($echipe) {
-            return [$echipe->puncte, $echipe->golaveraj];
-        });
+        if(isset($tab) && $tab == '1') {
+            $echipe = $echipe->sortByDesc(function($echipe) {
+                return [$echipe->a_puncte, $echipe->a_golaveraj];
+            });
+        }
+        
+        if(isset($tab) && $tab == '2') {
+            $echipe = $echipe->sortByDesc(function($echipe) {
+                return [$echipe->d_puncte, $echipe->d_golaveraj];
+            });
+        }
 
+        if($tab == NULL || $tab == '3') {
+            $echipe = $echipe->sortByDesc(function($echipe) {
+                return [$echipe->t_puncte, $echipe->t_golaveraj];
+            });
+        }
 
         $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC')->paginate($page);
 
@@ -102,19 +131,36 @@ class HomeController extends Controller
                     $victorii_gazde     = 1;
                     $infrangeri_oaspeti = 1;
 
-                    $echipa_gazde->meciuri   = ($echipa_gazde->meciuri   + $meciuri_jucate);
-                    $echipa_gazde->victorii  = ($echipa_gazde->victorii  + $victorii_gazde);
-                    $echipa_gazde->marcate   = ($echipa_gazde->marcate   + $goluri_marcate_gazde);
-                    $echipa_gazde->primite   = ($echipa_gazde->primite   + $goluri_primite_gazde);
-                    $echipa_gazde->golaveraj = ($echipa_gazde->golaveraj + $golaveraj_gazde);
-                    $echipa_gazde->puncte    = ($echipa_gazde->puncte    + $puncte_gazde);
+                    $echipa_gazde->t_meciuri   = ($echipa_gazde->t_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->t_victorii  = ($echipa_gazde->t_victorii  + $victorii_gazde);
+                    $echipa_gazde->t_marcate   = ($echipa_gazde->t_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->t_primite   = ($echipa_gazde->t_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj = ($echipa_gazde->t_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->t_puncte    = ($echipa_gazde->t_puncte    + $puncte_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri    = ($echipa_oaspeti->meciuri     + $meciuri_jucate);
-                    $echipa_oaspeti->infrangeri = ($echipa_oaspeti->infrangeri  + $infrangeri_oaspeti);
-                    $echipa_oaspeti->marcate    = ($echipa_oaspeti->marcate     + $goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite    = ($echipa_oaspeti->primite     + $goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj  = ($echipa_oaspeti->golaveraj   + $golaveraj_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri   = ($echipa_gazde->a_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->a_victorii  = ($echipa_gazde->a_victorii  + $victorii_gazde);
+                    $echipa_gazde->a_marcate   = ($echipa_gazde->a_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->a_primite   = ($echipa_gazde->a_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj = ($echipa_gazde->a_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->a_puncte    = ($echipa_gazde->a_puncte    + $puncte_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri    = ($echipa_oaspeti->t_meciuri     + $meciuri_jucate);
+                    $echipa_oaspeti->t_infrangeri = ($echipa_oaspeti->t_infrangeri  + $infrangeri_oaspeti);
+                    $echipa_oaspeti->t_marcate    = ($echipa_oaspeti->t_marcate     + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite    = ($echipa_oaspeti->t_primite     + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj  = ($echipa_oaspeti->t_golaveraj   + $golaveraj_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri    = ($echipa_oaspeti->d_meciuri     + $meciuri_jucate);
+                    $echipa_oaspeti->d_infrangeri = ($echipa_oaspeti->d_infrangeri  + $infrangeri_oaspeti);
+                    $echipa_oaspeti->d_marcate    = ($echipa_oaspeti->d_marcate     + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite    = ($echipa_oaspeti->d_primite     + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj  = ($echipa_oaspeti->d_golaveraj   + $golaveraj_oaspeti);
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
@@ -139,20 +185,38 @@ class HomeController extends Controller
                     $egaluri_gazde   = 1;
                     $egaluri_oaspeti = 1;
 
-                    $echipa_gazde->meciuri   = ($echipa_gazde->meciuri   + $meciuri_jucate);
-                    $echipa_gazde->egaluri   = ($echipa_gazde->egaluri   + $egaluri_gazde);
-                    $echipa_gazde->marcate   = ($echipa_gazde->marcate   + $goluri_marcate_gazde);
-                    $echipa_gazde->primite   = ($echipa_gazde->primite   + $goluri_primite_gazde);
-                    $echipa_gazde->golaveraj = ($echipa_gazde->golaveraj + $golaveraj_gazde);
-                    $echipa_gazde->puncte    = ($echipa_gazde->puncte    + $puncte_gazde);
+                    $echipa_gazde->t_meciuri   = ($echipa_gazde->t_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->t_egaluri   = ($echipa_gazde->t_egaluri   + $egaluri_gazde);
+                    $echipa_gazde->t_marcate   = ($echipa_gazde->t_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->t_primite   = ($echipa_gazde->t_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj = ($echipa_gazde->t_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->t_puncte    = ($echipa_gazde->t_puncte    + $puncte_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri   = ($echipa_oaspeti->meciuri   + $meciuri_jucate);
-                    $echipa_oaspeti->egaluri   = ($echipa_oaspeti->egaluri   + $egaluri_oaspeti);
-                    $echipa_oaspeti->marcate   = ($echipa_oaspeti->marcate   + $goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite   = ($echipa_oaspeti->primite   + $goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj = ($echipa_oaspeti->golaveraj + $golaveraj_oaspeti);
-                    $echipa_oaspeti->puncte    = ($echipa_oaspeti->puncte    + $puncte_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri   = ($echipa_gazde->a_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->a_egaluri   = ($echipa_gazde->a_egaluri   + $egaluri_gazde);
+                    $echipa_gazde->a_marcate   = ($echipa_gazde->a_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->a_primite   = ($echipa_gazde->a_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj = ($echipa_gazde->a_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->a_puncte    = ($echipa_gazde->a_puncte    + $puncte_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri   = ($echipa_oaspeti->t_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->t_egaluri   = ($echipa_oaspeti->t_egaluri   + $egaluri_oaspeti);
+                    $echipa_oaspeti->t_marcate   = ($echipa_oaspeti->t_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite   = ($echipa_oaspeti->t_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj = ($echipa_oaspeti->t_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->t_puncte    = ($echipa_oaspeti->t_puncte    + $puncte_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri   = ($echipa_oaspeti->d_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->d_egaluri   = ($echipa_oaspeti->d_egaluri   + $egaluri_oaspeti);
+                    $echipa_oaspeti->d_marcate   = ($echipa_oaspeti->d_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite   = ($echipa_oaspeti->d_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj = ($echipa_oaspeti->d_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->d_puncte    = ($echipa_oaspeti->d_puncte    + $puncte_oaspeti);
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
@@ -176,19 +240,36 @@ class HomeController extends Controller
                     $victorii_oaspeti = 1;
                     $infrangeri_gazde = 1;
 
-                    $echipa_gazde->meciuri    = ($echipa_gazde->meciuri     + $meciuri_jucate);
-                    $echipa_gazde->infrangeri = ($echipa_gazde->infrangeri  + $infrangeri_gazde);
-                    $echipa_gazde->marcate    = ($echipa_gazde->marcate     + $goluri_marcate_gazde);
-                    $echipa_gazde->primite    = ($echipa_gazde->primite     + $goluri_primite_gazde);
-                    $echipa_gazde->golaveraj  = ($echipa_gazde->golaveraj   + $golaveraj_gazde);
+                    $echipa_gazde->t_meciuri    = ($echipa_gazde->t_meciuri     + $meciuri_jucate);
+                    $echipa_gazde->t_infrangeri = ($echipa_gazde->t_infrangeri  + $infrangeri_gazde);
+                    $echipa_gazde->t_marcate    = ($echipa_gazde->t_marcate     + $goluri_marcate_gazde);
+                    $echipa_gazde->t_primite    = ($echipa_gazde->t_primite     + $goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj  = ($echipa_gazde->t_golaveraj   + $golaveraj_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri   = ($echipa_oaspeti->meciuri   + $meciuri_jucate);
-                    $echipa_oaspeti->victorii  = ($echipa_oaspeti->victorii  + $victorii_oaspeti);
-                    $echipa_oaspeti->marcate   = ($echipa_oaspeti->marcate   + $goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite   = ($echipa_oaspeti->primite   + $goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj = ($echipa_oaspeti->golaveraj + $golaveraj_oaspeti);
-                    $echipa_oaspeti->puncte    = ($echipa_oaspeti->puncte    + $puncte_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri    = ($echipa_gazde->a_meciuri     + $meciuri_jucate);
+                    $echipa_gazde->a_infrangeri = ($echipa_gazde->a_infrangeri  + $infrangeri_gazde);
+                    $echipa_gazde->a_marcate    = ($echipa_gazde->a_marcate     + $goluri_marcate_gazde);
+                    $echipa_gazde->a_primite    = ($echipa_gazde->a_primite     + $goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj  = ($echipa_gazde->a_golaveraj   + $golaveraj_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri   = ($echipa_oaspeti->t_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->t_victorii  = ($echipa_oaspeti->t_victorii  + $victorii_oaspeti);
+                    $echipa_oaspeti->t_marcate   = ($echipa_oaspeti->t_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite   = ($echipa_oaspeti->t_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj = ($echipa_oaspeti->t_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->t_puncte    = ($echipa_oaspeti->t_puncte    + $puncte_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri   = ($echipa_oaspeti->d_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->d_victorii  = ($echipa_oaspeti->d_victorii  + $victorii_oaspeti);
+                    $echipa_oaspeti->d_marcate   = ($echipa_oaspeti->d_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite   = ($echipa_oaspeti->d_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj = ($echipa_oaspeti->d_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->d_puncte    = ($echipa_oaspeti->d_puncte    + $puncte_oaspeti);
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
@@ -232,19 +313,36 @@ class HomeController extends Controller
                     $victorii_gazde     = 1;
                     $infrangeri_oaspeti = 1;
 
-                    $echipa_gazde->meciuri   = ($echipa_gazde->meciuri   - $meciuri_jucate);
-                    $echipa_gazde->victorii  = ($echipa_gazde->victorii  - $victorii_gazde);
-                    $echipa_gazde->marcate   = ($echipa_gazde->marcate   - $old_goluri_marcate_gazde);
-                    $echipa_gazde->primite   = ($echipa_gazde->primite   - $old_goluri_primite_gazde);
-                    $echipa_gazde->golaveraj = ($echipa_gazde->golaveraj - $old_golaveraj_gazde);
-                    $echipa_gazde->puncte    = ($echipa_gazde->puncte    - $puncte_gazde);
+                    $echipa_gazde->t_meciuri   = ($echipa_gazde->t_meciuri   - $meciuri_jucate);
+                    $echipa_gazde->t_victorii  = ($echipa_gazde->t_victorii  - $victorii_gazde);
+                    $echipa_gazde->t_marcate   = ($echipa_gazde->t_marcate   - $old_goluri_marcate_gazde);
+                    $echipa_gazde->t_primite   = ($echipa_gazde->t_primite   - $old_goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj = ($echipa_gazde->t_golaveraj - $old_golaveraj_gazde);
+                    $echipa_gazde->t_puncte    = ($echipa_gazde->t_puncte    - $puncte_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri    = ($echipa_oaspeti->meciuri     - $meciuri_jucate);
-                    $echipa_oaspeti->infrangeri = ($echipa_oaspeti->infrangeri  - $infrangeri_oaspeti);
-                    $echipa_oaspeti->marcate    = ($echipa_oaspeti->marcate     - $old_goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite    = ($echipa_oaspeti->primite     - $old_goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj  = ($echipa_oaspeti->golaveraj   - $old_golaveraj_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri   = ($echipa_gazde->a_meciuri   - $meciuri_jucate);
+                    $echipa_gazde->a_victorii  = ($echipa_gazde->a_victorii  - $victorii_gazde);
+                    $echipa_gazde->a_marcate   = ($echipa_gazde->a_marcate   - $old_goluri_marcate_gazde);
+                    $echipa_gazde->a_primite   = ($echipa_gazde->a_primite   - $old_goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj = ($echipa_gazde->a_golaveraj - $old_golaveraj_gazde);
+                    $echipa_gazde->a_puncte    = ($echipa_gazde->a_puncte    - $puncte_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri    = ($echipa_oaspeti->t_meciuri     - $meciuri_jucate);
+                    $echipa_oaspeti->t_infrangeri = ($echipa_oaspeti->t_infrangeri  - $infrangeri_oaspeti);
+                    $echipa_oaspeti->t_marcate    = ($echipa_oaspeti->t_marcate     - $old_goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite    = ($echipa_oaspeti->t_primite     - $old_goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj  = ($echipa_oaspeti->t_golaveraj   - $old_golaveraj_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri    = ($echipa_oaspeti->d_meciuri     - $meciuri_jucate);
+                    $echipa_oaspeti->d_infrangeri = ($echipa_oaspeti->d_infrangeri  - $infrangeri_oaspeti);
+                    $echipa_oaspeti->d_marcate    = ($echipa_oaspeti->d_marcate     - $old_goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite    = ($echipa_oaspeti->d_primite     - $old_goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj  = ($echipa_oaspeti->d_golaveraj   - $old_golaveraj_oaspeti);
                     $echipa_oaspeti->save();
                 }
 
@@ -255,20 +353,38 @@ class HomeController extends Controller
                     $egaluri_gazde   = 1;
                     $egaluri_oaspeti = 1;
 
-                    $echipa_gazde->meciuri   = ($echipa_gazde->meciuri   - $meciuri_jucate);
-                    $echipa_gazde->egaluri   = ($echipa_gazde->egaluri   - $egaluri_gazde);
-                    $echipa_gazde->marcate   = ($echipa_gazde->marcate   - $old_goluri_marcate_gazde);
-                    $echipa_gazde->primite   = ($echipa_gazde->primite   - $old_goluri_primite_gazde);
-                    $echipa_gazde->golaveraj = ($echipa_gazde->golaveraj - $old_golaveraj_gazde);
-                    $echipa_gazde->puncte    = ($echipa_gazde->puncte    - $puncte_gazde);
+                    $echipa_gazde->t_meciuri   = ($echipa_gazde->t_meciuri   - $meciuri_jucate);
+                    $echipa_gazde->t_egaluri   = ($echipa_gazde->t_egaluri   - $egaluri_gazde);
+                    $echipa_gazde->t_marcate   = ($echipa_gazde->t_marcate   - $old_goluri_marcate_gazde);
+                    $echipa_gazde->t_primite   = ($echipa_gazde->t_primite   - $old_goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj = ($echipa_gazde->t_golaveraj - $old_golaveraj_gazde);
+                    $echipa_gazde->t_puncte    = ($echipa_gazde->t_puncte    - $puncte_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri   = ($echipa_oaspeti->meciuri   - $meciuri_jucate);
-                    $echipa_oaspeti->egaluri   = ($echipa_oaspeti->egaluri   - $egaluri_oaspeti);
-                    $echipa_oaspeti->marcate   = ($echipa_oaspeti->marcate   - $old_goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite   = ($echipa_oaspeti->primite   - $old_goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj = ($echipa_oaspeti->golaveraj - $old_golaveraj_oaspeti);
-                    $echipa_oaspeti->puncte    = ($echipa_oaspeti->puncte    - $puncte_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri   = ($echipa_gazde->a_meciuri   - $meciuri_jucate);
+                    $echipa_gazde->a_egaluri   = ($echipa_gazde->a_egaluri   - $egaluri_gazde);
+                    $echipa_gazde->a_marcate   = ($echipa_gazde->a_marcate   - $old_goluri_marcate_gazde);
+                    $echipa_gazde->a_primite   = ($echipa_gazde->a_primite   - $old_goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj = ($echipa_gazde->a_golaveraj - $old_golaveraj_gazde);
+                    $echipa_gazde->a_puncte    = ($echipa_gazde->a_puncte    - $puncte_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri   = ($echipa_oaspeti->t_meciuri   - $meciuri_jucate);
+                    $echipa_oaspeti->t_egaluri   = ($echipa_oaspeti->t_egaluri   - $egaluri_oaspeti);
+                    $echipa_oaspeti->t_marcate   = ($echipa_oaspeti->t_marcate   - $old_goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite   = ($echipa_oaspeti->t_primite   - $old_goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj = ($echipa_oaspeti->t_golaveraj - $old_golaveraj_oaspeti);
+                    $echipa_oaspeti->t_puncte    = ($echipa_oaspeti->t_puncte    - $puncte_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri   = ($echipa_oaspeti->d_meciuri   - $meciuri_jucate);
+                    $echipa_oaspeti->d_egaluri   = ($echipa_oaspeti->d_egaluri   - $egaluri_oaspeti);
+                    $echipa_oaspeti->d_marcate   = ($echipa_oaspeti->d_marcate   - $old_goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite   = ($echipa_oaspeti->d_primite   - $old_goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj = ($echipa_oaspeti->d_golaveraj - $old_golaveraj_oaspeti);
+                    $echipa_oaspeti->d_puncte    = ($echipa_oaspeti->d_puncte    - $puncte_oaspeti);
                     $echipa_oaspeti->save();
                 }
 
@@ -278,19 +394,36 @@ class HomeController extends Controller
                     $victorii_oaspeti = 1;
                     $infrangeri_gazde = 1;
 
-                    $echipa_gazde->meciuri    = ($echipa_gazde->meciuri     - $meciuri_jucate);
-                    $echipa_gazde->infrangeri = ($echipa_gazde->infrangeri  - $infrangeri_gazde);
-                    $echipa_gazde->marcate    = ($echipa_gazde->marcate     - $old_goluri_marcate_gazde);
-                    $echipa_gazde->primite    = ($echipa_gazde->primite     - $old_goluri_primite_gazde);
-                    $echipa_gazde->golaveraj  = ($echipa_gazde->golaveraj   - $old_golaveraj_gazde);
+                    $echipa_gazde->t_meciuri    = ($echipa_gazde->t_meciuri     - $meciuri_jucate);
+                    $echipa_gazde->t_infrangeri = ($echipa_gazde->t_infrangeri  - $infrangeri_gazde);
+                    $echipa_gazde->t_marcate    = ($echipa_gazde->t_marcate     - $old_goluri_marcate_gazde);
+                    $echipa_gazde->t_primite    = ($echipa_gazde->t_primite     - $old_goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj  = ($echipa_gazde->t_golaveraj   - $old_golaveraj_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri   = ($echipa_oaspeti->meciuri   - $meciuri_jucate);
-                    $echipa_oaspeti->victorii  = ($echipa_oaspeti->victorii  - $victorii_oaspeti);
-                    $echipa_oaspeti->marcate   = ($echipa_oaspeti->marcate   - $old_goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite   = ($echipa_oaspeti->primite   - $old_goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj = ($echipa_oaspeti->golaveraj - $old_golaveraj_oaspeti);
-                    $echipa_oaspeti->puncte    = ($echipa_oaspeti->puncte    - $puncte_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri    = ($echipa_gazde->a_meciuri     - $meciuri_jucate);
+                    $echipa_gazde->a_infrangeri = ($echipa_gazde->a_infrangeri  - $infrangeri_gazde);
+                    $echipa_gazde->a_marcate    = ($echipa_gazde->a_marcate     - $old_goluri_marcate_gazde);
+                    $echipa_gazde->a_primite    = ($echipa_gazde->a_primite     - $old_goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj  = ($echipa_gazde->a_golaveraj   - $old_golaveraj_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri   = ($echipa_oaspeti->t_meciuri   - $meciuri_jucate);
+                    $echipa_oaspeti->t_victorii  = ($echipa_oaspeti->t_victorii  - $victorii_oaspeti);
+                    $echipa_oaspeti->t_marcate   = ($echipa_oaspeti->t_marcate   - $old_goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite   = ($echipa_oaspeti->t_primite   - $old_goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj = ($echipa_oaspeti->t_golaveraj - $old_golaveraj_oaspeti);
+                    $echipa_oaspeti->t_puncte    = ($echipa_oaspeti->t_puncte    - $puncte_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri   = ($echipa_oaspeti->d_meciuri   - $meciuri_jucate);
+                    $echipa_oaspeti->d_victorii  = ($echipa_oaspeti->d_victorii  - $victorii_oaspeti);
+                    $echipa_oaspeti->d_marcate   = ($echipa_oaspeti->d_marcate   - $old_goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite   = ($echipa_oaspeti->d_primite   - $old_goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj = ($echipa_oaspeti->d_golaveraj - $old_golaveraj_oaspeti);
+                    $echipa_oaspeti->d_puncte    = ($echipa_oaspeti->d_puncte    - $puncte_oaspeti);
                     $echipa_oaspeti->save();
                 }
 
@@ -301,20 +434,47 @@ class HomeController extends Controller
                     $victorii_gazde     = 1;
                     $infrangeri_oaspeti = 1;
 
-                    $echipa_gazde->meciuri   = ($echipa_gazde->meciuri   + $meciuri_jucate);
-                    $echipa_gazde->victorii  = ($echipa_gazde->victorii  + $victorii_gazde);
-                    $echipa_gazde->marcate   = ($echipa_gazde->marcate   + $goluri_marcate_gazde);
-                    $echipa_gazde->primite   = ($echipa_gazde->primite   + $goluri_primite_gazde);
-                    $echipa_gazde->golaveraj = ($echipa_gazde->golaveraj + $golaveraj_gazde);
-                    $echipa_gazde->puncte    = ($echipa_gazde->puncte    + $puncte_gazde);
+                    $echipa_gazde->t_meciuri   = ($echipa_gazde->t_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->t_victorii  = ($echipa_gazde->t_victorii  + $victorii_gazde);
+                    $echipa_gazde->t_marcate   = ($echipa_gazde->t_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->t_primite   = ($echipa_gazde->t_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj = ($echipa_gazde->t_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->t_puncte    = ($echipa_gazde->t_puncte    + $puncte_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri    = ($echipa_oaspeti->meciuri     + $meciuri_jucate);
-                    $echipa_oaspeti->infrangeri = ($echipa_oaspeti->infrangeri  + $infrangeri_oaspeti);
-                    $echipa_oaspeti->marcate    = ($echipa_oaspeti->marcate     + $goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite    = ($echipa_oaspeti->primite     + $goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj  = ($echipa_oaspeti->golaveraj   + $golaveraj_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri   = ($echipa_gazde->a_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->a_victorii  = ($echipa_gazde->a_victorii  + $victorii_gazde);
+                    $echipa_gazde->a_marcate   = ($echipa_gazde->a_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->a_primite   = ($echipa_gazde->a_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj = ($echipa_gazde->a_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->a_puncte    = ($echipa_gazde->a_puncte    + $puncte_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri    = ($echipa_oaspeti->t_meciuri     + $meciuri_jucate);
+                    $echipa_oaspeti->t_infrangeri = ($echipa_oaspeti->t_infrangeri  + $infrangeri_oaspeti);
+                    $echipa_oaspeti->t_marcate    = ($echipa_oaspeti->t_marcate     + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite    = ($echipa_oaspeti->t_primite     + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj  = ($echipa_oaspeti->t_golaveraj   + $golaveraj_oaspeti);
                     $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri    = ($echipa_oaspeti->d_meciuri     + $meciuri_jucate);
+                    $echipa_oaspeti->d_infrangeri = ($echipa_oaspeti->d_infrangeri  + $infrangeri_oaspeti);
+                    $echipa_oaspeti->d_marcate    = ($echipa_oaspeti->d_marcate     + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite    = ($echipa_oaspeti->d_primite     + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj  = ($echipa_oaspeti->d_golaveraj   + $golaveraj_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    $forma             = Forma::where('etapa_id', $id_etapa)->where('gazde', true)->first();
+                    $forma->forma      = 'V';
+                    $forma->updated_at = Carbon::now();
+                    $forma->save();
+
+                    $forma             = Forma::where('etapa_id', $id_etapa)->where('oaspeti', true)->first();
+                    $forma->forma      = 'I';
+                    $forma->updated_at = Carbon::now();
+                    $forma->save();
                 }
 
                 if($g_gazde == $g_oaspeti){
@@ -324,21 +484,49 @@ class HomeController extends Controller
                     $egaluri_gazde   = 1;
                     $egaluri_oaspeti = 1;
 
-                    $echipa_gazde->meciuri   = ($echipa_gazde->meciuri   + $meciuri_jucate);
-                    $echipa_gazde->egaluri   = ($echipa_gazde->egaluri   + $egaluri_gazde);
-                    $echipa_gazde->marcate   = ($echipa_gazde->marcate   + $goluri_marcate_gazde);
-                    $echipa_gazde->primite   = ($echipa_gazde->primite   + $goluri_primite_gazde);
-                    $echipa_gazde->golaveraj = ($echipa_gazde->golaveraj + $golaveraj_gazde);
-                    $echipa_gazde->puncte    = ($echipa_gazde->puncte    + $puncte_gazde);
+                    $echipa_gazde->t_meciuri   = ($echipa_gazde->t_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->t_egaluri   = ($echipa_gazde->t_egaluri   + $egaluri_gazde);
+                    $echipa_gazde->t_marcate   = ($echipa_gazde->t_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->t_primite   = ($echipa_gazde->t_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj = ($echipa_gazde->t_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->t_puncte    = ($echipa_gazde->t_puncte    + $puncte_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri   = ($echipa_oaspeti->meciuri   + $meciuri_jucate);
-                    $echipa_oaspeti->egaluri   = ($echipa_oaspeti->egaluri   + $egaluri_oaspeti);
-                    $echipa_oaspeti->marcate   = ($echipa_oaspeti->marcate   + $goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite   = ($echipa_oaspeti->primite   + $goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj = ($echipa_oaspeti->golaveraj + $golaveraj_oaspeti);
-                    $echipa_oaspeti->puncte    = ($echipa_oaspeti->puncte    + $puncte_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri   = ($echipa_gazde->a_meciuri   + $meciuri_jucate);
+                    $echipa_gazde->a_egaluri   = ($echipa_gazde->a_egaluri   + $egaluri_gazde);
+                    $echipa_gazde->a_marcate   = ($echipa_gazde->a_marcate   + $goluri_marcate_gazde);
+                    $echipa_gazde->a_primite   = ($echipa_gazde->a_primite   + $goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj = ($echipa_gazde->a_golaveraj + $golaveraj_gazde);
+                    $echipa_gazde->a_puncte    = ($echipa_gazde->a_puncte    + $puncte_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri   = ($echipa_oaspeti->t_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->t_egaluri   = ($echipa_oaspeti->t_egaluri   + $egaluri_oaspeti);
+                    $echipa_oaspeti->t_marcate   = ($echipa_oaspeti->t_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite   = ($echipa_oaspeti->t_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj = ($echipa_oaspeti->t_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->t_puncte    = ($echipa_oaspeti->t_puncte    + $puncte_oaspeti);
                     $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri   = ($echipa_oaspeti->d_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->d_egaluri   = ($echipa_oaspeti->d_egaluri   + $egaluri_oaspeti);
+                    $echipa_oaspeti->d_marcate   = ($echipa_oaspeti->d_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite   = ($echipa_oaspeti->d_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj = ($echipa_oaspeti->d_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->d_puncte    = ($echipa_oaspeti->d_puncte    + $puncte_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    $forma             = Forma::where('etapa_id', $id_etapa)->where('gazde', true)->first();
+                    $forma->forma      = 'E';
+                    $forma->updated_at = Carbon::now();
+                    $forma->save();
+
+                    $forma             = Forma::where('etapa_id', $id_etapa)->where('oaspeti', true)->first();
+                    $forma->forma      = 'E';
+                    $forma->updated_at = Carbon::now();
+                    $forma->save();
                 }
 
                 if($g_gazde < $g_oaspeti){
@@ -347,20 +535,47 @@ class HomeController extends Controller
                     $victorii_oaspeti = 1;
                     $infrangeri_gazde = 1;
 
-                    $echipa_gazde->meciuri    = ($echipa_gazde->meciuri     + $meciuri_jucate);
-                    $echipa_gazde->infrangeri = ($echipa_gazde->infrangeri  + $infrangeri_gazde);
-                    $echipa_gazde->marcate    = ($echipa_gazde->marcate     + $goluri_marcate_gazde);
-                    $echipa_gazde->primite    = ($echipa_gazde->primite     + $goluri_primite_gazde);
-                    $echipa_gazde->golaveraj  = ($echipa_gazde->golaveraj   + $golaveraj_gazde);
+                    $echipa_gazde->t_meciuri    = ($echipa_gazde->t_meciuri     + $meciuri_jucate);
+                    $echipa_gazde->t_infrangeri = ($echipa_gazde->t_infrangeri  + $infrangeri_gazde);
+                    $echipa_gazde->t_marcate    = ($echipa_gazde->t_marcate     + $goluri_marcate_gazde);
+                    $echipa_gazde->t_primite    = ($echipa_gazde->t_primite     + $goluri_primite_gazde);
+                    $echipa_gazde->t_golaveraj  = ($echipa_gazde->t_golaveraj   + $golaveraj_gazde);
                     $echipa_gazde->save();
 
-                    $echipa_oaspeti->meciuri   = ($echipa_oaspeti->meciuri   + $meciuri_jucate);
-                    $echipa_oaspeti->victorii  = ($echipa_oaspeti->victorii  + $victorii_oaspeti);
-                    $echipa_oaspeti->marcate   = ($echipa_oaspeti->marcate   + $goluri_marcate_oaspeti);
-                    $echipa_oaspeti->primite   = ($echipa_oaspeti->primite   + $goluri_primite_oaspeti);
-                    $echipa_oaspeti->golaveraj = ($echipa_oaspeti->golaveraj + $golaveraj_oaspeti);
-                    $echipa_oaspeti->puncte    = ($echipa_oaspeti->puncte    + $puncte_oaspeti);
+                    //gazde acasa
+                    $echipa_gazde->a_meciuri    = ($echipa_gazde->a_meciuri     + $meciuri_jucate);
+                    $echipa_gazde->a_infrangeri = ($echipa_gazde->a_infrangeri  + $infrangeri_gazde);
+                    $echipa_gazde->a_marcate    = ($echipa_gazde->a_marcate     + $goluri_marcate_gazde);
+                    $echipa_gazde->a_primite    = ($echipa_gazde->a_primite     + $goluri_primite_gazde);
+                    $echipa_gazde->a_golaveraj  = ($echipa_gazde->a_golaveraj   + $golaveraj_gazde);
+                    $echipa_gazde->save();
+
+                    $echipa_oaspeti->t_meciuri   = ($echipa_oaspeti->t_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->t_victorii  = ($echipa_oaspeti->t_victorii  + $victorii_oaspeti);
+                    $echipa_oaspeti->t_marcate   = ($echipa_oaspeti->t_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->t_primite   = ($echipa_oaspeti->t_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->t_golaveraj = ($echipa_oaspeti->t_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->t_puncte    = ($echipa_oaspeti->t_puncte    + $puncte_oaspeti);
                     $echipa_oaspeti->save();
+
+                    //oaspeti deplasare
+                    $echipa_oaspeti->d_meciuri   = ($echipa_oaspeti->d_meciuri   + $meciuri_jucate);
+                    $echipa_oaspeti->d_victorii  = ($echipa_oaspeti->d_victorii  + $victorii_oaspeti);
+                    $echipa_oaspeti->d_marcate   = ($echipa_oaspeti->d_marcate   + $goluri_marcate_oaspeti);
+                    $echipa_oaspeti->d_primite   = ($echipa_oaspeti->d_primite   + $goluri_primite_oaspeti);
+                    $echipa_oaspeti->d_golaveraj = ($echipa_oaspeti->d_golaveraj + $golaveraj_oaspeti);
+                    $echipa_oaspeti->d_puncte    = ($echipa_oaspeti->d_puncte    + $puncte_oaspeti);
+                    $echipa_oaspeti->save();
+
+                    $forma             = Forma::where('etapa_id', $id_etapa)->where('gazde', true)->first();
+                    $forma->forma      = 'I';
+                    $forma->updated_at = Carbon::now();
+                    $forma->save();
+
+                    $forma             = Forma::where('etapa_id', $id_etapa)->where('oaspeti', true)->first();
+                    $forma->forma      = 'V';
+                    $forma->updated_at = Carbon::now();
+                    $forma->save();
                 }
 
                 $status = 'Scorul a fost modificat.';
@@ -384,5 +599,27 @@ class HomeController extends Controller
 
     public function contact(){
         return view('contact');
+    }
+
+    public function parseJquery($liga, $serie, $etapa){
+
+        // $data = '';
+        // for ($i=1; $i <= 2; $i++) {
+
+        //     if($i < 10) {
+        //         $i = '0' . $i;
+        //     }
+
+            // $data .= file_get_contents('http://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-5-a-sud-6693-et' . $i);
+        // }
+
+        $x = $etapa;
+        if($etapa < 10) {
+            $x = '0' . $x;
+        }
+
+        $data = file_get_contents('http://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-5-a-sud-6693-et' . $x);
+
+        return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
     }
 }

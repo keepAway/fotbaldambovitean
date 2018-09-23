@@ -39,19 +39,29 @@
                     <a href="{{ route('clasament', ['liga' => 4]) }}">Liga 4</a>
                 </li>
                 <li>
-                    <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Nord']) }}">Liga 5 Nord</a>
+                    <a href="#homeSubmenuLiga5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Liga 5</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuLiga5">
+                        <li>
+                            <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Nord']) }}">Liga 5 Nord</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Sud']) }}">Liga 5 Sud</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Vest']) }}">Liga 5 Vest</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Sud']) }}">Liga 5 Sud</a>
-                </li>
-                <li>
-                    <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Vest']) }}">Liga 5 Vest</a>
-                </li>
-                <li>
-                    <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Nord']) }}">Liga 6 Nord</a>
-                </li>
-                <li>
-                    <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Vest']) }}">Liga 6 Vest</a>
+                    <a href="#homeSubmenuLiga6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Liga 5</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuLiga6">
+                        <li>
+                            <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Nord']) }}">Liga 6 Nord</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Sud']) }}">Liga 6 Sud</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
