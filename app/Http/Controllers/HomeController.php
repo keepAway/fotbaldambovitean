@@ -94,7 +94,7 @@ class HomeController extends Controller
         // echo '</pre>';
         // die;
 
-        return view('welcome')->with(['liga' => $liga, 'echipe' => $echipe, 'etape' => $etape]);
+        return view('clasament')->with(['liga' => $liga, 'echipe' => $echipe, 'etape' => $etape]);
     }
 
     public function adaugaScor(Request $request){

@@ -1,11 +1,12 @@
-<?php 
+@php 
     $seria       = Request::get('seria') ? Request::get('seria') :  NULL;
     $tab         = Request::get('tab') ? Request::get('tab') :  NULL;
     $current_url = Request::fullUrl();
-?>
-<!-- Page Content  -->
-<div id="content">
-    @include('navbar')
+@endphp
+
+@extends('layouts.app')
+@section('content')
+<div id="container">
     <div class="row">
         <div class="col-sm-2">
         </div>
@@ -317,3 +318,4 @@
         </div>
     </div>
 </div>
+@endsection

@@ -10,14 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/clasament/liga/{liga}', 'HomeController@clasament')->name('clasament');
 Route::post('/clasament/adauga-scor', 'HomeController@adaugaScor')->name('adauga-scor');
