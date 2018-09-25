@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Echipe;
 use App\Etape;
 use App\Forma;
+use App\Mail\ContactEmail;
 
 use Carbon\Carbon;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -597,8 +599,22 @@ class HomeController extends Controller
         }
     }
 
-    public function contact(){
+    public function contact() {
         return view('contact');
+    }
+
+    public function contactUs(Request $request) {
+        $data = $request->all();
+
+        $content = [
+            'Nume'    => $data['nume'],
+            'Email'   => $data['email'],
+            'Telefon' => $data['telefon'],
+            'Mesaj'   => $data['mesaj']
+        ];
+
+        Mail::to(['radumariancodrut@gmail.com'])->send(new ContactEmail($content));
+        return redirect()->back()->with('status', 'Multumim pentru mesaj.');
     }
 
     public function parseJquery($liga, $serie, $etapa){

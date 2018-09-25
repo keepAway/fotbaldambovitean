@@ -21,7 +21,7 @@
 
             @if (session('status'))
                 <div class="row">
-                    <div class="col-sm-12 alert alert-success text-center" role="alert">
+                    <div class="col-sm-12 alert alert-success text-center mb-5" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         {{session('status')}}
                     </div>
@@ -40,7 +40,8 @@
                 <div class="contact-image">
                     <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
                 </div>
-                <form method="post">
+                <form action="{{route('contact-us')}}" method="POST" class="prevent-resubmit" id="contact-form">
+                    {{ csrf_field() }}
                     <h3>Lasă-ne Un Mesaj!</h3>
                    <div class="row">
                         <div class="col-md-6">
@@ -74,7 +75,7 @@
                                             <i class="fas fa-phone"></i>
                                         </span>
                                     </div>
-                                    <input type="text" name="telefon" class="form-control" placeholder="Telefon" required/>
+                                    <input type="text" name="telefon" id="telefon" class="form-control" placeholder="(0720) 000-000" required/>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -95,4 +96,21 @@
         </div>
     </div>
 </div>
+<script>
+    $( document ).ready(function(){
+        $(function(){
+          $("#telefon").mask("(9999) 999-999");
+          $("#telefon").on("blur", function() {
+              var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+
+                if( last.length == 5 ) {
+                    var move = $(this).val().substr( $(this).val().indexOf("-") + 1, 1 );
+                    var lastfour = last.substr(1,4);
+                    var first = $(this).val().substr( 0, 9 );
+                    $(this).val( first + move + '-' + lastfour );
+                }
+            });
+        }); 
+    });
+</script>
 @endsection

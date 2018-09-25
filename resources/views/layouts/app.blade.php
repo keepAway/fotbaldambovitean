@@ -21,15 +21,15 @@
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-
+        <script src="{{ asset('js/mask.js') }}"></script>
     </head>
 
     <body>
+        <div class="overlay"></div>
         <div id="app">
 
         @include('navbar')
         @include('sidebar')
-        <div class="overlay"></div>
         <script type="text/javascript">
             $(document).ready(function () {
                 $("#sidebar").mCustomScrollbar({

@@ -32,7 +32,7 @@ class SocialAuthController extends Controller
 		$user = Socialite::driver('facebook')->user();
 		$authUser = $this->findOrCreateUser($user, 'facebook');
 		Auth::login($authUser, true);
-		return view('home');
+		return view('/welcome');
     }
 
     public function findOrCreateUser($user, $provider)

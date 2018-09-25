@@ -28,3 +28,5 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/parse-jquery/{liga}/{serie}/{etapa}', 'HomeController@parseJquery')->name('parse-jquery');
 
+
+Route::post('/contact-us', 'HomeController@contactUs')->name('contact-us');
