@@ -52,7 +52,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#homeSubmenuLiga6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Liga 5</a>
+                <a href="#homeSubmenuLiga6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Liga 6</a>
                 <ul class="collapse list-unstyled" id="homeSubmenuLiga6">
                     <li>
                         <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Nord']) }}">Liga 6 Nord</a>
