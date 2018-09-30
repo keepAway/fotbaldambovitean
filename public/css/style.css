@@ -94,11 +94,6 @@ a:focus {
     transition: all 0.3s;
 }
 
-#dismiss:hover {
-    background: #fff;
-    color: #7386D5;
-}
-
 .overlay {
     display: none;
     position: fixed;
@@ -193,6 +188,15 @@ a.article:hover {
     color: #fff !important;
 }
 
+.nav-link {
+    font-size: 16px;
+}
+
+.fa-times-circle {
+    width: 1.3rem !important;
+    height: 1.3rem;
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -231,25 +235,7 @@ a.article:hover {
     justify-content: center;
 }
 
-/* Breakpoints */
-@media (max-width: 991.98px) { 
-    .page-link {
-        padding: .2rem .45rem;
-    }
-    .table td {
-        padding: 0.40rem;
-    }
-}
-
-@media (max-width: 767.98px) { 
-    .team-name {
-        font-size: 10px;
-    }
-}
-
-
-
-/*contact*/
+/*contact start*/
 .contact-image{
     text-align: center;
 }
@@ -273,16 +259,14 @@ a.article:hover {
 }
 
 .contact-form h3 {
-    margin-bottom: 8%;
+    margin-bottom: 5%;
     margin-top: -10%;
     text-align: center;
-    color: #0062cc;
 }
 
 .contact-form label {
     font-weight: bold;
     font-size: 14px;
-    color: #0062cc;
 }
 
 .contact-form input::-webkit-input-placeholder {
@@ -293,4 +277,36 @@ a.article:hover {
 .contact-form textarea::-webkit-input-placeholder {
     font-size: 11px;
     font-style: italic;
+}
+
+.contact-form input:focus,
+.contact-form input:hover,
+.contact-form textarea:focus,
+.contact-form textarea:hover {
+    outline: 0;
+    border: 1px solid #000;
+    box-shadow: none;
+}
+
+.form-intro p {
+    font-weight: 600;
+    color: #000;
+}
+/*contact end*/
+
+
+/* Breakpoints */
+@media (max-width: 991.98px) { 
+    .page-link {
+        padding: .2rem .45rem;
+    }
+    .table td {
+        padding: 0.40rem;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .team-name {
+        font-size: 10px;
+    }
 }

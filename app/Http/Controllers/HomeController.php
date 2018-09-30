@@ -613,7 +613,7 @@ class HomeController extends Controller
             'Mesaj'   => $data['mesaj']
         ];
 
-        Mail::to(['radumariancodrut@gmail.com'])->send(new ContactEmail($content));
+        Mail::to(['catana.ionut08@gmail.com'])->send(new ContactEmail($content));
         return redirect()->back()->with('status', 'Multumim pentru mesaj.');
     }
 

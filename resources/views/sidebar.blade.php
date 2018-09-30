@@ -1,7 +1,7 @@
 <div class="wrapper">
     <nav id="sidebar">       
         <div id="dismiss">
-            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-times-circle"></i>
         </div>
         <div class="sidebar-header">
             <h3 style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px; font-weight: bold;">Fotbal Dambovitean</h3>

@@ -264,7 +264,7 @@
                                     </tr>
                                         @if(Auth::check())
                                         <tr>
-                                            <td colspan="2">
+                                            <td colspan="2" class="text-right">
                                                 <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                 <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
                                                 <input type="hidden" name="gazde" value="{{$etapa->gazde}}">

@@ -8,8 +8,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2">
-        </div>
+        <div class="col-sm-2"></div>
         <div class="col-sm-7">
             @if ( count( $errors ) > 0 )
                 @foreach ($errors->all() as $error)
@@ -28,23 +27,26 @@
                 </div>
             @endif
         </div>
-        <div class="col-sm-3">
-        </div>
+        <div class="col-sm-3"></div>
     </div>
 
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-sm-2">test test
         </div>
-        <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="container contact-form">
                 <div class="contact-image">
-                    <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                    <img src="{{URL::asset('/img/rocket.png')}}" alt="rocket_contact"/>
                 </div>
                 <form action="{{route('contact-us')}}" method="POST" class="prevent-resubmit" id="contact-form">
                     {{ csrf_field() }}
                     <h3>Lasă-ne Un Mesaj!</h3>
-                   <div class="row">
-                        <div class="col-md-6">
+                    <div class="form-intro text-center">
+                        <p>Acest website este realizat în sprijinul şi pentru dumneavoastră. Sunteţi martorul unui eveniment, aveţi informaţii, sesizări, nu ezitaţi să ne scrieţi.</p>
+                        <p>Vă stăm la dispoziţie!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
                             <label>Nume *</label>
                             <div class="form-group">
                                 <div class="input-group">
@@ -77,22 +79,22 @@
                                     </div>
                                     <input type="text" name="telefon" id="telefon" class="form-control" placeholder="(0720) 000-000" required/>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-primary btn-sm" value="Trimite" />
-                            </div>
+                            </div>                            
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label>Mesaj *</label>
                                 <textarea name="mesaj" class="form-control" placeholder="Mesajul tau" style="width: 100%; height: 200px;" required></textarea>
                             </div>
                         </div>
+                        <div class="form-group ml-auto mr-auto">
+                            <input type="submit" name="submit" class="btn btn-dark" value="Trimite" />
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-sm-3">teeeeeeeeest
         </div>
     </div>
 </div>
