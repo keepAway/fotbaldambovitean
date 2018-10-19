@@ -21,8 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/auth/facebook',          'Auth\SocialAuthController@redirect');
-Route::get('/auth/facebook/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('/auth/facebook',          'Auth\SocialAuthController@facebookRedirect')->name('auth-facebook');
+Route::get('/auth/facebook/callback', 'Auth\SocialAuthController@handleFacebookCallback');
+
+Route::get('/auth/google', 'Auth\SocialAuthController@googleRedirect')->name('auth-google');
+Route::get('/auth/google/callback', 'Auth\SocialAuthController@handleGoogleCallback');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
@@ -36,3 +39,13 @@ Route::post('/admin-save-stire', 'HomeController@adminSaveStire')->name('admin-s
 
 Route::get('/stire/{id}', 'HomeController@stireDetaliu')->name('stire-detaliu');
 Route::get('/save-view', 'HomeController@saveView')->name('save-view');
+
+Route::get('/adauga-scor', 'HomeController@getTrimiteScor')->name('trimite-scor');
+Route::post('/adauga-scor', 'HomeController@addTrimiteScor')->name('add-trimite-scor');
+
+
+Route::get('/scoruri-primite', 'HomeController@scoruriPrimite')->name('scoruri-primite');
+Route::get('/useri', 'HomeController@useri')->name('useri');
+
+Route::get('/disable/{id}', 'HomeController@disableUser')->name('disable');
+

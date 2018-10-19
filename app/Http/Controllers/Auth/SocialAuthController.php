@@ -17,22 +17,44 @@ class SocialAuthController extends Controller
    *
    * @return void
    */
-    public function redirect()
+    public function googleRedirect()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function facebookRedirect()
     {
         return Socialite::driver('facebook')->redirect();
     }
-
     /**
      * Return a callback method from facebook api.
      *
      * @return callback URL from facebook
      */
-    public function handleProviderCallback()
+    public function handleFacebookCallback()
     {
-		$user = Socialite::driver('facebook')->user();
-		$authUser = $this->findOrCreateUser($user, 'facebook');
+		try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (\Exception $e) {
+            return redirect('/login');
+        }
+		
+        $authUser = $this->findOrCreateUser($user, 'facebook');
 		Auth::login($authUser, true);
-		return view('/welcome');
+		return redirect()->to('/');
+    }
+
+    public function handleGoogleCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+        } catch (\Exception $e) {
+            return redirect('/login');
+        }
+        
+        $authUser = $this->findOrCreateUser($user, 'google');
+        Auth::login($authUser, true);
+        return redirect()->to('/');
     }
 
     public function findOrCreateUser($user, $provider)
@@ -45,10 +67,12 @@ class SocialAuthController extends Controller
         $email = ($user->email != '' ? $user->email : 'noemail@fotbaldambovitean.ro');
 
         return User::create([
-            'name'     => $user->name,
-            'email'    => $email,
-            'provider' => $provider,
-            'provider_id' => $user->id
+            'name'            => $user->name,
+            'email'           => $email,
+            'provider'        => $provider,
+            'provider_id'     => $user->id,
+            'avatar'          => $user->avatar,
+            'avatar_original' => $user->avatar_original
         ]);
     }
 }

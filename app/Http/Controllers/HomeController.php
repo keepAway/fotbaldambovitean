@@ -11,9 +11,14 @@ use App\Categorie;
 use App\View;
 use App\Mail\ContactEmail;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Mail\ContactEmail;
+use App\ScoruriTrimise;
 
 use Carbon\Carbon;
 use Mail;
+use DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -730,5 +735,127 @@ class HomeController extends Controller
         $view->stire_id = $request->id;        
         $view->counter = $view->counter + 1;
         $view->save();
+    }
+
+    public function getTrimiteScor(Request $request){
+        
+        $data  = $request->all();
+        $liga  = $data['liga'];
+        $serie = (isset($data['serie']) && $data['serie'] != null ? $data['serie'] : NULL);
+
+        if(!in_array($liga, [3,4,5,6])){
+            return redirect()->back()->withErrors('Liga indisponibila');
+        }
+
+        $etape = Etape::where('liga', '=', $liga)
+                        ->where('serie', '=', $serie)
+                        ->where('etapa', '<=', '7')
+                        ->whereNull('g_gazde')
+                        ->whereNull('g_oaspeti')
+                        ->groupBy('liga', 'etapa', 'id')
+                        ->get();
+
+        $i = 0;
+        foreach ($etape as $etapa) {
+            $__check = ScoruriTrimise::where('etapa', $etapa->id)
+                                     ->where('user_id', Auth::user()->id)->first();
+
+            if(!empty($__check) && ($etapa->id == $__check->etapa)) {
+                $etape[$i]->g_gazde      = $__check->g_gazde;
+                $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
+                $etape[$i]->contestatie  = $__check->contestatie;
+                $etape[$i]->incident     = $__check->incident;
+                $etape[$i]->alte_detalii = $__check->alte_detalii;
+                $etape[$i]->adaugat      = true;
+            }
+            $i++;
+        }
+
+        $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
+
+        return view('adauga-scor')->with(['etape' => $etape, 'ligi' => $ligi]);
+    }
+
+    public function addTrimiteScor(Request $request) {
+
+        $data = $request->all();
+        $update = $data['update'];
+
+        $scor = ($update == 'false') ? new ScoruriTrimise : ScoruriTrimise::where('etapa', $data['id_etapa'])->first();
+        $scor->user_id      = Auth::user()->id;
+        $scor->g_gazde      = $data['g_gazde'];
+        $scor->g_oaspeti    = $data['g_oaspeti'];
+        $scor->etapa        = $data['id_etapa'];
+        $scor->gazde        = $data['gazde'];
+        $scor->oaspeti      = $data['oaspeti'];
+        $scor->liga         = $data['liga'];
+        $scor->serie        = $data['serie'];
+        $scor->contestatie  = $data['contestatie'];
+        $scor->incident     = $data['incident'];
+        $scor->alte_detalii = $data['alte_detalii'];
+
+        if($scor->save()) {
+            $res = 'Scorul a fost adaugat, iti multumim!';
+            if($update == 'true') {
+                $res =  'Scorul a fost modificat, iti multumim!';
+            }
+
+            return redirect()->back()->with('status', $res);
+        } else {
+            return redirect()->back()->withErrors('Scorul nu a putut fi adaugat');
+        }
+    }
+
+    public function scoruriPrimite(Request $request){
+        
+        $data  = $request->all();
+        $liga  = $data['liga'];
+        $serie = (isset($data['serie']) && $data['serie'] != null ? $data['serie'] : NULL);
+
+        if(!in_array($liga, [3,4,5,6])){
+            return redirect()->back()->withErrors('Liga indisponibila');
+        }
+
+        $etape = Etape::where('liga', '=', $liga)
+                        ->where('serie', '=', $serie)
+                        ->where('etapa', '<=', '7')
+                        ->whereNull('g_gazde')
+                        ->whereNull('g_oaspeti')
+                        ->groupBy('liga', 'etapa', 'id')
+                        ->get();
+
+        $i = 0;
+        foreach ($etape as $etapa) {
+            $__check = ScoruriTrimise::where('etapa', $etapa->id)
+                                     ->where('user_id', Auth::user()->id)->first();
+
+            if(!empty($__check) && ($etapa->id == $__check->etapa)) {
+                $etape[$i]->g_gazde      = $__check->g_gazde;
+                $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
+                $etape[$i]->contestatie  = $__check->contestatie;
+                $etape[$i]->incident     = $__check->incident;
+                $etape[$i]->alte_detalii = $__check->alte_detalii;
+                $etape[$i]->adaugat      = true;
+            }
+            $i++;
+        }
+
+        $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
+
+        return view('scoruri-primite')->with(['etape' => $etape, 'ligi' => $ligi]);
+    }
+
+    public function useri() {
+
+        $useri = User::paginate(50);
+        return view('useri')->with(['useri' => $useri]);
+    }
+    
+    public function disableUser($id) {
+        $check = User::where('id', $id)->first()->disabled;
+        $res = $check ? 'deblocat' : 'blocat';
+        if(User::where('id', $id)->update(['disabled' => !$check])){
+            return redirect()->back()->with('status', 'Utilizator ' . $res);
+        }
     }
 }
