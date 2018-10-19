@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Echipe;
 use App\Etape;
 use App\Forma;
+use App\Stiri;
+use App\Categorie;
+use App\View;
 use App\Mail\ContactEmail;
+use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
 use Mail;
@@ -30,7 +34,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $cat = isset($_GET["categorie"]) ? $_GET["categorie"] : "0";
+
+        $all_used_cats = Stiri::pluck('categorie_id');
+        $unique_used_cats = array_unique($all_used_cats->all());
+
+        if($cat == "0" || !in_array($cat, $unique_used_cats)) {
+            $stiri = Stiri::orderBy('pin', true)
+                ->join('views', 'stiri.id', '=', 'views.stire_id')
+                ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
+                ->join('users', 'stiri.user_id', '=', 'users.id')
+                    ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
+                        ->orderBy('stiri.created_at', 'DESC')
+                            ->paginate(8);
+        } else {
+            $stiri = Stiri::where('categorie_id', $cat)
+                ->join('views', 'stiri.id', '=', 'views.stire_id')
+                ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
+                ->join('users', 'stiri.user_id', '=', 'users.id')
+                    ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
+                        ->orderBy('pin', true)
+                            ->orderBy('stiri.created_at', 'DESC')
+                                ->paginate(8);
+        }
+        
+        return view('home')->with(['stiri' => $stiri]);       
     }
 
 
@@ -637,5 +665,70 @@ class HomeController extends Controller
         $data = file_get_contents('http://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-5-a-sud-6693-et' . $x);
 
         return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
+    }
+
+    public function adminStiri() {
+        $categorii = Categorie::all();
+
+        return view('admin-stiri')->with(['categorii' => $categorii]);
+    }
+
+    public function adminSaveStire(Request $request) {
+        $data = $request->all();
+        $stire = new Stiri;
+        $view = new View;
+
+        $stire->user_id = Auth::user()->id;
+        $stire->pin = isset($data["stire_featured"]) ? true : false;
+        $stire->titlu = $data["stire_titlu"];
+        $stire->categorie_id = (int)$data["stire_categorie"];
+        $stire->imagine = $data["stire_imagine"];
+        $stire->introducere = $data["stire_introducere"];
+        $stire->continut = $data["stire_continut"];
+        $stire->created_at = Carbon::now();
+        $stire->updated_at = Carbon::now();
+        
+        $stire->save();
+
+        $stire->imagine = $stire->id .'_'. $data["stire_imagine"]->getClientOriginalName();
+        $stire->save();
+
+        $view->stire_id = $stire->id;        
+        $view->counter = 0;
+        $view->save();        
+
+        $data['stire_imagine']->storeAs('public/images', $stire->id .'_'.$data['stire_imagine']->getClientOriginalName());
+
+        return redirect()->back()->with('status', 'Stirea a fost adaugata.');
+    }
+
+    public function stireDetaliu(Int $id) {
+        $stire = Stiri::join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
+                    ->join('users', 'stiri.user_id', '=', 'users.id')
+                    ->join('views', 'stiri.id', '=', 'views.stire_id')
+                    ->select('stiri.*', 'categorii.nume as nume_categorie', 'users.name as autor', 'views.counter as views')
+                    ->find($id);
+        $alte_stiri = Stiri::where('stiri.id', '!=', $id)
+                                ->where('stiri.categorie_id', $stire->categorie_id)
+                                ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
+                                ->join('users', 'stiri.user_id', '=', 'users.id')
+                                ->join('views', 'stiri.id', '=', 'views.stire_id')
+                                ->select('stiri.*', 'categorii.nume as nume_categorie', 'users.name as autor', 'views.counter as views')
+                                ->inRandomOrder()
+                                ->take(2)
+                                ->get();
+
+        if(is_null($stire)) {
+            return redirect('/');
+        } else {
+            return view('stire-detaliu')->with(['stire' => $stire, 'alte_stiri' => $alte_stiri]);
+        }
+    }
+
+    public function saveView(Request $request) {
+        $view = View::where('stire_id', $request->id)->first();
+        $view->stire_id = $request->id;        
+        $view->counter = $view->counter + 1;
+        $view->save();
     }
 }

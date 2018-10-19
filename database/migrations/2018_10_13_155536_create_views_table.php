@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormaTable extends Migration
+class CreateViewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateFormaTable extends Migration
      */
     public function up()
     {
-        Schema::create('forma', function (Blueprint $table) {
+        Schema::create('views', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('etapa_id');
-            $table->string('echipa');
-            $table->string('forma');
-            $table->boolean('gazde')->default(false);
-            $table->boolean('oaspeti')->default(false);
+            $table->integer('stire_id');
+            $table->integer('counter');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateFormaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('forma');
+        Schema::dropIfExists('views');
     }
 }

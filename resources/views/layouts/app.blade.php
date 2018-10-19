@@ -13,48 +13,50 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
         <script src="{{ asset('js/solid.js') }}"></script>
         <script src="{{ asset('js/fontawesome.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/custom.js') }}"></script>
         <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
         <script src="{{ asset('js/mask.js') }}"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     </head>
 
     <body>
         <div class="overlay"></div>
         <div id="app">
+            @include('navbar')
+            @include('sidebar')
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#sidebar").mCustomScrollbar({
+                        theme: "minimal"
+                    });
 
-        @include('navbar')
-        @include('sidebar')
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#sidebar").mCustomScrollbar({
-                    theme: "minimal"
+                    $('#dismiss, .overlay').on('click', function () {
+                        $('#sidebar').removeClass('active');
+                        $('.overlay').removeClass('active');
+                    });
+
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').addClass('active');
+                        $('.overlay').addClass('active');
+                        $('.collapse.in').toggleClass('in');
+                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                    });
                 });
 
-                $('#dismiss, .overlay').on('click', function () {
-                    $('#sidebar').removeClass('active');
-                    $('.overlay').removeClass('active');
+                $('[data-toggle="tooltip"]').tooltip({
+                   container: 'body'
                 });
-
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar').addClass('active');
-                    $('.overlay').addClass('active');
-                    $('.collapse.in').toggleClass('in');
-                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                });
-            });
-
-            $('[data-toggle="tooltip"]').tooltip({
-               container: 'body'
-            });
-        </script>
-        <main class="py-4">
-            @yield('content')
-        </main>
+            </script>
+            <main class="py-4">
+                @yield('content')
+            </main>
         </div>
     </body>
 </html>

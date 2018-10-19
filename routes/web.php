@@ -30,3 +30,9 @@ Route::get('/parse-jquery/{liga}/{serie}/{etapa}', 'HomeController@parseJquery')
 
 
 Route::post('/contact-us', 'HomeController@contactUs')->name('contact-us');
+
+Route::get('/admin-stiri', 'HomeController@adminStiri')->name('admin-stiri');
+Route::post('/admin-save-stire', 'HomeController@adminSaveStire')->name('admin-save-stire');
+
+Route::get('/stire/{id}', 'HomeController@stireDetaliu')->name('stire-detaliu');
+Route::get('/save-view', 'HomeController@saveView')->name('save-view');

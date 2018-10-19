@@ -214,7 +214,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-sm-12 text-center" style="text-align: center !important;">
+                <div class="col-sm-12 text-center">
                     {{ $etape->appends(\Request::except('page'))->links() }}
                 </div>
             </div>
@@ -282,7 +282,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-sm-12 text-center" style="text-align: center !important;">
+                <div class="col-sm-12 text-center">
                     {{ $etape->appends(\Request::except('page'))->links() }}
                 </div>
             </div>

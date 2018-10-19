@@ -17,6 +17,9 @@
                 	<li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">Adauga scor</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin-stiri') }}">Adauga stire</a>
+                    </li>
                 @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
