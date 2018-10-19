@@ -35,9 +35,9 @@
         </div>
         <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="container contact-form">
-                <div class="contact-image">
+                {{-- <div class="contact-image">
                     <img src="{{URL::asset('/img/rocket.png')}}" alt="rocket_contact"/>
-                </div>
+                </div> --}}
                 <form action="{{route('contact-us')}}" method="POST" class="prevent-resubmit" id="contact-form">
                     {{ csrf_field() }}
                     <div class="form-intro text-center">

@@ -28,9 +28,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="container contact-form">
-                <div class="contact-image">
+                {{-- <div class="contact-image">
                     <img src="{{URL::asset('/img/rocket.png')}}" alt="rocket_contact"/>
-                </div>
+                </div> --}}
                 <form action="{{route('admin-save-stire')}}" method="POST" class="prevent-resubmit" id="stiri-form" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <h3>Scrie O Stire</h3>

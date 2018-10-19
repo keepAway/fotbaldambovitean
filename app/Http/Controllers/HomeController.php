@@ -10,10 +10,9 @@ use App\Stiri;
 use App\Categorie;
 use App\View;
 use App\Mail\ContactEmail;
-use Illuminate\Support\Facades\Auth;
 use App\User;
-use App\Mail\ContactEmail;
 use App\ScoruriTrimise;
+use App\EtapaCurenta;
 
 use Carbon\Carbon;
 use Mail;
@@ -122,14 +121,20 @@ class HomeController extends Controller
             });
         }
 
-        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC')->paginate($page);
 
+        $etapa_curenta = NULL;
+        $__check = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
+        if(!empty($__check)){
+            $etapa_curenta = $__check['etapa_curenta'];
+        }
+
+        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC')->paginate($page);
         // echo '<pre>';
-        //     print_r($echipe);
+        //     print_r($etape);
         // echo '</pre>';
         // die;
 
-        return view('clasament')->with(['liga' => $liga, 'echipe' => $echipe, 'etape' => $etape]);
+        return view('clasament')->with(['liga' => $liga, 'echipe' => $echipe, 'etape' => $etape, 'etapa_curenta' => $etapa_curenta, 'current_page' => 10]);
     }
 
     public function adaugaScor(Request $request){
@@ -667,7 +672,7 @@ class HomeController extends Controller
             $x = '0' . $x;
         }
 
-        $data = file_get_contents('http://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-5-a-sud-6693-et' . $x);
+        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-4-a-6655-et' . $x);
 
         return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
     }
@@ -680,6 +685,12 @@ class HomeController extends Controller
 
     public function adminSaveStire(Request $request) {
         $data = $request->all();
+
+        // echo '<pre>';
+        //     print_r($data);
+        // echo '<pre>';
+        // die;
+
         $stire = new Stiri;
         $view = new View;
 
@@ -726,11 +737,16 @@ class HomeController extends Controller
         if(is_null($stire)) {
             return redirect('/');
         } else {
-            return view('stire-detaliu')->with(['stire' => $stire, 'alte_stiri' => $alte_stiri]);
+            return view('stire-detaliu')->with(['stire' => $stire, 'alte_stiri' => $alte_stiri, 'id' => $stire->id]);
         }
     }
 
     public function saveView(Request $request) {
+
+        // echo '<pre>';
+        //     print_r($request);
+        // echo '</pre>';
+        // die;
         $view = View::where('stire_id', $request->id)->first();
         $view->stire_id = $request->id;        
         $view->counter = $view->counter + 1;
@@ -816,33 +832,32 @@ class HomeController extends Controller
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
-        $etape = Etape::where('liga', '=', $liga)
-                        ->where('serie', '=', $serie)
-                        ->where('etapa', '<=', '7')
-                        ->whereNull('g_gazde')
-                        ->whereNull('g_oaspeti')
-                        ->groupBy('liga', 'etapa', 'id')
-                        ->get();
+        // $etape = Etape::where('liga', '=', $liga)
+        //                 ->where('serie', '=', $serie)
+        //                 ->where('etapa', '<=', '7')
+        //                 ->whereNull('g_gazde')
+        //                 ->whereNull('g_oaspeti')
+        //                 ->groupBy('liga', 'etapa', 'id')
+        //                 ->get();
 
-        $i = 0;
-        foreach ($etape as $etapa) {
-            $__check = ScoruriTrimise::where('etapa', $etapa->id)
-                                     ->where('user_id', Auth::user()->id)->first();
+        // $i = 0;
+        // foreach ($etape as $etapa) {
+            $__check = ScoruriTrimise::where('liga', $liga)->get();
 
-            if(!empty($__check) && ($etapa->id == $__check->etapa)) {
-                $etape[$i]->g_gazde      = $__check->g_gazde;
-                $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
-                $etape[$i]->contestatie  = $__check->contestatie;
-                $etape[$i]->incident     = $__check->incident;
-                $etape[$i]->alte_detalii = $__check->alte_detalii;
-                $etape[$i]->adaugat      = true;
-            }
-            $i++;
-        }
+        //     if(!empty($__check) && ($etapa->id == $__check['etapa'])) {
+        //         $etape[$i]->g_gazde      = $__check->g_gazde;
+        //         $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
+        //         $etape[$i]->contestatie  = $__check->contestatie;
+        //         $etape[$i]->incident     = $__check->incident;
+        //         $etape[$i]->alte_detalii = $__check->alte_detalii;
+        //         $etape[$i]->adaugat      = true;
+        //     }
+        //     $i++;
+        // }
 
         $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
 
-        return view('scoruri-primite')->with(['etape' => $etape, 'ligi' => $ligi]);
+        return view('scoruri-primite')->with(['etape' => $__check, 'ligi' => $ligi]);
     }
 
     public function useri() {
@@ -856,6 +871,25 @@ class HomeController extends Controller
         $res = $check ? 'deblocat' : 'blocat';
         if(User::where('id', $id)->update(['disabled' => !$check])){
             return redirect()->back()->with('status', 'Utilizator ' . $res);
+        }
+    }
+
+    public function etapaCurenta(Request $request) {
+        $data     = $request->all();
+        $liga     = $data['liga'];
+        $serie    = $data['serie'];
+        $etapa_id = $data['etapa_id'];
+
+        $__check = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
+        $etapa_curenta = (empty($__check)) ? new EtapaCurenta : $__check;
+        $etapa_curenta->liga = $liga;
+        $etapa_curenta->serie = $serie;
+        $etapa_curenta->etapa_curenta = $etapa_id;
+
+        if($etapa_curenta->save()) {
+            return redirect()->back()->with('status', 'Etapa a fost marcata ca si curenta!');
+        } else {
+            return redirect()->back()->withErrors('Etapa nu a putut fi marcata ca si curenta!');
         }
     }
 }

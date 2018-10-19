@@ -38,7 +38,7 @@ Route::get('/admin-stiri', 'HomeController@adminStiri')->name('admin-stiri');
 Route::post('/admin-save-stire', 'HomeController@adminSaveStire')->name('admin-save-stire');
 
 Route::get('/stire/{id}', 'HomeController@stireDetaliu')->name('stire-detaliu');
-Route::get('/save-view', 'HomeController@saveView')->name('save-view');
+Route::get('/save-view/{id}', 'HomeController@saveView')->name('save-view');
 
 Route::get('/adauga-scor', 'HomeController@getTrimiteScor')->name('trimite-scor');
 Route::post('/adauga-scor', 'HomeController@addTrimiteScor')->name('add-trimite-scor');
@@ -48,4 +48,7 @@ Route::get('/scoruri-primite', 'HomeController@scoruriPrimite')->name('scoruri-p
 Route::get('/useri', 'HomeController@useri')->name('useri');
 
 Route::get('/disable/{id}', 'HomeController@disableUser')->name('disable');
+
+Route::post('/etapa-curenta', 'HomeController@etapaCurenta')->name('etapa-curenta');
+
 

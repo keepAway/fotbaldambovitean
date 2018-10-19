@@ -161,10 +161,29 @@
         <!-- Etapa desktop -->
         <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                <div class="col-sm-10 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
                     <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
                 </div>
+                @if($etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa)
+                <div class="col-sm-2 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                    <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="liga" value="{{$liga}}">
+                        <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
+                        <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
+                        <button class="btn btn-primary btn-sm float-right">Etapa curenta</button>
+                    </form>
+                </div>
+                @else
+                <div class="col-sm-2 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                    <div class="switch__container float-right">
+                        <input type="checkbox" id="switch-shadow" type="submit" class="switch switch--shadow"
+                         {{$etapa_curenta == $etape[0]->etapa ? 'checked="checked"' : ''}} disabled="disabled">
+                        <label for="switch-shadow"></label>
+                    </div>
+                </div>
+                @endif
                 <div class="col-sm-12">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table table-striped table-hover text-center">

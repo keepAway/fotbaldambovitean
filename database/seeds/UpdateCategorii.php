@@ -37,7 +37,6 @@ class UpdateCategorii extends Seeder
 
         foreach ($categorii as $categorie) {
         	$new_cat = new Categorie;
-
         	$new_cat->nume = $categorie;
         	$new_cat->save();
         }
