@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEtapeTable extends Migration
+class CreateScoruriTrimiseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateEtapeTable extends Migration
      */
     public function up()
     {
-        Schema::create('etape', function (Blueprint $table) {
+        Schema::create('scoruri_trimise', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('gazde');
             $table->string('oaspeti');
             $table->integer('g_gazde')->nullable();
@@ -22,8 +23,9 @@ class CreateEtapeTable extends Migration
             $table->integer('liga');
             $table->string('serie')->nullable();
             $table->integer('etapa');
-            $table->date('data')->nullable();
-            $table->string('ora')->nullable();
+            $table->text('contestatie')->nullable();
+            $table->text('incident')->nullable();
+            $table->text('alte_detalii')->nullable();
             $table->timestamps();
         });
     }
@@ -35,6 +37,6 @@ class CreateEtapeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('etape');
+        Schema::dropIfExists('scoruri_trimise');
     }
 }

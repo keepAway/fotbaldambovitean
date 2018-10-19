@@ -67,7 +67,9 @@ a:focus {
     height: 100vh;
     z-index: 999;
     /*background: #7386D5;*/
-    background: #455a64;
+    /*background: #455a64;*/
+    /*background-color: #343a40;*/
+    background: #545454;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -83,8 +85,6 @@ a:focus {
     height: 35px;
     line-height: 35px;
     text-align: center;
-    /*background: #7386D5;*/
-    background: #191c1f;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -111,7 +111,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #191c1f;
+    background: #053600;
     /*background: #6d7fcc;*/
 }
 
@@ -129,7 +129,7 @@ a:focus {
     font-weight: 400;
     font-size: 14px;
     border-radius: 2px;
-    color: #cfd8dc;
+    color: #fff;
     display: block;
     margin: 1px 10px;
     padding: 10px 10px;
@@ -137,14 +137,14 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: #fff;
-    background: #607d8b;
+    background: #474749;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
     /*background: #6d7fcc;*/
-    background: #607d8b;
+    background: #474749;
 }
 
 a[data-toggle="collapse"] {
@@ -160,9 +160,9 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
+    font-size: 1em !important;
+    padding-left: 10px !important;
+    background: #373737;
 }
 
 ul.CTAs {
@@ -189,7 +189,7 @@ a.article:hover {
 }
 
 .nav-link {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .fa-times-circle {
@@ -248,7 +248,7 @@ a.article:hover {
 }
 
 .contact-form form{
-    padding-top: 14%;
+    padding-top: 4%;
     padding-bottom: 14%;
     padding-left: 4%;
     padding-right: 4%;
@@ -310,3 +310,69 @@ a.article:hover {
         font-size: 10px;
     }
 }
+
+/*toggle button css*/
+/* The switch - the box around the slider */
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  margin-bottom: -3px;
+}
+
+/* Hide default HTML checkbox */
+.switch-toggle input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider-disabled {
+  background-color: #28283b;
+}
+/*end of toggle button css*/

@@ -27743,7 +27743,7 @@ class UpdateDatabase extends Seeder
 			$adauga->etapa     = $etapa['etapa'];
 			// $adauga->data      = $etapa['data'];
 			// $adauga->data      = DateTime::createFromFormat('M d, Y', ($etapa['data']))->format('Y-m-d');
-			$adauga->data      = $etapa['data'] != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL;
+			// $adauga->data      = $etapa['data'] != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL;
 			$adauga->ora       = $etapa['ora'];
 			$adauga->save();
 		}

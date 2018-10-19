@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header" style="background-color: #085f00; color: #fff;">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
@@ -38,28 +38,19 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <a class="btn btn-primary" href="{{ url('auth/facebook') }}">Facebook Login</a>
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
+                            <div class="col-md-8 offset-md-4 pt-3">
+                                <button type="submit" class="btn" style="background-color: #085f00; color: #fff; margin-top: -20px;">{{ __('Intra') }}</button>
+                                <span class="pl-2"> sau </span>
+                                <a class="fab fa-facebook fa-3x pl-2" href="{{ route('auth-facebook') }}" style="color: #3b5998;"></a>
+                                <a class="fab fa-google-plus-square fa-3x pl-3" href="{{ route('auth-google') }}" style="color: #d85040;"></a>
+                            </div>
+                            <div class="col-md-8 offset-md-4 pt-3 pl-0">
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('Inscrie-te') }}
+                                </a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                    {{ __('Am uitat parola') }}
                                 </a>
                             </div>
                         </div>

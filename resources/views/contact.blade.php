@@ -40,9 +40,10 @@
                 </div>
                 <form action="{{route('contact-us')}}" method="POST" class="prevent-resubmit" id="contact-form">
                     {{ csrf_field() }}
-                    <h3>Lasă-ne Un Mesaj!</h3>
                     <div class="form-intro text-center">
-                        <p>Acest website este realizat în sprijinul şi pentru dumneavoastră. Sunteţi martorul unui eveniment, aveţi informaţii, sesizări, nu ezitaţi să ne scrieţi.</p>
+                        <h4>Lasă-ne Un Mesaj!</h4>
+                        <p>Acest website este realizat în sprijinul şi pentru dumneavoastră.</p>
+                        <p>Sunteţi martorul unui eveniment, aveţi informaţii, sesizări, nu ezitaţi să ne scrieţi.</p>
                         <p>Vă stăm la dispoziţie!</p>
                     </div>
                     <div class="row">
