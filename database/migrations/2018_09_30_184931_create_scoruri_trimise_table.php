@@ -23,6 +23,7 @@ class CreateScoruriTrimiseTable extends Migration
             $table->integer('liga');
             $table->string('serie')->nullable();
             $table->integer('etapa');
+            $table->boolean('adaugat')->default(false);
             $table->text('contestatie')->nullable();
             $table->text('incident')->nullable();
             $table->text('alte_detalii')->nullable();

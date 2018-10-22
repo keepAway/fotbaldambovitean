@@ -53,7 +53,7 @@
                 </ul>
             </li>
             <li>
-                <a href="{{ route('clasament', ['liga' => 4]) }}">Liga 4</a>
+                <a href="{{ route('clasament', ['liga' => 4 ]) }}">Liga 4</a>
             </li>
             <li>
                 <a href="#homeSubmenuLiga5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Liga 5</a>

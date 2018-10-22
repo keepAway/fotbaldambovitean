@@ -599,3 +599,19 @@ input:checked + .slider:before {
 .switch--shadow:checked+label:after {
     transform: translateX(100%)
 }
+
+.w3-badge,
+.w3-tag{
+    background-color: #fd7e14;
+    color:#fff;
+    display:inline-block;
+    font-weight: bold;
+    font-size: 10px;
+    width: 15px;
+    text-align:center;
+    margin-top: -7px !important;
+    margin-left: -5px !important;
+    float: right;
+    position: absolute;
+}
+.w3-badge{border-radius:999px}

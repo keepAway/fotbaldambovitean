@@ -88,20 +88,42 @@
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                             @if(Auth::check())
                                             <td>
-                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
-                                                <a class="btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
-                                                    <i class="fas fa-plus" style="font-weight: 600"></i>
-                                                </a>
-                                                <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
-                                                <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
-                                                <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
-                                                <input type="hidden" name="liga" value="{{$etapa->liga}}">
-                                                <input type="hidden" name="serie" value="{{$etapa->serie}}">
-                                                <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                                <div>
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                    <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
+                                                        <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
+                                                    </a>
+                                                    @php $i = 0; $j = 0; $k = 0; @endphp
+                                                    @php
+                                                        if($etapa->contestatie != '') {
+                                                            $i = 1;
+                                                        }
+
+                                                        if($etapa->incident != '') {
+                                                            $j = 1;
+                                                        }
+ 
+                                                        if($etapa->alte_detalii != '') {
+                                                            $k = 1;
+                                                        }
+                                                    @endphp
+
+                                                    @if($etapa->adaugat && ($i > 0 || $j > 0 || $k > 0))
+                                                        <span class="w3-badge">{{$i+$j+$k}}</span>
+                                                    @endif
+
+                                                    <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
+                                                    <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
+                                                    <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
+                                                    <input type="hidden" name="liga" value="{{$etapa->liga}}">
+                                                    <input type="hidden" name="serie" value="{{$etapa->serie}}">
+                                                    <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                                </div>
                                             </td>
                                             @endif
                                         </tr>
                                         <tr class="d-none" id="{{'container_' . $etapa->id}}">
+                                        {{-- <tr class="{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? '' : 'd-none'}}" id="{{'container_' . $etapa->id}}"> --}}
                                             <td class="pl-0 pr-0" colspan="9">
                                                 <div class="card card-default text-left pl-0 pr-0 pt-0" style="border-radius: 0;">
                                                     <div class="card-body pb-1">
@@ -112,8 +134,8 @@
                                                             </label>
                                                             <label class="form-check-label" style="font-weight: normal;"> Contestatie? </label>
                                                         </div>
-                                                        <div class="d-none pb-2" id="{{'contestatie_' . $etapa->id}}">
-                                                            <textarea name="contestatie" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Motivul contestatiei si echipa care contesta?"></textarea>
+                                                        <div class="{{$etapa->contestatie != '' ? '' : 'd-none'}} pb-2" id="{{'contestatie_' . $etapa->id}}">
+                                                            <textarea name="contestatie" class="pl-2" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Motivul contestatiei si echipa care contesta?">{{$etapa->contestatie != '' ? $etapa->contestatie : ''}}</textarea>
                                                         </div>
                                                         <div class="form-group mb-2">
                                                             <label class="switch-toggle">
@@ -122,8 +144,8 @@
                                                             </label>
                                                             <label class="form-check-label" style="font-weight: normal;"> Incidente? </label>
                                                         </div>
-                                                        <div class="d-none pb-2" id="{{'incident_' . $etapa->id}}">
-                                                            <textarea name="incident" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Descrie incidentul ..."></textarea>
+                                                        <div class="{{$etapa->incident != '' ? '' : 'd-none'}} pb-2" id="{{'incident_' . $etapa->id}}">
+                                                            <textarea name="incident" class="pl-2" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Descrie incidentul ...">{{$etapa->incident != '' ? $etapa->incident : ''}}</textarea>
                                                         </div>
                                                         <div class="form-group mb-2">
                                                             <label class="switch-toggle">
@@ -132,8 +154,8 @@
                                                             </label>
                                                             <label class="form-check-label" style="font-weight: normal;"> Alte detalii ... </label>
                                                         </div>
-                                                        <div class="d-none" id="{{'detalii_' . $etapa->id}}">
-                                                            <textarea name="alte_detalii" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Descrie detaliul ..."></textarea>
+                                                        <div class="{{$etapa->alte_detalii != '' ? '' : 'd-none'}}" id="{{'detalii_' . $etapa->id}}">
+                                                            <textarea name="alte_detalii" class="pl-2" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Descrie detaliul ...">{{$etapa->alte_detalii != '' ? $etapa->alte_detalii : ''}}</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -289,6 +311,10 @@
     $('.display-details-container').click(function(){
         var id = $(this).data('id');
         $('#container_' + id).toggleClass('d-none');
+    });
+
+    $('.toggle-plus-minus').click(function(){
+        $(this).find('.plus-minus').toggleClass('fa-minus fa-plus');
     });
 </script>
 
