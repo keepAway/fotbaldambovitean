@@ -758,6 +758,8 @@ class HomeController extends Controller
         $data  = $request->all();
         $liga  = $data['liga'];
         $serie = (isset($data['serie']) && $data['serie'] != null ? $data['serie'] : NULL);
+        $etapa_curenta = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
+        $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
 
         if(!in_array($liga, [3,4,5,6])){
             return redirect()->back()->withErrors('Liga indisponibila');
@@ -765,7 +767,7 @@ class HomeController extends Controller
 
         $etape = Etape::where('liga', '=', $liga)
                         ->where('serie', '=', $serie)
-                        ->where('etapa', '<=', '7')
+                        ->where('etapa', '<=', $etapa_curenta)
                         ->whereNull('g_gazde')
                         ->whereNull('g_oaspeti')
                         ->groupBy('liga', 'etapa', 'id')
@@ -809,6 +811,7 @@ class HomeController extends Controller
         $scor->contestatie  = $data['contestatie'];
         $scor->incident     = $data['incident'];
         $scor->alte_detalii = $data['alte_detalii'];
+        $scor->adaugat      = true;
 
         if($scor->save()) {
             $res = 'Scorul a fost adaugat, iti multumim!';
@@ -832,28 +835,9 @@ class HomeController extends Controller
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
-        // $etape = Etape::where('liga', '=', $liga)
-        //                 ->where('serie', '=', $serie)
-        //                 ->where('etapa', '<=', '7')
-        //                 ->whereNull('g_gazde')
-        //                 ->whereNull('g_oaspeti')
-        //                 ->groupBy('liga', 'etapa', 'id')
-        //                 ->get();
-
-        // $i = 0;
-        // foreach ($etape as $etapa) {
-            $__check = ScoruriTrimise::where('liga', $liga)->get();
-
-        //     if(!empty($__check) && ($etapa->id == $__check['etapa'])) {
-        //         $etape[$i]->g_gazde      = $__check->g_gazde;
-        //         $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
-        //         $etape[$i]->contestatie  = $__check->contestatie;
-        //         $etape[$i]->incident     = $__check->incident;
-        //         $etape[$i]->alte_detalii = $__check->alte_detalii;
-        //         $etape[$i]->adaugat      = true;
-        //     }
-        //     $i++;
-        // }
+        $etapa_curenta = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
+        $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
+        $__check = ScoruriTrimise::where('liga', $liga)->orderBy('etapa', 'ASC')->get();
 
         $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
 
