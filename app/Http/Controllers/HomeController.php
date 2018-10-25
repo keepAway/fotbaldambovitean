@@ -666,14 +666,25 @@ class HomeController extends Controller
 
             // $data .= file_get_contents('http://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-5-a-sud-6693-et' . $i);
         // }
+        $array = [
+            'NORD' => 6692,
+            'SUD'  => 6693,
+            'VEST' => 6694,
+
+            // 'NORD' => 7000,
+            // 'SUD'  => 7001,
+        ];
+
+        if($etapa < 34) {
+            header("Refresh:0; url=/parse-jquery/".$liga."/".$serie."/" . ($etapa + 1));
+        }
 
         $x = $etapa;
         if($etapa < 10) {
             $x = '0' . $x;
         }
 
-        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-4-a-6655-et' . $x);
-
+        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-'.$liga.'-a-'.strtolower($serie).'-'.$array[$serie].'-et' . $x);
         return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
     }
 
