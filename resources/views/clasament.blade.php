@@ -53,23 +53,23 @@
                     <label style="font-size: 16px; margin-left: 5px;"> Clasament</label>
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
-                    <ul class="nav nav-tabs font-weight-bold" style="background-color: #085f00; color: #fff; border: 1px solid #085f00; border-radius: 0;">
+                    <ul class="nav nav-tabs font-weight-bold" style="background-color: #323b3e; color: #fff; border: 1px solid #323b3e; border-radius: 0;">
                         <li class="nav-item">
-                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == NULL ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria]) }}">Total</a>
+                            <a class="nav-link" style="border-radius: 0; color: {{$tab == NULL ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria]) }}">Total</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="border-radius: 0; background-color:  {{$tab == '1' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab' => 1]) }}">Acasa</a>
+                            <a class="nav-link" style="border-radius: 0; color:  {{$tab == '1' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab' => 1]) }}">Acasa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == '2' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 2]) }}">Deplasare</a>
+                            <a class="nav-link" style="border-radius: 0; color: {{$tab == '2' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 2]) }}">Deplasare</a>
                         </li>
                         <li class="nav-item d-block d-sm-none">
-                            <a class="nav-link" style="border-radius: 0; background-color: {{$tab == '3' ? '#053600' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 3]) }}">Forma</a>
+                            <a class="nav-link" style="border-radius: 0; color: {{$tab == '3' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 3]) }}">Forma</a>
                         </li>
                     </ul>
                     <div class="table-responsive-sm table-responsive-md">
                         <table class="table table-striped table-hover text-center" style="margin-bottom: 0;">
-                            <thead style="background-color: #085f00; color: #fff;">
+                            <thead style="background-color: #323b3e; color: #fff;">
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col" class="text-left">Echipa</th>
@@ -233,7 +233,18 @@
         <!-- Etapa tablet/mobile -->
         <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                <div class="pl-3 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                    <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="liga" value="{{$liga}}">
+                        <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
+                        <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
+                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'primary' : 'success'}} btn-sm">
+                            <i class="fas fa-check"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-11 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
                     <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
                 </div>
@@ -244,7 +255,7 @@
                                 @foreach($etape as $key => $etapa)
                                     <form action="{{route('adauga-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
-                                    <tr style="background-color: #085f00; color: #fff;">
+                                    <tr style="background-color: #323b3e; color: #fff;">
                                         <td class="text-left">Etapa: {{$etapa->etapa}}</td>
                                         <td class="text-right font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
                                     </tr>

@@ -876,4 +876,14 @@ class HomeController extends Controller
             return redirect()->back()->withErrors('Etapa nu a putut fi marcata ca si curenta!');
         }
     }
+
+    public function termeni()
+    {   
+        return view('termeni-si-conditii');       
+    }
+
+    public function confidentialitate()
+    {   
+        return view('confidentialitate');       
+    }
 }

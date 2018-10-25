@@ -51,4 +51,7 @@ Route::get('/disable/{id}', 'HomeController@disableUser')->name('disable');
 
 Route::post('/etapa-curenta', 'HomeController@etapaCurenta')->name('etapa-curenta');
 
+Route::get('/termeni-si-conditii', 'HomeController@termeni')->name('termeni');
+Route::get('/confidentialitate', 'HomeController@confidentialitate')->name('confidentialitate');
+
 

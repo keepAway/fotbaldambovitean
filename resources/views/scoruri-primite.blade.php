@@ -32,14 +32,15 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-sm-2">
             {{-- test --}}
         </div>
+        {{-- Desktop --}}
         <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <select class="form-control" id="ligi" style="font-weight: bold;">
                                 @foreach($ligi as $liga)
                                     <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
@@ -49,7 +50,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-7">
                             @if(!Auth::check())
                                 <span class="float-right" style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
                             @endif
@@ -170,14 +171,157 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-2">
+
+        {{-- Tablet/Mobile --}}
+        <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+            <div class="row">
+                <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <select class="form-control font-weight-bold w-auto m-auto" id="mobile-ligi">
+                                @foreach($ligi as $liga)
+                                    <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
+                                        {{($__liga == $liga->$liga || $__serie == $liga->serie ? 'selected' : '')}}>
+                                        Liga {{$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">   
+                        <div class="col-sm-12 text-center">
+                            @if(!Auth::check())
+                                <span style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="table-responsive-sm table-responsive-md table-responsive-lg">
+                        <table class="table text-center">
+                            <tbody>
+                                @foreach($etape as $etapa)
+                                    <form action="{{route('trimite-scor')}}" method="POST" class="prevent-resubmit">
+                                        {{ csrf_field() }}
+                                        <tr style="background-color: #085f00; color: #fff;">
+                                            <td class="text-left">Etapa: {{$etapa->etapa}}</td>
+                                            <td class="text-right font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
+                                            <td class="text-right">
+                                                @if(Auth::check())
+                                                    <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control float-right" name="g_gazde" style="width: 70px;" required>
+                                                @else
+                                                    <span class="font-weight-bold">
+                                                        {{$etapa->g_gazde}}
+                                                    </span>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
+                                            <td class="text-right">
+                                                @if(Auth::check())
+                                                    <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control float-right" name="g_oaspeti" style="width: 70px;" required>
+                                                @else
+                                                    <span class="font-weight-bold">
+                                                        {{$etapa->g_oaspeti}}
+                                                    </span>
+                                                @endif
+                                            </td>   
+                                        </tr>
+                                        <tr>
+                                            @if(Auth::check())
+                                            <td colspan="2" class="align-middle text-right">
+                                                <div>
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                    <a class="mobile-toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} mobile-display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
+                                                        <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
+                                                    </a>
+                                                    @php $i = 0; $j = 0; $k = 0; @endphp
+                                                    @php
+                                                        if($etapa->contestatie != '') {
+                                                            $i = 1;
+                                                        }
+
+                                                        if($etapa->incident != '') {
+                                                            $j = 1;
+                                                        }
+ 
+                                                        if($etapa->alte_detalii != '') {
+                                                            $k = 1;
+                                                        }
+                                                    @endphp
+
+                                                    @if($etapa->adaugat && ($i > 0 || $j > 0 || $k > 0))
+                                                        <span class="w3-badge">{{$i+$j+$k}}</span>
+                                                    @endif
+
+                                                    <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
+                                                    <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
+                                                    <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
+                                                    <input type="hidden" name="liga" value="{{$etapa->liga}}">
+                                                    <input type="hidden" name="serie" value="{{$etapa->serie}}">
+                                                    <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                                </div>
+                                            </td>
+                                            @endif
+                                        </tr>
+                                        <tr class="d-none" id="{{'mobile_container_' . $etapa->id}}">
+                                            <td class="pl-0 pr-0" colspan="2">
+                                                <div class="card card-default text-left pl-0 pr-0 pt-0" style="border-radius: 0;">
+                                                    <div class="card-body pb-1">
+                                                        <div class="form-group mb-2">
+                                                            <label class="switch-toggle">
+                                                            <input type="checkbox" class="mobile_contestatie" data-id="{{$etapa->id}}" {{($etapa->contestatie != '') ? 'checked="checked"' : ''}}>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                            <label class="form-check-label" style="font-weight: normal;"> Contestatie? </label>
+                                                        </div>
+                                                        <div class="{{$etapa->contestatie != '' ? '' : 'd-none'}} pb-2" id="{{'mobile_contestatie_' . $etapa->id}}">
+                                                            <textarea name="contestatie" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Motivul contestatiei si echipa care contesta?">{{$etapa->contestatie != '' ? $etapa->contestatie : ''}}</textarea>
+                                                        </div>
+                                                        <div class="form-group mb-2">
+                                                            <label class="switch-toggle">
+                                                            <input type="checkbox" class="mobile_incident" data-id="{{$etapa->id}}" {{($etapa->incident != '') ? 'checked="checked"' : ''}}>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                            <label class="form-check-label" style="font-weight: normal;"> Incidente? </label>
+                                                        </div>
+                                                        <div class="{{$etapa->incident != '' ? '' : 'd-none'}} pb-2" id="{{'mobile_incident_' . $etapa->id}}">
+                                                            <textarea name="incident" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Descrie incidentul ...">{{$etapa->incident != '' ? $etapa->incident : ''}}</textarea>
+                                                        </div>
+                                                        <div class="form-group mb-2">
+                                                            <label class="switch-toggle">
+                                                            <input type="checkbox" class="mobile_detalii" data-id="{{$etapa->id}}" {{($etapa->alte_detalii != '') ? 'checked="checked"' : ''}}>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                            <label class="form-check-label" style="font-weight: normal;"> Alte detalii ... </label>
+                                                        </div>
+                                                        <div class="{{$etapa->alte_detalii != '' ? '' : 'd-none'}} pb-2" id="{{'mobile_detalii_' . $etapa->id}}">
+                                                            <textarea name="alte_detalii" rows="3" style="width: 100%" placeholder="&nbsp;&nbsp;Descrie detaliul ...">{{$etapa->alte_detalii != '' ? $etapa->alte_detalii : ''}}</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
             {{-- test --}}
         </div>
     </div>
 </div>
 
 <script>
-    $('#ligi').change(function() {
+    $('#ligi, #mobile-ligi').change(function() {
         var liga  = $(this).find(':selected').data('liga');
         var serie = $(this).find(':selected').data('serie');
         
@@ -196,9 +340,30 @@
         $('#' + _id).toggleClass('d-none');
     });
 
+    $('.mobile_contestatie, .mobile_incident, .mobile_detalii').click(function(){
+        var id = $(this).data('id');
+        var __class = $(this).attr('class');
+        
+        var _id = __class + '_' + id;
+        $('#' + _id).toggleClass('d-none');
+    });
+
     $('.display-details-container').click(function(){
         var id = $(this).data('id');
         $('#container_' + id).toggleClass('d-none');
+    });
+
+    $('.mobile-display-details-container').click(function(){
+        var id = $(this).data('id');
+        $('#mobile_container_' + id).toggleClass('d-none');
+    });
+
+    $('.toggle-plus-minus').click(function(){
+        $(this).find('.plus-minus').toggleClass('fa-minus fa-plus');
+    });
+
+    $('.mobile-toggle-plus-minus').click(function(){
+        $(this).find('.plus-minus').toggleClass('fa-minus fa-plus');
     });
 </script>
 
