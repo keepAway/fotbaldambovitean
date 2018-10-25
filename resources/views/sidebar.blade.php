@@ -7,7 +7,7 @@
             <i class="fas fa-arrow-alt-circle-left fa-2x"></i>
         </div>
         <div class="sidebar-header">
-            <a href="/"><img src="{{URL::asset('img/logo-galben.png')}}" alt="Logo Fotbal Dambovitean"></a>
+            <a href="/"><img src="{{URL::asset('img/logo-gri.png')}}" alt="Logo Fotbal Dambovitean"></a>
         </div>
 
         <ul class="list-unstyled components">
