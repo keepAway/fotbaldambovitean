@@ -8,6 +8,7 @@ body {
     /*background: #fafafa;*/
     background: #f2f2ef;
     font-size: 12px;
+    height: 100%;
 }
 
 p {
@@ -30,15 +31,19 @@ main {
     margin-top: 68px;
 }
 
+#app {
+    min-height: 75vh;
+}
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
-    padding: 15px 10px;
-    background: #fff;
-    border: none;
+    padding: 15px 0px;
+    background-color: #323b3e;
+    border-bottom: 2px solid #f4d90c;
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -56,8 +61,13 @@ main {
     margin-left: -20px;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #28a745 !important;
+.nav-link:hover {
+    color: #f4d90c !important;
+}
+
+.nav-link.active,
+.sidebar-link.active {
+    color: #f4d90c !important;
 }
 
 .line {
@@ -124,8 +134,13 @@ main {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #053600;
-    /*background: #6d7fcc;*/
+    background-color: #323b3e;
+    text-align: center;
+}
+
+#sidebar .sidebar-header img {
+    height: 50px;
+    width: auto;
 }
 
 #sidebar ul.components {
@@ -201,8 +216,33 @@ a.article:hover {
     color: #fff !important;
 }
 
+.nav-item {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.nav-item.social-facebook {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #838383;
+    border-radius: 100%;
+    text-align: center;
+    margin-right: 6px;
+    line-height: 35px;
+}
+
+.nav-item.social-facebook a {
+    font-size: 20px;
+    text-align: center;
+    padding: 0!important;
+}
+
 .nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #a4b4b9 !important;
+    text-transform: uppercase;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .fa-times-circle {
@@ -457,22 +497,6 @@ a.article:hover {
 /* Social icons style end*/
 
 
-/* Breakpoints */
-@media (max-width: 991.98px) { 
-    .page-link {
-        padding: .2rem .45rem;
-    }
-    .table td {
-        padding: 0.40rem;
-    }
-}
-
-@media (max-width: 767.98px) { 
-    .team-name {
-        font-size: 10px;
-    }
-}
-
 /*toggle button css*/
 /* The switch - the box around the slider */
 .switch-toggle {
@@ -601,7 +625,7 @@ input:checked + .slider:before {
 }
 
 .w3-badge,
-.w3-tag{
+.w3-tag {
     background-color: #fd7e14;
     color:#fff;
     display:inline-block;
@@ -614,4 +638,74 @@ input:checked + .slider:before {
     float: right;
     position: absolute;
 }
-.w3-badge{border-radius:999px}
+.w3-badge {
+    border-radius:999px
+}
+
+/*Footer START*/
+.footer {
+    background-color: #323b3e;
+    padding: 15px 0px;
+    font-weight: 700;
+    border-top: 2px solid #f4d90c;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.copyright {
+    color: #a4b4b9;
+}
+.footer-logo {
+    height: 50px;
+}
+.footer-logo img {
+    height: 100%;
+    width: auto;
+}
+/*Footer END*/
+
+.card {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border: 1px solid #000;
+}
+
+.card .btn-link {
+    color: #323b3e;
+}
+
+.card-body {
+    background-color: #f2f2ef;
+}
+
+.form-control:focus,
+.form-control:hover {
+    border-color: #000;
+    box-shadow: none;
+}
+
+/* Breakpoints */
+@media (min-width: 992px) {
+    .navbar .nav-item.social-facebook {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 991.98px) { 
+    .page-link {
+        padding: .2rem .45rem;
+    }
+    .table td {
+        padding: 0.40rem;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .team-name {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 575.98px) { 
+    .nav-tabs .nav-link {
+        font-size: 12px;
+    }
+}

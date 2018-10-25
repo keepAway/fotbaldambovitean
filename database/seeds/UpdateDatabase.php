@@ -27719,9 +27719,9 @@ class UpdateDatabase extends Seeder
 	  		]
 		];
 
-		Echipe::where('liga', 4)->where('serie', NULL)->delete();
+		Echipe::where('liga', 5)->where('serie', 'sud')->delete();
 		
-		foreach ($liga_4 as $echipa) {
+		foreach ($liga_5_SUD as $echipa) {
 			$adauga = new Echipe;
 			$adauga->echipa = trim($echipa['echipa']);
 			$adauga->liga   = $echipa['liga'];
@@ -27729,9 +27729,9 @@ class UpdateDatabase extends Seeder
 			$adauga->save();
 		}
 
-		Etape::where('liga', 4)->where('serie', NULL)->delete();
+		Etape::where('liga', 5)->where('serie', 'sud')->delete();
 		
-		foreach ($liga_4_etape as $etapa) {
+		foreach ($liga_5_serie_SUD_etape as $etapa) {
 			$adauga = new Etape;
 			$adauga->gazde     = trim($etapa['gazde']);
 			$adauga->oaspeti   = trim($etapa['oaspeti']);
@@ -27740,11 +27740,11 @@ class UpdateDatabase extends Seeder
 			$adauga->liga      = $etapa['liga'];
 			$adauga->serie     = $etapa['serie'];
 			$adauga->etapa     = $etapa['etapa'];
-			// $adauga->data      = $etapa['data'];
+			$adauga->data      = $etapa['data'];
 			// $adauga->data      = DateTime::createFromFormat('M d, Y', ($etapa['data']))->format('Y-m-d');
 
 			//liga4
-			$adauga->data      = $etapa['data'] != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL;
+			//$adauga->data      = $etapa['data'] != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL;
 			$adauga->ora       = $etapa['ora'];
 			$adauga->save();
 		}

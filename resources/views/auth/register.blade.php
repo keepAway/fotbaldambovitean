@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" style="background-color: #085f00; color: #fff;">{{ __('Register') }}</div>
+            <div class="card" style="box-shadow: 0 1px 3px rgba(0,0,0,0.8);">
+                <div class="card-header" style="background-color: #323b3e; color: #fff;">{{ __('Register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
@@ -63,7 +63,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn" style="color: #fff; background-color: #085f00;">
+                                <button type="submit" class="btn btn btn-secondary">
                                     {{ __('Creaza cont') }}
                                 </button>
                             </div>
