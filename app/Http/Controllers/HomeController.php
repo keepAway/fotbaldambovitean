@@ -102,7 +102,7 @@ class HomeController extends Controller
         }
 
         $__count = count($echipe);
-        $page   = ($__count % 2 == 0 ? $__count : ($__count + 1) / 2);
+        $page   = ($__count / 2);
 
         if(isset($tab) && $tab == '1') {
             $echipe = $echipe->sortByDesc(function($echipe) {

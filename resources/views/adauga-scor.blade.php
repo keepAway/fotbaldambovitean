@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-sm-2">test</div>
         {{-- Desktop --}}
-        <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-8 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
@@ -63,8 +63,8 @@
                                     <form action="{{route('trimite-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                         <tr>
-                                            <td class="align-middle">Etapa: {{$etapa->etapa}}</td>
-                                            <td class="font-italic align-middle">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                            <td class="align-middle" style="white-space: nowrap;"><b>#{{$etapa->etapa}}</b></td>
+                                            <td class="font-italic align-middle" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                             <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="align-middle">
                                                 @if(Auth::check())
@@ -88,8 +88,8 @@
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                             @if(Auth::check())
                                             <td class="align-middle">
-                                                <div>
-                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm mb-1"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                <div style="white-space: nowrap; ">
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                     <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
                                                     </a>
@@ -171,7 +171,7 @@
         </div>
 
         {{-- Tablet/Mobile --}}
-        <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-8 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
@@ -312,7 +312,7 @@
                 </div>
             </div>
         </div>
-	    <div class="col-sm-3">test</div>
+	    <div class="col-sm-2">test</div>
     </div>
 </div>
 
