@@ -42,32 +42,36 @@
     <div class="row">
         <div class="col-sm-2">reclama stanga</div>
         <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
-            <div class="news-detail-wrapper mt-5">
+            <div class="news-detail-wrapper mt-2">
                 <div class="news-detail-header">
-                    <h3 class="text-center mb-4">{{$stire->titlu}}</h3>
                     <div class="news-details mb-0">
                         <div class="row">
-                            <div class="col-6">
-                                <div><i class="fas fa-calendar-alt"></i> {{date('M d, Y | G:i', strtotime($stire->created_at))}}</div>
+                             <div class="col-6 news-date">
+                                {{date('M d, Y, H:s', strtotime($stire->created_at))}}
                             </div>
                             <div class="col-6">
                                 <a href="{{'/?categorie='.$stire->categorie_id}}">
-                                    <div class="news-cat float-right"><i class="fas fa-tags"></i> {{$stire->nume_categorie}}</div>
+                                    <div class="news-cat float-right"># {{$stire->nume_categorie}}</div>
                                 </a>
                             </div>
                         </div>
                     </div>
+                    <h3 class="mb-4 mt-3">{{$stire->titlu}}</h3>
                 </div>
                 <div class="news-detail-img mb-4">
+                    <div class="news-hr">
+                        {{-- <div class="float-left" style="font-weight: bold; color: #888;">
+                            <i class="fas fa-eye fa-lg"></i> {{$stire->views}}
+                        </div> --}}
+                        <div class="float-right" style="font-weight: bold; font-style: italic; color: #888;">
+                            <span style="font-weight: normal;">by </span>{{$stire->autor}}
+                        </div>
+                    </div>
                     <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" alt="Imagine Fotbal Dambovitean">
                 </div>
-                <div class="news-hr">
-                    <div class="news-detail-views font-weight-bold"><i class="fas fa-eye"></i> {{$stire->views}}</div>
-                    <div class="news-detail-author font-weight-bold"><i class="fas fa-user"></i> {{$stire->autor}}</div>
-                </div>
-                <div class="news-detail-content ">{!!html_entity_decode($stire->continut)!!}</div>
-                <div class="news-detail-share mt-5 px-3 py-2 text-center bg-light">
-                    <div class="font-weight-bold h5">Distribuie</div>
+                <div class="news-detail-content">{!!html_entity_decode($stire->continut)!!}</div>
+                <div class="news-detail-share mt-5 px-3 py-2 text-center">
+                    {{-- <div class="font-weight-bold h5">Distribuie</div> --}}
                     <div class="px-3 py-2">
                         <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
                         <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>

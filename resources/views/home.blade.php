@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                <div class="news-title">{{$stire->titlu}}</div>
+                                <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
                             </a>
                             <div class="news-img">
                                 <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">

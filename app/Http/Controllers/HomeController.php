@@ -75,7 +75,7 @@ class HomeController extends Controller
             $serie = $data['seria'];
         }
 
-        $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->get();
+        $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', '!=', 'STA')->get();
 
         $i=0;
         foreach ($echipe as $echipa) {
@@ -101,7 +101,8 @@ class HomeController extends Controller
             $i++;
         }
 
-        $page   = (count($echipe) / 2);
+        $__count = count($echipe);
+        $page   = ($__count % 2 == 0 ? $__count : ($__count + 1) / 2);
 
         if(isset($tab) && $tab == '1') {
             $echipe = $echipe->sortByDesc(function($echipe) {

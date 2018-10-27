@@ -31,21 +31,21 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-2">test test
+        <div class="col-sm-2">
         </div>
-        <div class="col-sm-7" style="border:1px solid #000; box-shadow: 0 1px 3px rgba(0,0,0,0.8);">
+        <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="container contact-form">
-                {{-- <div class="contact-image">
-                    <img src="{{URL::asset('/img/rocket.png')}}" alt="rocket_contact"/>
-                </div> --}}
+                <div class="col-sm-12 text-center font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
+                {{-- </div>
+                <div class="form-intro text-center"> --}}
+                    {{-- <h4>Lasă-ne Un Mesaj!</h4> --}}
+                    {{-- <p>Acest website este realizat în sprijinul şi pentru dumneavoastră.</p>
+                    <p>Sunteţi martorul unui eveniment, aveţi informaţii, sesizări, nu ezitaţi să ne scrieţi.</p>
+                    <p>Vă stăm la dispoziţie!</p> --}}
+                    LASA-NE UN MESAJ!!!
+                </div>
                 <form action="{{route('contact-us')}}" method="POST" class="prevent-resubmit" id="contact-form">
                     {{ csrf_field() }}
-                    <div class="form-intro text-center">
-                        <h4>Lasă-ne Un Mesaj!</h4>
-                        <p>Acest website este realizat în sprijinul şi pentru dumneavoastră.</p>
-                        <p>Sunteţi martorul unui eveniment, aveţi informaţii, sesizări, nu ezitaţi să ne scrieţi.</p>
-                        <p>Vă stăm la dispoziţie!</p>
-                    </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <label>Nume *</label>
@@ -95,7 +95,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-sm-3">teeeeeeeeest
+        <div class="col-sm-3">
         </div>
     </div>
 </div>

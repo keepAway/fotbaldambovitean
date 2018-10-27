@@ -42,9 +42,8 @@
     }(document, 'script', 'facebook-jssdk'));</script>
     
     <div class="row">
-        <div class="col-lg-2"><p>teeeeeeeeeeest</p>
-            <p>teeeeeeeeeeest clasament</p>
-            <p>teeeeeeeeeeest clasament</p>
+        <div class="col-lg-2">
+            #
         </div>
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
@@ -140,9 +139,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3"><p>teeeeeeeeeeest</p>
-            <p>teeeeeeeeeeest clasament</p>
-            <p>teeeeeeeeeeest clasament</p>
+        <div class="col-lg-3">
+            #
         </div>
     </div>
 
@@ -154,9 +152,8 @@
     <div class="line"></div> --}}
 
     <div class="row">
-        <div class="col-sm-2"><p>teeeeeeeeeeest</p>
-            <p>teeeeeeeeeeest scor</p>
-            <p>teeeeeeeeeeest scor</p>
+        <div class="col-sm-2">
+            #
         </div>
         <!-- Etapa desktop -->
         <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
@@ -185,38 +182,52 @@
                                     {{ csrf_field() }}
                                     <tr>
                                         <td>Etapa: {{$etapa->etapa}}</td>
-                                        <td class="font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                        @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                            <td class="font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                        @else
+                                            <td class="font-weight-bold align-middle"></td>
+                                        @endif
                                         <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
-                                        <td>
-                                            @if(Auth::check())
-                                                <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control" name="g_gazde" style="width: 70px;">
-                                            @else
-                                                <span class="font-weight-bold">
-                                                    {{$etapa->g_gazde}}
-                                                </span>
-                                            @endif
-                                        </td>
-                                        <td class="font-weight-bold align-middle">-</td>
-                                        <td>
-                                            @if(Auth::check())
-                                                <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control" name="g_oaspeti" style="width: 70px;">
-                                            @else
-                                                <span class="font-weight-bold">
-                                                    {{$etapa->g_oaspeti}}
-                                                </span>
-                                            @endif
-                                        </td>
+                                        @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                            <td>
+                                                @if(Auth::check())
+                                                    <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control" name="g_gazde" style="width: 70px;">
+                                                @else
+                                                    <span class="font-weight-bold scor-color">
+                                                        {{$etapa->g_gazde}}
+                                                    </span>
+                                                @endif
+                                            </td>
+                                            <td class="font-weight-bold align-middle">-</td>
+                                            <td>
+                                                @if(Auth::check())
+                                                    <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control" name="g_oaspeti" style="width: 70px;">
+                                                @else
+                                                    <span class="font-weight-bold scor-color">
+                                                        {{$etapa->g_oaspeti}}
+                                                    </span>
+                                                @endif
+                                            </td>
+                                        @else
+                                            <td></td>
+                                            <td class="font-weight-bold align-middle">-</td>
+                                            <td></td>
+                                        @endif
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                         @if(Auth::check())
-                                        <td>
-                                            <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
-                                            <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
-                                            <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
-                                            <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
-                                            <input type="hidden" name="liga" value="{{$etapa->liga}}">
-                                            <input type="hidden" name="serie" value="{{$etapa->serie}}">
-                                            <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
-                                        </td>
+                                        @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                            <td>
+                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
+                                                <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
+                                                <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
+                                                <input type="hidden" name="liga" value="{{$etapa->liga}}">
+                                                <input type="hidden" name="serie" value="{{$etapa->serie}}">
+                                                <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                            </td>
+                                            @else
+                                                <td class="font-weight-bold align-middle"></td>
+                                            @endif
                                         @endif
                                     </tr>
                                     </form>
@@ -309,9 +320,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3"><p>teeeeeeeeeeest</p>
-            <p>teeeeeeeeeeest scor</p>
-            <p>teeeeeeeeeeest scor</p>
+        <div class="col-sm-3">
+            #
         </div>
     </div>
     <div class="line"></div>

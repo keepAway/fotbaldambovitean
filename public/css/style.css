@@ -166,14 +166,14 @@ main {
 
 #sidebar ul li a:hover {
     color: #fff;
-    background: #474749;
+    /*background: #474749;*/
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
     /*background: #6d7fcc;*/
-    background: #474749;
+    /*background: #474749;*/
 }
 
 a[data-toggle="collapse"] {
@@ -236,6 +236,7 @@ a.article:hover {
     font-size: 20px;
     text-align: center;
     padding: 0!important;
+    /*margin-top: 6px;*/
 }
 
 .nav-link {
@@ -303,9 +304,10 @@ a.article:hover {
 
 .contact-form form{
     padding-top: 4%;
-    padding-bottom: 14%;
+    padding-bottom: 40%;
     padding-left: 4%;
     padding-right: 4%;
+    /*height: 90%;*/
 }
 
 .contact-form form .row{
@@ -365,9 +367,9 @@ a.article:hover {
     -moz-box-shadow:    5px 5px 30px 0 rgba(0, 0, 0, .5);
     -webkit-box-shadow: 5px 5px 30px 0 rgba(0, 0, 0, .5);
     box-shadow:         5px 5px 30px 0 rgba(0, 0, 0, .5);
-    /*-webkit-transform: translate(0px, -5px);*/
-    /*-ms-transform: translate(0px, -5px);*/
-    /*transform: translate(0px, -5px);*/
+    -webkit-transform: translate(0px, -5px);
+    -ms-transform: translate(0px, -5px);
+    transform: translate(0px, -5px);
 }
 .news-img {
     position: relative;
@@ -390,7 +392,6 @@ a.article:hover {
     width: 100%;
     height: 1px;
     margin: 20px 0;
-    background-color: #343a40;
 }
 .news-details {
     margin-bottom: 15px;
@@ -411,7 +412,8 @@ a.article:hover {
 }
 .news-link {
     transition: all 200ms ease;
-    color: #323b3e;
+    /*color: #323b3e;*/
+    color: #007934;
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -464,7 +466,7 @@ a.article:hover {
     max-width: 560px;
 }
 .news-detail-content p {
-    font-size: 13px;
+    font-size: 15px;
     color: #000;
 }
 .news-detail-content strong {
@@ -492,29 +494,50 @@ a.article:hover {
 
 /* Social icons style start*/
 .fa-facebook-square {
+    color: #323b3e;
+}
+.fa-facebook-square:hover {
     color: #3B5998;
 }
 .fa-twitter-square {
+    color: #323b3e;
+}
+.fa-twitter-square:hover {
     color: #55acee;
 }
 .fa-google-plus-square {
+    color: #323b3e;
+}
+.fa-google-plus-square:hover {
     color: #dc4e41;
 }
 .fa-linkedin {
-    color: #0077b5;
+    color: #323b3e;
 }
+.fa-linkedin:hover {
+    color: #0077b5
+};
 .fa-pinterest-square {
+    color: #323b3e;
+}
+.fa-pinterest-square:hover {
     color: #CB2027;
 }
 .fa-envelope-square {
+    color: #323b3e;
+}
+.fa-envelope-square:hover {
     color: #7d7d7d;
 }
 .fa-whatsapp-square {
+    color: #323b3e;
+}
+.fa-whatsapp-square:hover {
     color: #25d366;
 }
-.social-share:hover {
+/*.social-share:hover {
     opacity: 0.7;
-}
+}*/
 /* Social icons style end*/
 
 
@@ -683,11 +706,11 @@ input:checked + .slider:before {
 }
 /*Footer END*/
 
-.card {
+/*.card {
     margin-bottom: 100px;
     margin-top: 100px;
     border: 1px solid #000;
-}
+}*/
 
 .card .btn-link {
     color: #323b3e;
@@ -733,4 +756,12 @@ input:checked + .slider:before {
 
 .container-fluid {
     padding-top: 20px;
+}
+
+.scor-color {
+    background-color: #f4d90c !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: inline-block;
+    padding-top: 8px;
 }
