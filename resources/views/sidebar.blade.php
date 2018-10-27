@@ -96,7 +96,7 @@
                 </ul>
             </li>
             <hr>
-            @if(Auth::check())
+            @if(Auth::check() && Auth::user()->role == 'admin')
             <li>
                 <a href="#homeSubmenuAdmin" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Admin </a>
                 <ul class="collapse list-unstyled" id="homeSubmenuAdmin">

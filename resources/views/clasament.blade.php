@@ -158,7 +158,7 @@
         <!-- Etapa desktop -->
         <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="pl-3 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                <div class="pl-2 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
                         {{ csrf_field() }}
                         <input type="hidden" name="liga" value="{{$liga}}">
@@ -173,24 +173,36 @@
                     Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
                     <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table table-striped table-hover text-center">
                             <tbody>
+                                <tr style="background-color: #323b3e; color: #fff;">
+                                    <th>#</th>
+                                    <th class="text-left">Program</th>
+                                    <th class="text-right">Gazde</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th class="text-left">Oaspeti</th>
+                                    @if(Auth::check() && Auth::user()->role == 'admin')
+                                        <th></th>
+                                    @endif
+                                </tr>
                                 @foreach($etape as $etapa)
                                     <form action="{{route('adauga-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                     <tr>
-                                        <td>Et: {{$etapa->etapa}}</td>
+                                        <td><b>{{$etapa->etapa}}</b></td>
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
-                                            <td class="font-italic">{{$etapa->data}}, {{$etapa->ora}}</td>
+                                            <td class="text-left font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                         @else
                                             <td class="font-weight-bold align-middle"></td>
                                         @endif
                                         <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
                                             <td>
-                                                @if(Auth::check())
+                                                @if(Auth::check() && Auth::user()->role == 'admin')
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control" name="g_gazde" style="width: 70px;">
                                                 @else
                                                     <span class="font-weight-bold scor-color">
@@ -200,7 +212,7 @@
                                             </td>
                                             <td class="font-weight-bold align-middle">-</td>
                                             <td>
-                                                @if(Auth::check())
+                                                @if(Auth::check() && Auth::user()->role == 'admin')
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control" name="g_oaspeti" style="width: 70px;">
                                                 @else
                                                     <span class="font-weight-bold scor-color">
@@ -214,7 +226,7 @@
                                             <td></td>
                                         @endif
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
-                                        @if(Auth::check())
+                                        @if(Auth::check() && Auth::user()->role == 'admin')
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
                                             <td>
                                                 <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
@@ -237,7 +249,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 text-center">
-                    {{ $etape->appends(\Request::except('page'))->links() }}
+                    {{$etape->appends(\Request::except('page'))->links()}}
                 </div>
             </div>
         </div>
@@ -273,7 +285,7 @@
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                         <td class="text-right">
-                                            @if(Auth::check())
+                                            @if(Auth::check() && Auth::user()->role == 'admin')
                                                 <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control text-center" name="g_gazde" style="width: 70px; float: right;">
                                             @else
                                                 <span class="font-weight-bold">
@@ -284,7 +296,7 @@
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                         <td class="text-right">
-                                            @if(Auth::check())
+                                            @if(Auth::check() && Auth::user()->role == 'admin')
                                                 <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control text-center" name="g_oaspeti" style="width: 70px; float: right;">
                                             @else
                                                 <span class="font-weight-bold">
@@ -295,7 +307,7 @@
                                         
                                     </tr>
                                     </tr>
-                                        @if(Auth::check())
+                                        @if(Auth::check() && Auth::user()->role == 'admin')
                                         <tr>
                                             <td colspan="2" class="text-right">
                                                 <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
