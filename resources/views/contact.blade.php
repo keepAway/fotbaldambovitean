@@ -48,33 +48,33 @@
                     {{ csrf_field() }}
                     <div class="row">
                         <div class="col-lg-6">
-                            <label>Nume *</label>
+                            <label style="color: #323b3e;">Nume *</label>
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">
+                                        <span class="input-group-text" id="basic-addon1" style="color: #fff; background-color: #323b3e; border: 1px solid #323b3e;">
                                             <i class="fas fa-user"></i>
                                         </span>
                                     </div>
                                     <input type="text" name="nume" class="form-control" placeholder="Nume" required/>
                                 </div>
                             </div>
-                            <label>Email *</label>
+                            <label style="color: #323b3e;">Email *</label>
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">
+                                        <span class="input-group-text" id="basic-addon1" style="color: #fff; background-color: #323b3e; border: 1px solid #323b3e;">
                                             <i class="fas fa-at"></i>
                                         </span>
                                     </div>
                                     <input type="email" name="email" class="form-control" placeholder="Email" required/>
                                 </div>
                             </div>
-                            <label>Telefon *</label>
+                            <label style="color: #323b3e;">Telefon *</label>
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon1">
+                                        <span class="input-group-text" id="basic-addon1" style="color: #fff; background-color: #323b3e; border: 1px solid #323b3e;">
                                             <i class="fas fa-phone"></i>
                                         </span>
                                     </div>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label>Mesaj *</label>
+                                <label style="color: #323b3e;">Mesaj *</label>
                                 <textarea name="mesaj" class="form-control" placeholder="Mesajul tau" style="width: 100%; height: 200px;" required></textarea>
                             </div>
                         </div>

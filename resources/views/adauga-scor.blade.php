@@ -88,10 +88,10 @@
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                             @if(Auth::check())
                                             <td class="align-middle">
-                                                <div style="white-space: nowrap; ">
+                                                <div style="white-space: nowrap;">
                                                     <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                     <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
-                                                        <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
+                                                        <i class="plus-minus fas fa-plus" style="font-weight: 600;"></i>
                                                     </a>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp
                                                     @php

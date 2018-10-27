@@ -53,16 +53,16 @@
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <ul class="nav nav-tabs font-weight-bold" style="background-color: #323b3e; color: #fff; border: 1px solid #323b3e; border-radius: 0;">
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
                             <a class="nav-link" style="border-radius: 0; color: {{$tab == NULL ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria]) }}">Total</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
                             <a class="nav-link" style="border-radius: 0; color:  {{$tab == '1' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab' => 1]) }}">Acasa</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
                             <a class="nav-link" style="border-radius: 0; color: {{$tab == '2' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 2]) }}">Deplasare</a>
                         </li>
-                        <li class="nav-item d-block d-sm-none">
+                        <li class="nav-item d-block d-sm-none" style="padding-left: 0px; padding-right: 0px;">
                             <a class="nav-link" style="border-radius: 0; color: {{$tab == '3' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 3]) }}">Forma</a>
                         </li>
                     </ul>
@@ -181,9 +181,9 @@
                                     <form action="{{route('adauga-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                     <tr>
-                                        <td>Etapa: {{$etapa->etapa}}</td>
+                                        <td>Et: {{$etapa->etapa}}</td>
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
-                                            <td class="font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                            <td class="font-italic">{{$etapa->data}}, {{$etapa->ora}}</td>
                                         @else
                                             <td class="font-weight-bold align-middle"></td>
                                         @endif

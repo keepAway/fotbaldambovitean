@@ -47,7 +47,7 @@ main {
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    padding-top: 30px;
+    height: 90px;
 }
 
 .navbar-btn {
@@ -126,7 +126,6 @@ main {
     z-index: 998;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    margin-top: 2px;
 }
 .overlay.active {
     display: block;
@@ -135,6 +134,10 @@ main {
 
 #sidebar .sidebar-header {
     padding: 20px;
+<<<<<<< Updated upstream
+=======
+    /*background-color: #323b3e;*/
+>>>>>>> Stashed changes
     background-color: #f4d90c !important;
     text-align: center;
 }
