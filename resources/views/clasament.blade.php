@@ -2,6 +2,18 @@
     $seria       = Request::get('seria') ? Request::get('seria') :  NULL;
     $tab         = Request::get('tab') ? Request::get('tab') :  NULL;
     $current_url = Request::fullUrl();
+
+    // Construct sharing URL without using any script
+    $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$current_url;
+    $twitterURL = 'https://twitter.com/share?url='.$current_url.'&amp;';  
+    $googleURL = 'https://plus.google.com/share?url='.$current_url;
+    $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$current_url.'&amp:';
+    $whatsappURL = 'whatsapp://send?text=Clasament' . ' ' . $current_url;
+
+    // Mail to
+    $body = 'Iata linkul catre articol: '.$current_url;
+    $mailURL = 'mailto:?Subject=Clasament&Body='.$body;
+
 @endphp
 
 @extends('layouts.app')
@@ -164,7 +176,7 @@
                         <input type="hidden" name="liga" value="{{$liga}}">
                         <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
                         <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
-                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'primary' : 'success'}} btn-sm">
+                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'secondary' : 'success'}} btn-sm">
                             <i class="fas fa-check"></i>
                         </button>
                     </form>
@@ -176,6 +188,15 @@
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table table-striped table-hover text-center">
+                            <thead style="background-color: #323b3e; color: #fff;">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col" colspan="2">Gazde</th>
+                                    <th scope="col">-</th>
+                                    <th scope="col" colspan="{{Auth::check() ? "3" : "2"}}">Oaspeti</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr style="background-color: #323b3e; color: #fff;">
                                     <th>#</th>
@@ -193,9 +214,9 @@
                                     <form action="{{route('adauga-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                     <tr>
-                                        <td><b>{{$etapa->etapa}}</b></td>
+                                        <td class="align-middle"><b>{{$etapa->etapa}}</b></td>
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
-                                            <td class="text-left font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
+                                            <td class="font-italic align-middle" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                         @else
                                             <td class="font-weight-bold align-middle"></td>
                                         @endif
@@ -228,8 +249,8 @@
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                         @if(Auth::check() && Auth::user()->role == 'admin')
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
-                                            <td>
-                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                            <td class="align-middle">
+                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                 <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
                                                 <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
                                                 <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
@@ -251,6 +272,17 @@
                 <div class="col-sm-12 text-center">
                     {{$etape->appends(\Request::except('page'))->links()}}
                 </div>
+                <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
+                    <div class="font-weight-bold h5">Distribuie</div>
+                    <div class="px-3 py-2">
+                        <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Etapa tablet/mobile -->
@@ -262,7 +294,7 @@
                         <input type="hidden" name="liga" value="{{$liga}}">
                         <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
                         <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
-                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'primary' : 'success'}} btn-sm">
+                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'secondary' : 'success'}} btn-sm">
                             <i class="fas fa-check"></i>
                         </button>
                     </form>
@@ -280,7 +312,7 @@
                                     {{ csrf_field() }}
                                     <tr style="background-color: #323b3e; color: #fff;">
                                         <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                        <td class="text-right font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                        <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                     </tr>
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
@@ -288,7 +320,7 @@
                                             @if(Auth::check() && Auth::user()->role == 'admin')
                                                 <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control text-center" name="g_gazde" style="width: 70px; float: right;">
                                             @else
-                                                <span class="font-weight-bold">
+                                                <span class="font-weight-bold scor-color text-center">
                                                     {{$etapa->g_gazde}}
                                                 </span>
                                             @endif
@@ -299,7 +331,7 @@
                                             @if(Auth::check() && Auth::user()->role == 'admin')
                                                 <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control text-center" name="g_oaspeti" style="width: 70px; float: right;">
                                             @else
-                                                <span class="font-weight-bold">
+                                                <span class="font-weight-bold scor-color text-center">
                                                     {{$etapa->g_oaspeti}}
                                                 </span>
                                             @endif
@@ -310,7 +342,7 @@
                                         @if(Auth::check() && Auth::user()->role == 'admin')
                                         <tr>
                                             <td colspan="2" class="text-right">
-                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                 <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
                                                 <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
                                                 <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
@@ -329,6 +361,17 @@
                 </div>
                 <div class="col-sm-12 text-center">
                     {{ $etape->appends(\Request::except('page'))->links() }}
+                </div>
+                <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
+                    <div class="font-weight-bold h5">Distribuie</div>
+                    <div class="px-3 py-2">
+                        <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
