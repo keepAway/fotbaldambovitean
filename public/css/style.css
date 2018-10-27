@@ -41,13 +41,11 @@ main {
     left: 0;
     right: 0;
     z-index: 2;
-    padding: 15px 0px;
     background-color: #323b3e;
     border-bottom: 2px solid #f4d90c;
     border-radius: 0;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-    padding-top: 30px;
 }
 
 .navbar-btn {
@@ -706,18 +704,18 @@ input:checked + .slider:before {
 }
 /*Footer END*/
 
-/*.card {
+.card {
     margin-bottom: 100px;
     margin-top: 100px;
     border: 1px solid #000;
-}*/
+}
 
 .card .btn-link {
     color: #323b3e;
 }
 
 .card-body {
-    background-color: #f2f2ef;
+    background-color: #fff;
 }
 
 .form-control:focus,
@@ -726,10 +724,25 @@ input:checked + .slider:before {
     box-shadow: none;
 }
 
+.container-fluid {
+    padding-top: 20px;
+}
+
+.scor-color {
+    background-color: #f4d90c !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: inline-block;
+    padding-top: 8px;
+}
+
 /* Breakpoints */
 @media (min-width: 992px) {
     .navbar .nav-item.social-facebook {
         margin-left: 50px;
+    }
+    .navbar {
+        padding: 22px 0px;
     }
 }
 
@@ -739,6 +752,9 @@ input:checked + .slider:before {
     }
     .table td {
         padding: 0.40rem;
+    }
+    .navbar {
+        padding: 26px 0px;
     }
 }
 
@@ -752,16 +768,7 @@ input:checked + .slider:before {
     .nav-tabs .nav-link {
         font-size: 12px;
     }
-}
-
-.container-fluid {
-    padding-top: 20px;
-}
-
-.scor-color {
-    background-color: #f4d90c !important;
-    width: 30px !important;
-    height: 30px !important;
-    display: inline-block;
-    padding-top: 8px;
+    .footer-logo {
+        margin-bottom: 20px;
+    }
 }

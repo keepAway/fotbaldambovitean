@@ -1,4 +1,8 @@
 jQuery(document).ready(function($){
+    //code here
+});
+
+window.onload = function() {
     // News images same height
     if ($('.news-block').length > 0) {
         var max =  0;
@@ -14,4 +18,4 @@ jQuery(document).ready(function($){
 
         $('.news-block .news-img').height(max);
     }
-});
+}
