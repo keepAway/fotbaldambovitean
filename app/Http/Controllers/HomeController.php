@@ -14,6 +14,7 @@ use App\User;
 use App\ScoruriTrimise;
 use App\EtapaCurenta;
 use App\Penalizari;
+use App\PozitieStatus;
 
 use Carbon\Carbon;
 use Mail;
@@ -78,6 +79,13 @@ class HomeController extends Controller
 
         $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', '!=', 'STA')->get();
         $echipe_penalizate = [];
+
+        $pozitieStatus = PozitieStatus::where('liga', $liga)->where('serie', $serie)->get()->toArray();
+        $pozitiiValide = PozitieStatus::where('liga', $liga)->where('serie', $serie)->pluck('pozitie')->toArray();
+
+        foreach ($pozitieStatus as $key => $value) {
+            $pozitieStatus[$value['pozitie']] = $value;
+        }
 
         $i=0;
         $j=0;
@@ -148,19 +156,17 @@ class HomeController extends Controller
         }
 
         $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC')->paginate($page);
-        // echo '<pre>';
-        //     print_r($etape);
-        // echo '</pre>';
-        // die;
 
         return view('clasament')->with([
-            'liga' => $liga,
-            'serie' => $serie,
-            'echipe' => $echipe,
-            'etape' => $etape,
-            'etapa_curenta' => $etapa_curenta,
-            'current_page' => 10,
-            'echipe_penalizate' => $echipe_penalizate
+            'liga'              => $liga,
+            'serie'             => $serie,
+            'echipe'            => $echipe,
+            'etape'             => $etape,
+            'etapa_curenta'     => $etapa_curenta,
+            'current_page'      => 10,
+            'echipe_penalizate' => $echipe_penalizate,
+            'pozitieStatus'     => $pozitieStatus,
+            'pozitiiValide'     => $pozitiiValide
         ]);
     }
 

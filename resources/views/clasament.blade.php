@@ -59,9 +59,9 @@
         </div>
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
-                    Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
-                    <label style="font-size: 16px; margin-left: 5px;"> Clasament</label>
+                <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
+                    Liga {{$liga}}, {{isset($seria) && $seria != NULL ? ' Seria ' . $seria : ''}}
+                    <label style="font-size: 20px; margin-left: 5px;"> Clasament</label>
                 </div>
 
                 @include('parts/block-penalizare')
@@ -81,8 +81,8 @@
                             <a class="nav-link" style="border-radius: 0; color: {{$tab == '3' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 3]) }}">Forma</a>
                         </li>
                     </ul>
-                    <div class="table-responsive-sm table-responsive-md">
-                        <table class="table table-striped table-hover text-center" style="margin-bottom: 0;">
+                    <div class="table-responsive-sm table-responsive-md pb-2">
+                        <table class="table table-hover text-center" style="margin-bottom: 0;">
                             <thead style="background-color: #323b3e; color: #fff;">
                                 <tr>
                                     <th scope="col">#</th>
@@ -101,12 +101,15 @@
                                 <?php $i = 1; ?>
                                 @foreach($echipe as $echipa)
                                 <tr>
-                                    <td class="font-weight-bold" style="width: 1%; background: #{{$i <= 2 ? '004682' : '000'}}; text-align: center; color: #fff;">{{$i++}}.</td>
+                                    <td class="font-weight-bold" style="width: 1%; text-align: center; color: #fff; 
+                                        background-color: {{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['culoare'] : '#323b3e'}} !important;" data-toggle="tooltip" data-placement="top" title="{{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['status'] : ''}}">
+                                        {{$i++}}.
+                                    </td>
                                     <td class="text-left font-weight-bold team-name">
                                         {{$echipa->echipa}}
-                                        @if($echipa->penalizata)
-                                            <span style="font-style: italic;">
-                                                <span class="red-badge">-{{$echipa->puncte_penalizate}} p</span>
+                                        @if($echipa->penalizata && $tab == NULL)
+                                            <span>
+                                                <span class="red-badge">-{{$echipa->puncte_penalizate}}p</span>
                                             </span>
                                         @endif
                                     </td>
@@ -131,7 +134,7 @@
                                         {{$tab == NULL ? $echipa->t_golaveraj : ($tab == 1 ? $echipa->a_golaveraj : $echipa->d_golaveraj)}}
                                     </td>
                                     <td class="{{$tab == 3 ? 'd-none' : ''}}">
-                                        {{$tab == NULL ? $echipa->t_puncte : ($tab == 1 ? $echipa->a_puncte : $echipa->d_puncte)}}
+                                        <b>{{$tab == NULL ? $echipa->t_puncte : ($tab == 1 ? $echipa->a_puncte : $echipa->d_puncte)}}</b>
                                     </td>
                                     <td class="{{$tab == 3 ? 'd-inline-flex' : 'd-none d-sm-inline-flex'}}">
                                         <div class="forma" style="background: #656565; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Etapa urmatoare: ">
@@ -191,9 +194,9 @@
                         </button>
                     </form>
                 </div>
-                <div class="col-sm-11 font-weight-bold float-left" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
-                    Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
-                    <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
+                <div class="col-sm-11 font-weight-bold float-left" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 16px;">
+                    Liga {{$liga}}, {{isset($seria) && $seria != NULL ? ' Seria ' . $seria : ''}}
+                    <label style="font-size: 20px; margin-left: 5px;"> Etape</label>
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">

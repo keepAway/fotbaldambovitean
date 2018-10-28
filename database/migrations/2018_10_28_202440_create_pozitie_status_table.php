@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePenalizariTable extends Migration
+class CreatePozitieStatusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreatePenalizariTable extends Migration
      */
     public function up()
     {
-        Schema::create('penalizari', function (Blueprint $table) {
+        Schema::create('pozitie_status', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('echipa_id');
             $table->integer('liga');
             $table->string('serie')->nullable();
-            $table->integer('puncte');
+            $table->integer('pozitie');
+            $table->string('status');
+            $table->string('culoare');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreatePenalizariTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penalizari');
+        Schema::dropIfExists('pozitie_status');
     }
 }

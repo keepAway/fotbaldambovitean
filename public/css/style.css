@@ -4,7 +4,8 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    font-family: 'Poppins', sans-serif;
+    /*font-family: 'Poppins', sans-serif;*/
+    font-family: Lato,sans-serif;
     /*background: #fafafa;*/
     background: #f2f2ef;
     font-size: 12px;
@@ -700,7 +701,7 @@ input:checked + .slider:before {
     padding-top: 2px;
     float: right;
     position: absolute;
-    border-radius:999px
+    /*border-radius:999px*/
 }
 
 /*Footer START*/
