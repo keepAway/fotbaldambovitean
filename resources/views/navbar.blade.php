@@ -16,11 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link{{$current_url == url('/') ? " active" : ""}}" href="{{ url('/') }}">Stiri</a>
                 </li>
-                @if(Auth::check())
-                    <li class="nav-item">
-                        <a class="nav-link{{$current_url == route('trimite-scor', ['liga' => 4]) ? " active" : ""}}" href="{{ route('trimite-scor', ['liga' => 4]) }}">Adauga scor</a>
-                    </li>
-                @endif
+                <li class="nav-item">
+                    <a class="nav-link{{$current_url == route('trimite-scor', ['liga' => 4]) ? " active" : ""}}" href="{{ route('trimite-scor', ['liga' => 4]) }}">Adauga scor</a>
+                </li>
                 @if(Auth::check() && (Auth::user()->rol == 'admin'))
                     <li class="nav-item">
                         <a class="nav-link{{$current_url == route('admin-stiri') ? " active" : ""}}" href="{{ route('admin-stiri') }}">Adauga stire</a>

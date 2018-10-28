@@ -806,6 +806,8 @@ class HomeController extends Controller
         $etape = Etape::where('liga', '=', $liga)
                         ->where('serie', '=', $serie)
                         ->where('etapa', '<=', $etapa_curenta)
+                        ->where('gazde', '!=', 'STA')
+                        ->where('oaspeti', '!=', 'STA')
                         ->whereNull('g_gazde')
                         ->whereNull('g_oaspeti')
                         ->groupBy('liga', 'etapa', 'id')
@@ -813,8 +815,13 @@ class HomeController extends Controller
 
         $i = 0;
         foreach ($etape as $etapa) {
-            $__check = ScoruriTrimise::where('etapa', $etapa->id)
-                                     ->where('user_id', Auth::user()->id)->first();
+            $__check = ScoruriTrimise::where('etapa', $etapa->id);
+
+            if(Auth::check()){
+                $__check = $__check->where('user_id', Auth::user()->id);
+            }
+
+            $__check = $__check->first();
 
             if(!empty($__check) && ($etapa->id == $__check->etapa)) {
                 $etape[$i]->g_gazde      = $__check->g_gazde;

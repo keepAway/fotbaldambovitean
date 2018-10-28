@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-sm-2">test</div>
         {{-- Desktop --}}
-        <div class="col-sm-8 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
@@ -78,7 +78,7 @@
                                     {{ csrf_field() }}
                                         <tr>
                                             <td class="align-middle" style="white-space: nowrap;"><b>{{$etapa->etapa}}</b></td>
-                                            <td class="font-italic align-middle" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
+                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                             <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="align-middle">
                                                 @if(Auth::check())
@@ -185,7 +185,7 @@
         </div>
 
         {{-- Tablet/Mobile --}}
-        <div class="col-sm-8 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
