@@ -58,12 +58,26 @@
                 <div class="col-sm-12">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table text-center">
+                            <thead style="background-color: #323b3e; color: #fff;">
+                                <tr style="background-color: #323b3e; color: #fff;">
+                                    <th>#</th>
+                                    <th class="text-left">Program</th>
+                                    <th class="text-right">Gazde</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th class="text-left">Oaspeti</th>
+                                    @if(Auth::check())
+                                        <th></th>
+                                    @endif
+                                </tr>
+                            </thead>
                             <tbody>
                                 @foreach($etape as $etapa)
                                     <form action="{{route('trimite-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                         <tr>
-                                            <td class="align-middle" style="white-space: nowrap;"><b>#{{$etapa->etapa}}</b></td>
+                                            <td class="align-middle" style="white-space: nowrap;"><b>{{$etapa->etapa}}</b></td>
                                             <td class="font-italic align-middle" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                             <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="align-middle">
@@ -89,8 +103,8 @@
                                             @if(Auth::check())
                                             <td class="align-middle">
                                                 <div style="white-space: nowrap;">
-                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
-                                                    <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                    <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'danger' : 'success'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600;"></i>
                                                     </a>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp
@@ -201,9 +215,9 @@
                                 @foreach($etape as $etapa)
                                     <form action="{{route('trimite-scor')}}" method="POST" class="prevent-resubmit">
                                         {{ csrf_field() }}
-                                        <tr style="background-color: #085f00; color: #fff;">
+                                        <tr style="background-color: #323b3e; color: #fff;">
                                             <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                            <td class="text-right font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                            <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</td>
                                         </tr>
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
@@ -233,8 +247,8 @@
                                             @if(Auth::check())
                                             <td colspan="2" class="align-middle text-right">
                                                 <div>
-                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
-                                                    <a class="mobile-toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} mobile-display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                    <a class="mobile-toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'danger' : 'success'}} mobile-display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
                                                     </a>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp

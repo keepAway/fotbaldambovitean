@@ -51,7 +51,7 @@
                             </select>
                         </div>
                         <div class="col-sm-7">
-                            @if(!Auth::check())
+                            @if(!Auth::check() && !(Auth::user()->rol == 'admin'))
                                 <span class="float-right" style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
                             @endif
                         </div>
@@ -60,16 +60,34 @@
                 <div class="col-sm-12">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table text-center">
+                            <thead style="background-color: #323b3e; color: #fff;">
+                                <tr style="background-color: #323b3e; color: #fff;">
+                                    <th>#</th>
+                                    <th class="text-left">Program</th>
+                                    <th class="text-right">Gazde</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th class="text-left">Oaspeti</th>
+                                    @if(Auth::check() && Auth::user()->rol == 'admin')
+                                        <th></th>
+                                    @endif
+                                </tr>
+                            </thead>
                             <tbody>
                                 @foreach($etape as $etapa)
                                     <form action="{{route('trimite-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                         <tr>
-                                            <td>Etapa: {{$etapa->etapa}}</td>
-                                            <td class="font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
-                                            <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
-                                            <td>
-                                                @if(Auth::check())
+                                            <td class="align-middle"><b>{{$etapa->etapa}}</b></td>
+                                            @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                                <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->created_at))}}</td>
+                                            @else
+                                                <td class="font-weight-bold align-middle"></td>
+                                            @endif
+                                            <td class="text-right align-middle font-weight-bold" style="white-space: nowrap;">{{$etapa->gazde}}</td>
+                                            <td class="align-middle">
+                                                @if(Auth::check() && Auth::user()->rol == 'admin')
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control" name="g_gazde" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -78,8 +96,8 @@
                                                 @endif
                                             </td>
                                             <td class="font-weight-bold align-middle">-</td>
-                                            <td>
-                                                @if(Auth::check())
+                                            <td class="align-middle">
+                                                @if(Auth::check() && Auth::user()->rol == 'admin')
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control" name="g_oaspeti" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -87,12 +105,12 @@
                                                     </span>
                                                 @endif
                                             </td>
-                                            <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
-                                            @if(Auth::check())
+                                            <td class="text-left align-middle font-weight-bold" style="white-space: nowrap;">{{$etapa->oaspeti}}</td>
+                                            @if(Auth::check() && Auth::user()->rol == 'admin')
                                             <td>
                                                 <div>
-                                                    <button type="submit" class="btn btn-primary btn-sm"> Adauga </button>
-                                                    <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
+                                                    <button type="submit" class="btn btn-success btn-sm"> Adauga </button>
+                                                    <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'danger' : 'success'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
                                                     </a>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp
@@ -190,7 +208,7 @@
                     </div>
                     <div class="row">   
                         <div class="col-sm-12 text-center">
-                            @if(!Auth::check())
+                            @if(!Auth::check() && !(Auth::user()->rol == 'admin'))
                                 <span style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
                             @endif
                         </div>
@@ -203,14 +221,14 @@
                                 @foreach($etape as $etapa)
                                     <form action="{{route('trimite-scor')}}" method="POST" class="prevent-resubmit">
                                         {{ csrf_field() }}
-                                        <tr style="background-color: #085f00; color: #fff;">
+                                        <tr style="background-color: #323b3e; color: #fff;">
                                             <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                            <td class="text-right font-italic">Data: {{$etapa->data}} | Ora: {{$etapa->ora}}</td>
+                                            <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->created_at))}}</td>
                                         </tr>
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="text-right">
-                                                @if(Auth::check())
+                                                @if(Auth::check() && (Auth::user()->rol == 'admin'))
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control float-right" name="g_gazde" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -222,7 +240,7 @@
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                             <td class="text-right">
-                                                @if(Auth::check())
+                                                @if(Auth::check() && (Auth::user()->rol == 'admin'))
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control float-right" name="g_oaspeti" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -232,11 +250,11 @@
                                             </td>   
                                         </tr>
                                         <tr>
-                                            @if(Auth::check())
+                                            @if(Auth::check() && (Auth::user()->rol == 'admin'))
                                             <td colspan="2" class="align-middle text-right">
                                                 <div>
-                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'success' : 'primary'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
-                                                    <a class="mobile-toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'success' : 'primary'}} mobile-display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                    <a class="mobile-toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'danger' : 'success'}} mobile-display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
                                                     </a>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp

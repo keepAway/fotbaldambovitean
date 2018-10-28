@@ -25,11 +25,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-2"><p>teeeeeeeeeeest</p>
+        <div class="col-sm-2"><p>teeeeeeeeeeest</p>
             <p>teeeeeeeeeeest clasament</p>
             <p>teeeeeeeeeeest clasament</p>
         </div>
-               <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <label style="font-size: 16px; margin-left: 5px;"> Useri</label>
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3"><p>teeeeeeeeeeest</p>
+        <div class="col-sm-3"><p>teeeeeeeeeeest</p>
             <p>teeeeeeeeeeest clasament</p>
             <p>teeeeeeeeeeest clasament</p>
         </div>
