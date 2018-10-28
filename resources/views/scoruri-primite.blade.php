@@ -51,7 +51,7 @@
                             </select>
                         </div>
                         <div class="col-sm-7">
-                            @if(!Auth::check() && !(Auth::user()->rol == 'admin'))
+                            @if(!Auth::check() && !(Auth::user()->role == 'admin'))
                                 <span class="float-right" style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
                             @endif
                         </div>
@@ -69,7 +69,7 @@
                                     <th></th>
                                     <th></th>
                                     <th class="text-left">Oaspeti</th>
-                                    @if(Auth::check() && Auth::user()->rol == 'admin')
+                                    @if(Auth::check() && Auth::user()->role == 'admin')
                                         <th></th>
                                     @endif
                                 </tr>
@@ -87,7 +87,7 @@
                                             @endif
                                             <td class="text-right align-middle font-weight-bold" style="white-space: nowrap;">{{$etapa->gazde}}</td>
                                             <td class="align-middle">
-                                                @if(Auth::check() && Auth::user()->rol == 'admin')
+                                                @if(Auth::check() && Auth::user()->role == 'admin')
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control" name="g_gazde" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -97,7 +97,7 @@
                                             </td>
                                             <td class="font-weight-bold align-middle">-</td>
                                             <td class="align-middle">
-                                                @if(Auth::check() && Auth::user()->rol == 'admin')
+                                                @if(Auth::check() && Auth::user()->role == 'admin')
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control" name="g_oaspeti" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -106,7 +106,7 @@
                                                 @endif
                                             </td>
                                             <td class="text-left align-middle font-weight-bold" style="white-space: nowrap;">{{$etapa->oaspeti}}</td>
-                                            @if(Auth::check() && Auth::user()->rol == 'admin')
+                                            @if(Auth::check() && Auth::user()->role == 'admin')
                                             <td>
                                                 <div>
                                                     <button type="submit" class="btn btn-success btn-sm"> Adauga </button>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="row">   
                         <div class="col-sm-12 text-center">
-                            @if(!Auth::check() && !(Auth::user()->rol == 'admin'))
+                            @if(!Auth::check() && !(Auth::user()->role == 'admin'))
                                 <span style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
                             @endif
                         </div>
@@ -228,7 +228,7 @@
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="text-right">
-                                                @if(Auth::check() && (Auth::user()->rol == 'admin'))
+                                                @if(Auth::check() && (Auth::user()->role == 'admin'))
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control float-right" name="g_gazde" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -240,7 +240,7 @@
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
                                             <td class="text-right">
-                                                @if(Auth::check() && (Auth::user()->rol == 'admin'))
+                                                @if(Auth::check() && (Auth::user()->role == 'admin'))
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control float-right" name="g_oaspeti" style="width: 70px;" required>
                                                 @else
                                                     <span class="font-weight-bold">
@@ -250,7 +250,7 @@
                                             </td>   
                                         </tr>
                                         <tr>
-                                            @if(Auth::check() && (Auth::user()->rol == 'admin'))
+                                            @if(Auth::check() && (Auth::user()->role == 'admin'))
                                             <td colspan="2" class="align-middle text-right">
                                                 <div>
                                                     <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>

@@ -813,27 +813,22 @@ class HomeController extends Controller
                         ->groupBy('liga', 'etapa', 'id')
                         ->get();
 
-        $i = 0;
-        foreach ($etape as $etapa) {
-            $__check = ScoruriTrimise::where('etapa', $etapa->id);
+        if(Auth::check()) {
+            $i = 0;
+            foreach ($etape as $etapa) {
+                $__check = ScoruriTrimise::where('etapa', $etapa->id)->where('user_id', Auth::user()->id)->first();
 
-            if(Auth::check()){
-                $__check = $__check->where('user_id', Auth::user()->id);
+                if(!empty($__check) && ($etapa->id == $__check->etapa)) {
+                    $etape[$i]->g_gazde      = $__check->g_gazde;
+                    $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
+                    $etape[$i]->contestatie  = $__check->contestatie;
+                    $etape[$i]->incident     = $__check->incident;
+                    $etape[$i]->alte_detalii = $__check->alte_detalii;
+                    $etape[$i]->adaugat      = true;
+                }
+                $i++;
             }
-
-            $__check = $__check->first();
-
-            if(!empty($__check) && ($etapa->id == $__check->etapa)) {
-                $etape[$i]->g_gazde      = $__check->g_gazde;
-                $etape[$i]->g_oaspeti    = $__check->g_oaspeti;
-                $etape[$i]->contestatie  = $__check->contestatie;
-                $etape[$i]->incident     = $__check->incident;
-                $etape[$i]->alte_detalii = $__check->alte_detalii;
-                $etape[$i]->adaugat      = true;
-            }
-            $i++;
         }
-
         $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
 
         return view('adauga-scor')->with(['etape' => $etape, 'ligi' => $ligi]);

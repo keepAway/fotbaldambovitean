@@ -38,8 +38,8 @@
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
-                        <div class="col-sm-5">
-                            <select class="form-control font-weight-bold w-auto" id="ligi">
+                        <div class="col-sm-6">
+                            <select class="form-control font-weight-bold" id="ligi" style="width: 100% !important; border-radius: 0 !important;">
                                 @foreach($ligi as $liga)
                                     <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
                                         {{($__liga == $liga->$liga || $__serie == $liga->serie ? 'selected' : '')}}>
@@ -48,9 +48,9 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-sm-7 text-center">
+                        <div class="col-sm-6 text-center">
                             @if(!Auth::check())
-                                <span style="font-size: 11px; font-style: italic; color: red">( Trebuie sa fii logat pentru a adauga scoruri )</span>
+                                <div class="alert alert-danger" style="font-size: 11px; width: 100% !important; margin-bottom: 0px !important; margin-top: -4px !important;"> Trebuie sa fii logat pentru a adauga scoruri </div>
                             @endif
                         </div>
                     </div>
@@ -78,13 +78,13 @@
                                     {{ csrf_field() }}
                                         <tr>
                                             <td class="align-middle" style="white-space: nowrap;"><b>{{$etapa->etapa}}</b></td>
-                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
+                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{($etapa->ora) ? $etapa->ora : '00:00'}}</b></td>
                                             <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="align-middle">
                                                 @if(Auth::check())
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control" name="g_gazde" style="width: 70px;" required>
                                                 @else
-                                                    <span class="font-weight-bold">
+                                                    <span class="font-weight-bold scor-color">
                                                         {{$etapa->g_gazde}}
                                                     </span>
                                                 @endif
@@ -94,7 +94,7 @@
                                                 @if(Auth::check())
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control" name="g_oaspeti" style="width: 70px;" required>
                                                 @else
-                                                    <span class="font-weight-bold">
+                                                    <span class="font-weight-bold scor-color">
                                                         {{$etapa->g_oaspeti}}
                                                     </span>
                                                 @endif
@@ -190,7 +190,7 @@
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
                         <div class="col-sm-12">
-                            <select class="form-control font-weight-bold w-auto m-auto" id="mobile-ligi">
+                            <select class="form-control font-weight-bold w-auto m-auto" id="mobile-ligi" style="width: 100% !important; border-radius: 0 !important;">
                                 @foreach($ligi as $liga)
                                     <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
                                         {{($__liga == $liga->$liga || $__serie == $liga->serie ? 'selected' : '')}}>
@@ -217,7 +217,7 @@
                                         {{ csrf_field() }}
                                         <tr style="background-color: #323b3e; color: #fff;">
                                             <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                            <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</td>
+                                            <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{($etapa->ora) ? $etapa->ora : '00:00'}}</td>
                                         </tr>
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
@@ -225,7 +225,7 @@
                                                 @if(Auth::check())
                                                     <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control float-right" name="g_gazde" style="width: 70px;" required>
                                                 @else
-                                                    <span class="font-weight-bold">
+                                                    <span class="font-weight-bold scor-color">
                                                         {{$etapa->g_gazde}}
                                                     </span>
                                                 @endif
@@ -237,7 +237,7 @@
                                                 @if(Auth::check())
                                                     <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control float-right" name="g_oaspeti" style="width: 70px;" required>
                                                 @else
-                                                    <span class="font-weight-bold">
+                                                    <span class="font-weight-bold scor-color">
                                                         {{$etapa->g_oaspeti}}
                                                     </span>
                                                 @endif

@@ -687,16 +687,16 @@ input:checked + .slider:before {
 }
 
 .red-badge {
-    background-color: #DB4727;
-    color:#fff;
+    /*background-color: #DB4727;*/
+    color: #DB4727;
     display:inline-block;
     font-weight: bold;
-    font-size: 9px;
-    width: 15px;
-    height: 15px;
+    font-size: 10px;
+    /*width: 15px;*/
+    /*height: 15px;*/
     text-align:center;
     margin-top: -8px !important;
-    margin-left: -2px !important;
+    margin-left: 0px !important;
     padding-top: 2px;
     float: right;
     position: absolute;

@@ -78,7 +78,7 @@
                             <div class="row pt-3">
                                 <div class="col-6">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <div class="news-link">Citeşte mai mult ...</div>
+                                        <div class="news-link">Citeşte mai mult</div>
                                     </a>
                                 </div>
                                 <div class="col-6">
