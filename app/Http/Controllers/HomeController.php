@@ -13,6 +13,7 @@ use App\Mail\ContactEmail;
 use App\User;
 use App\ScoruriTrimise;
 use App\EtapaCurenta;
+use App\Penalizari;
 
 use Carbon\Carbon;
 use Mail;
@@ -76,10 +77,23 @@ class HomeController extends Controller
         }
 
         $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', '!=', 'STA')->get();
+        $echipe_penalizate = [];
 
         $i=0;
+        $j=0;
         foreach ($echipe as $echipa) {
             $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id');
+            $penalizare = Penalizari::where('echipa_id', $echipa->id)->first();
+            
+            if(!empty($penalizare)) {
+                $echipe_penalizate[]             = $penalizare;
+                $echipe_penalizate[$j]['echipa'] = $echipa->echipa;                
+                $echipe[$i]['penalizata']        = true;
+                $echipe[$i]['t_puncte']          = ($echipa->t_puncte - $penalizare->puncte);
+                $echipe[$i]['puncte_penalizate'] = $penalizare->puncte;
+                $j++;
+            }
+
 
             if(isset($tab) && $tab == '1') {
                 $forma = $forma->where('forma.gazde', true);
@@ -100,6 +114,10 @@ class HomeController extends Controller
             $echipe[$i]['forma'] = $forma;
             $i++;
         }
+
+
+        // dd($echipe_penalizate);
+        // die;
 
         $__count = count($echipe);
         $page   = ($__count / 2);
@@ -135,7 +153,15 @@ class HomeController extends Controller
         // echo '</pre>';
         // die;
 
-        return view('clasament')->with(['liga' => $liga, 'echipe' => $echipe, 'etape' => $etape, 'etapa_curenta' => $etapa_curenta, 'current_page' => 10]);
+        return view('clasament')->with([
+            'liga' => $liga,
+            'serie' => $serie,
+            'echipe' => $echipe,
+            'etape' => $etape,
+            'etapa_curenta' => $etapa_curenta,
+            'current_page' => 10,
+            'echipe_penalizate' => $echipe_penalizate
+        ]);
     }
 
     public function adaugaScor(Request $request){
@@ -876,6 +902,11 @@ class HomeController extends Controller
         $serie    = $data['serie'];
         $etapa_id = $data['etapa_id'];
 
+        // echo '<pre>';
+        //     print_r($data);
+        // echo '</pre>';
+        // die;
+
         $__check = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
         $etapa_curenta = (empty($__check)) ? new EtapaCurenta : $__check;
         $etapa_curenta->liga = $liga;
@@ -897,5 +928,34 @@ class HomeController extends Controller
     public function confidentialitate()
     {   
         return view('confidentialitate');       
+    }
+
+    public function adaugaPenalizare(Request $request) {
+        $data = $request->all();
+        $echipa_id = $data['echipa_id'];
+        $liga = $data['liga'];
+        $serie = $data['serie'];
+        $puncte = $data['puncte'];
+        
+        $penalizare = Penalizari::where('echipa_id', $echipa_id)->first();
+
+        if(!empty($penalizare)) {
+            if(!$penalizare->delete()){
+                return redirect()->back()->withErrors('Ceva nu a mers bine, te rugam reincearca.');
+            }
+        }
+
+        if($puncte != 0) {
+            $penalizare = new Penalizari;
+            $penalizare->echipa_id = $data['echipa_id'];
+            $penalizare->liga      = $data['liga'];
+            $penalizare->serie     = $data['serie'];
+            $penalizare->puncte    = $data['puncte'];
+            if($penalizare->save()) {
+                return redirect()->back()->with('status', 'Penalizarea a fost adaugata.');
+            } else {
+                return redirect()->back()->withErrors('Ceva nu a mers bine, te rugam reincearca.');
+            }
+        }
     }
 }

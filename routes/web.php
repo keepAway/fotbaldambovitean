@@ -54,4 +54,7 @@ Route::post('/etapa-curenta', 'HomeController@etapaCurenta')->name('etapa-curent
 Route::get('/termeni-si-conditii', 'HomeController@termeni')->name('termeni');
 Route::get('/confidentialitate', 'HomeController@confidentialitate')->name('confidentialitate');
 
+Route::post('/clasament/adauga-penalizare', 'HomeController@adaugaPenalizare')->name('adauga-penalizare');
+
+
 

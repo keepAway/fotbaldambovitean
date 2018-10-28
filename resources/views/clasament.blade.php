@@ -59,10 +59,13 @@
         </div>
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
+                <div class="col-sm-6 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
                     Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
                     <label style="font-size: 16px; margin-left: 5px;"> Clasament</label>
                 </div>
+
+                @include('parts/block-penalizare')
+                
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <ul class="nav nav-tabs font-weight-bold" style="background-color: #323b3e; color: #fff; border: 1px solid #323b3e; border-radius: 0;">
                         <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
@@ -99,7 +102,14 @@
                                 @foreach($echipe as $echipa)
                                 <tr>
                                     <td class="font-weight-bold" style="width: 1%; background: #{{$i <= 2 ? '004682' : '000'}}; text-align: center; color: #fff;">{{$i++}}.</td>
-                                    <td class="text-left font-weight-bold team-name">{{$echipa->echipa}}</td>
+                                    <td class="text-left font-weight-bold team-name">
+                                        {{$echipa->echipa}}
+                                        @if($echipa->penalizata)
+                                            <span style="font-style: italic;">
+                                                <span class="red-badge">-{{$echipa->puncte_penalizate}}</span>
+                                            </span>
+                                        @endif
+                                    </td>
                                     <td class="{{$tab == 3 ? 'd-none' : ''}}">
                                         {{$tab == NULL ? $echipa->t_meciuri : ($tab == 1 ? $echipa->a_meciuri : $echipa->d_meciuri)}}
                                     </td>
@@ -189,15 +199,6 @@
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table table-striped table-hover text-center">
                             <thead style="background-color: #323b3e; color: #fff;">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Data</th>
-                                    <th scope="col" colspan="2">Gazde</th>
-                                    <th scope="col">-</th>
-                                    <th scope="col" colspan="{{Auth::check() ? "3" : "2"}}">Oaspeti</th>
-                                </tr>
-                            </thead>
-                            <tbody>
                                 <tr style="background-color: #323b3e; color: #fff;">
                                     <th>#</th>
                                     <th class="text-left">Program</th>
@@ -210,13 +211,15 @@
                                         <th></th>
                                     @endif
                                 </tr>
+                            </thead>
+                            <tbody>
                                 @foreach($etape as $etapa)
                                     <form action="{{route('adauga-scor')}}" method="POST" class="prevent-resubmit">
                                     {{ csrf_field() }}
                                     <tr>
                                         <td class="align-middle"><b>{{$etapa->etapa}}</b></td>
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
-                                            <td class="font-italic align-middle" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
+                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
                                         @else
                                             <td class="font-weight-bold align-middle"></td>
                                         @endif
@@ -273,7 +276,6 @@
                     {{$etape->appends(\Request::except('page'))->links()}}
                 </div>
                 <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
-                    <div class="font-weight-bold h5">Distribuie</div>
                     <div class="px-3 py-2">
                         <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
                         <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
