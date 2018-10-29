@@ -1,5 +1,16 @@
 jQuery(document).ready(function($){
-    //code here
+    var isshow = localStorage.getItem('isshow');
+
+    if(isshow !== "1") {
+        $('.info-cookie').removeClass('d-none');
+    }
+
+    $(".close-cookie").click(function() {
+        if (isshow === null) {
+            localStorage.setItem('isshow', 1);
+            $('.info-cookie').addClass('d-none');
+        }
+    });
 });
 
 window.onload = function() {

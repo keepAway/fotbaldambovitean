@@ -61,5 +61,6 @@
             </main>
         </div>
         @include('footer')
+        @include('cookie')
     </body>
 </html>

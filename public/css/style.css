@@ -756,6 +756,39 @@ input:checked + .slider:before {
     padding-top: 8px;
 }
 
+.terms-wrapper li {
+    color: #999;
+}
+
+.terms-wrapper a {
+    color: #e01b2f;
+}
+
+.terms-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.info-cookie {
+    background-color: #323b3e;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+}
+
+.info-cookie p {
+    color: #fff;
+    margin-bottom: 5px;
+}
+.info-cookie a {
+    color: #f4d90c;
+}
+.info-cookie a:hover {
+    text-decoration: underline;
+}
+
+
 /* Breakpoints */
 @media (min-width: 992px) {
     .navbar .nav-item.social-facebook {

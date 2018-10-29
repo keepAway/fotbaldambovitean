@@ -1,35 +1,30 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-sm-2"></div>
-            <div class="col-sm-7">
-                <p>Ce cuprinde o pagina de termeni si conditii?
-                    In general, pagina de termeni si conditii acopera urmatoarele:
-
-                    Definirea unor termeni – cuvinte si fraze importante si semnificatia acestora
-                    Datele de identificare ale firmei
-                    Datele de contact ale firmei
-                    Drepturile si responsabilitatile cumparatorului
-                    Drepturile si responsabilitatile vanzatorului
-                    Informatii despre produsele / serviciile comercializate pe site
-                    Politica de plata si facturare
-                    Politica de livrare
-                    Politica de returnare a produselor (conform Ordonantei de urgenta nr. 34/2014, clientii pot aplica pentru procedura de retur in 14 zile, fara a fi nevoiti sa isi justifice decizia si fara a suporta alte costuri decat cele prevazute la art. 13, alin. (3) si art. 14. Vezi mai multe detalii aici)
-                    Politica de garantare
-                    Limitarea responsabilitatii societatii tale in anumite situatii
-                    Modul de solutionare a litigiilor
-                    Link-ul catre SOL. Pe 15 februarie 2016, Comisia Europeana a implementat online platforma SOL (solutionarea online a litigiilor), prin care oricare dintre parti poate solutiona litigiile rezultate din tranzactiile online. Daca nu respecti prevederile Regulamentului nr. 524/2013 si nu furnizezi un link spre platforma, poti risca amenzi intre 2000 si 5000 de lei din partea ANPC.
-                    Politica de confidentialitate privitoare la prelucrarea datelor cu caracter personal si modul de gestionare a acestora, precum si scopul pentru care ceri datele.
-                    Politica de informare despre cookie-uri. E foarte important sa respecti recomandarea reprezentantilor Autoritatii Nationale de Supraveghere a Prelucrarii Datelor cu Caracter Personal de a nu trimite mesaje promotionale catre cei care nu si-au dat acceptul.
-                    Cum scrii o pagina de termeni si conditii?
-                    Cel mai ok ar fi ca pagina ta sa fie verificata si validata de un jurist, inainte de a o afisa public pe site. Personal, ti-l pot recomanda pe Bogdan Manolea, consultant juridic, director executiv APTI si initiator Trusted.ro.
-
-                    Atunci cand vrei sa concepi o pagina de termeni si conditii exista doua lucruri pe care te sfatuiesc sa NU le faci: nu copia cuvant cu cuvant o alta pagina gasita pe net, nici macar de la un competitor ce vinde exact aceleasi produse si nu folosi intrumentele de generare automata a unei pagini, care, da, exista pe net.
-
-                    In primul rand, este vorba de legea dreptului de autor – chiar si pagina de termeni si conditii este proprietatea intelectuala a cuiva si, apoi, termenii si conditiile depind foarte multe de tipul tau de afacere, de nisa, de politica proprie de livrare, plata, garantie, retur etc. Nu te juca, facand greseli, pentru ca mai devreme sau mai tarziu vei avea de suferit.
-
-                    Pe de alta parte este ok sa te inspiri de la altii, cu conditia sa adaptezi totul la caracteristicile afacerii tale si, atentie mare, la legile in vigoare.</p>
+            <div class="col-sm-7" style="background-color: #fff;">
+                <div class="terms-wrapper pt-5 pb-5">
+                    <h2>Termeni și condiții</h2>
+                    <h5>Acceptul Dvs</h5>
+                    <p>Prezenții Termeni și condiții ("Condiții") stabilesc care sunt condițiile de utilizare ale site-ul www.denumiresite.ro ("Site-ul"). Termenii şi condițiile pot fi schimbate în orice moment de către administratorul site-ului, fără notificarea prealabilă a persoanelor care îl utilizează. Prin utilizarea Site-ului acceptați automat aceste Condiții. Vă rugăm să le citiți cu atenție.</p>
+                    <h5>Utilizarea Site-ului</h5>
+                    <p>www.denumiresite.ro nu poate fi făcut răspunzător în niciun fel de pierderile sau daunele pe care cineva le-ar putea suferi ca urmare a folosirii în vreun fel a informațiilor prezentate în acest site web. www.denumiresite.ro nu garantează rezultatele ce s-ar putea obține din utilizarea informațiilor prezentate prin intermediul acestui site şi nici disponibilitatea spre folosire a oricăror informații prezente pe site. Orice utilizator care vizitează acest site o face pe propria răspundere.</p>
+                    <h5>Contul Dvs</h5>
+                    <p>În vederea accesării unor servicii ale Site-ului, poate fi necesar să vă creați propriul Cont ("Cont").</p>
+                    <p>Utilizatorul are posibilitatea de a se înregistra în platforma www.denumiresite.ro prin contul personal de Facebook sau Google. Dacă optează pentru această variantă, va fi direcționat către o pagină administrată de Facebook Inc, respectiv Google Inc, unde va fi informat cu privire la transferul datelor către www.denumiresite.ro. Puteți consulta politica de confidențialitate Facebook sau Google folosind următorul link: <a href="https://www.facebook.com/about/privacy" target="_blank">https://www.facebook.com/about/privacy</a> respectiv <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.</p>
+                    <p>Datele necesare pentru crearea unui cont, ce sunt stocate de către www.denumiresite.ro sunt: prenumele și numele, adresa de e-mail și parola. Singurul scop pentru care www.denumiresite.ro stochează aceste date este acela ca Utilizatorul să aibă acces și să beneficieze de serviciile www.denumiresite.ro.</p>
+                    <h5>Conținut</h5>
+                    <p>Materialele şi informațiile conținute în acest site sunt furnizate în scop de informare generală, nefiind însoțite de nici un fel de garanții, explicite sau implicite. Informațiile şi materialele de pe site pot conține erori atât din punct de vedere al ortografiei cât şi din punct de vedere al conținutului www.denumiresite.ro nu îşi asumă nici o responsabilitate în cazul în care serviciile site-ului nu pot fi accesate de către utilizatori, pe o perioada nelimitată/nedeterminată de timp, din orice motive tehnice sau comerciale.</p>
+                    <p>Utilizatorilor nu le este permisă publicarea de Conținut:
+                        <ul>
+                            <li>defăimător, obscen, amenințător, care încalcă intimitatea persoanelor, care dăunează minorilor, abuziv, ilegal sau care conține expresii și forme ale urii, rasismului sau pornografiei, care pot încuraja activitatea criminală, care poate încălca drepturile cuiva sau încălca legea, sau Conținut pe care nu ai voie să îl faci public fiind protejat de contracte și legi;</li>
+                            <li>care încalcă drepturile de autor;</li>
+                            <li>ce ar putea să dăuneze Site-ului sau unei terțe persoane;</li>
+                            <li>de tip Spam care să conțină anunțuri publicitare sau solicitări de colaborări comerciale.</li>
+                        </ul>
+                    </p>
+                </div>
             </div>
             <div class="col-sm-3"></div>
         </div>
