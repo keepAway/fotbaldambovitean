@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
                     <label style="font-size: 20px; margin-left: 5px;"> Clasament </label> |
-                    Liga {{$liga}}, {{isset($seria) && $seria != NULL ? ' Seria ' . $seria : ''}}
+                    Liga {{$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
 
                 @include('parts/block-penalizare')
@@ -192,7 +192,7 @@
                 @endif
                 <div class="col-sm-11 font-weight-bold float-left" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 16px;">
                     <label style="font-size: 20px; margin-left: 5px;"> Etape </label> | 
-                    Liga {{$liga}}, {{isset($seria) && $seria != NULL ? ' Seria ' . $seria : ''}}
+                    Liga {{$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
@@ -366,7 +366,6 @@
                     {{ $etape->appends(\Request::except('page'))->links() }}
                 </div>
                 <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
-                    <div class="font-weight-bold h5">Distribuie</div>
                     <div class="px-3 py-2">
                         <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
                         <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
