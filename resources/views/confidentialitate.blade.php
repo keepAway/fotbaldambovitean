@@ -7,7 +7,7 @@
                 <div class="terms-wrapper pt-5 pb-5">
                     <h2>Confidențialitate</h2>
                     <h5>Informații generale</h5>
-                    <p>Acest document are rolul de a vă informa cu privire la prelucrarea datelor dumneavoastră cu caracter personal, în contextul utilizării paginii de internet www.numesite.ro. („Site-ul”)</p>
+                    <p>Acest document are rolul de a vă informa cu privire la prelucrarea datelor dumneavoastră cu caracter personal, în contextul utilizării paginii de internet www.fotbal-arena.ro. („Site-ul”)</p>
                     <h5>Categoriile de date cu caracter personal prelucrate</h5>
                     <p>Dacă sunteți client al Site-ului se pot aduna informaţiile de contact (nume si prenume), inclusiv adresa de email. Dacă pentru a vă crea cont de utilizator pe Site, utilizați contul dumneavoastră de Facebook sau Google, se vor prelucra următoarele date publice de profil afişate de aplicaţiile respective: nume utilizator, adresa de e-mail.</p>
                     <h5>Utilizarea informațiilor</h5>
@@ -19,7 +19,7 @@
                     <p>Un cookie este un fișier de mici dimensiuni, în general alcătuit din litere și cifre, care este salvat în memoria unui calculator sau altui echipament folosit pentru navigare online (telefon mobil, tabletă etc.), atunci când utilizatorul accesează un anumit site web. De fiecare dată când utilizatorul accesează din nou respectivul site web, browserul transmite acest fișier către serverul site-ului web. Altfel spus, cookie-ul poate fi văzut ca un card de identificare a utilizatorului de internet, care anunță site-ul web de fiecare dată când utilizatorul se întoarce pe respectivul site.</p>
                     <h5>Ce NU este un cookie!</h5>
                     <p>De la apariția cookie-urilor pe internet s-au răspândit mai multe păreri greșite cum ar fi că acestea sunt viruși, o formă de spyware sau că generează pop-up-uri (ferestre cu reclame, deschise automat de către navigator, în general deranjante). Cookie-urile NU sunt viruși! Ele folosesc formate tip plain-text. Nu sunt alcătuite din bucăți de cod, așa că NU pot fi executate și nici NU pot auto-rula. În consecință, NU se pot auto-copia, NU se pot răspândi în alte rețele pentru a genera acțiuni și NU pot să citească sau să șteargă nimic de pe PC-ul utilizatorului.</p>
-                    <h5>Cum sunt folosite cookie-urile de către www.numesite.ro?</h5>
+                    <h5>Cum sunt folosite cookie-urile de către www.fotbal-arena.ro?</h5>
                     <p>O vizită pe acest site poate plasa:</p>
                     <ul>
                         <li>Cookie-uri de performanță</li>

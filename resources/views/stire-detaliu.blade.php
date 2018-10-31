@@ -71,7 +71,6 @@
                 </div>
                 <div class="news-detail-content">{!!html_entity_decode($stire->continut)!!}</div>
                 <div class="news-detail-share mt-5 px-3 py-2 text-center">
-                    <div class="font-weight-bold h5">Distribuie</div>
                     <div class="px-3 py-2">
                         <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
                         <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
