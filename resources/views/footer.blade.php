@@ -3,7 +3,7 @@
         <div class="row mb-3">
             <div class="col-sm-3 text-center">
                 <div class="footer-logo">
-                    <img src="{{URL::asset('img/logo-galben.png')}}" alt="Logo Fotbal Dambovitean">
+                    {{-- <img src="{{URL::asset('img/logo-galben.png')}}" alt="Logo Fotbal Dambovitean"> --}}
                 </div>
             </div>
             <div class="col-sm-6 text-center">
@@ -21,7 +21,7 @@
                     <li class="nav-item">
                         <div class="nav-link">Urmăreşte-ne</div>
                     </li>
-                    <li class="nav-item social-facebook">
+                    <li class="nav-item social-facebook" style="{{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
                         <a class="nav-link" href="https://www.facebook.com/fotbaldambovitean/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </li>
                 </ul>
@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <p class="copyright">© {{date('Y')}} Fotbal Dâmboviţean - Toate drepturile rezervate</p>
+                <p class="copyright">© {{date('Y')}} Fotbal Arena - Toate drepturile rezervate</p>
             </div>
         </div>
     </div>

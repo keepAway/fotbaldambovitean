@@ -2,13 +2,13 @@
     $current_url = Request::fullUrl();
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container">
+    <div class="container" style="padding-left: 15px; padding-right: 15px;">
         <button type="button" id="sidebarCollapse" class="btn btn-dark">
-            <i class="fas fa-align-justify"></i> &nbsp;
-            <span style="font-size: 15px;">Meniu</span>
+            <i class="fas fa-align-justify fa-lg"></i> &nbsp;
+            <span style="font-size: 15px; font-weight: bold !important; vertical-align: sub;"></span>
         </button>
         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-align-justify"></i>
+            <i class="fas fa-align-justify fa-lg"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,7 +50,7 @@
                         </form>
                     </li>
                 @endguest
-                <li class="nav-item social-facebook">
+                <li class="nav-item social-facebook" style="{{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
                     <a class="nav-link" href="https://www.facebook.com/fotbaldambovitean/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </li>
             </ul>

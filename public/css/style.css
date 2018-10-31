@@ -769,7 +769,7 @@ input:checked + .slider:before {
 }
 
 .info-cookie {
-    background-color: #323b3e;
+    background-color: #000;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -780,10 +780,14 @@ input:checked + .slider:before {
 .info-cookie p {
     color: #fff;
     margin-bottom: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
+
 .info-cookie a {
     color: #f4d90c;
 }
+
 .info-cookie a:hover {
     text-decoration: underline;
 }

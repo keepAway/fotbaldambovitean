@@ -40,7 +40,7 @@
         <div class="col-sm-3"></div>
     </div>
     <div class="row">
-        <div class="col-sm-2">reclama stanga</div>
+        <div class="col-sm-2"></div>
         <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="news-detail-wrapper mt-2">
                 <div class="news-detail-header">
@@ -136,7 +136,7 @@
                 @endif
             </div>
         </div>
-        <div class="col-sm-3">reclama dreapta</div>
+        <div class="col-sm-3"></div>
     </div>
     <div class="line"></div>
     <div class="row">

@@ -44,24 +44,22 @@
         </div>
     </div>
 
-    <div id="fb-root"></div>
+    {{-- <div id="fb-root"></div>
     <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v3.1&appId=2136989686622565&autoLogAppEvents=1';
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));</script> --}}
     
     <div class="row">
-        <div class="col-lg-2">
-            #
-        </div>
+        <div class="col-lg-2"></div>
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
+                    <label style="font-size: 20px; margin-left: 5px;"> Clasament </label> |
                     Liga {{$liga}}, {{isset($seria) && $seria != NULL ? ' Seria ' . $seria : ''}}
-                    <label style="font-size: 20px; margin-left: 5px;"> Clasament</label>
                 </div>
 
                 @include('parts/block-penalizare')
@@ -137,9 +135,9 @@
                                         <b>{{$tab == NULL ? $echipa->t_puncte : ($tab == 1 ? $echipa->a_puncte : $echipa->d_puncte)}}</b>
                                     </td>
                                     <td class="{{$tab == 3 ? 'd-inline-flex' : 'd-none d-sm-inline-flex'}}">
-                                        <div class="forma" style="background: #656565; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Etapa urmatoare: ">
+                                        {{-- <div class="forma" style="background: #656565; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Etapa urmatoare: ">
                                             ?
-                                        </div>
+                                        </div> --}}
                                         @foreach($echipa->forma as $forma)
                                             @if($forma->forma == 'V')
                                                 <div class="forma" style="background: #28a745; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
@@ -164,39 +162,37 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            #
-        </div>
+        <div class="col-lg-3"></div>
     </div>
 
-    <div class="line"></div>
-    {{-- <div class="row" id="blogspot">
+    <div class="line"></div>{{-- 
+    <div class="row" id="blogspot">
         <div class="col-sm-12">
         </div>
     </div>
     <div class="line"></div> --}}
 
     <div class="row">
-        <div class="col-sm-2">
-            #
-        </div>
+        <div class="col-sm-2"></div>
         <!-- Etapa desktop -->
         <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="pl-2 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
-                    <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
-                        {{ csrf_field() }}
-                        <input type="hidden" name="liga" value="{{$liga}}">
-                        <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
-                        <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
-                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'secondary' : 'success'}} btn-sm">
-                            <i class="fas fa-check"></i>
-                        </button>
-                    </form>
-                </div>
+                @if(Auth::check() && Auth::user()->role == 'admin')
+                    <div class="pl-2 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                        <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="liga" value="{{$liga}}">
+                            <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
+                            <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
+                                <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'secondary' : 'success'}} btn-sm">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                        </form>
+                    </div>
+                @endif
                 <div class="col-sm-11 font-weight-bold float-left" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 16px;">
+                    <label style="font-size: 20px; margin-left: 5px;"> Etape </label> | 
                     Liga {{$liga}}, {{isset($seria) && $seria != NULL ? ' Seria ' . $seria : ''}}
-                    <label style="font-size: 20px; margin-left: 5px;"> Etape</label>
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
@@ -293,17 +289,19 @@
         <!-- Etapa tablet/mobile -->
         <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
-                <div class="pl-3 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
-                    <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
+                @if(Auth::check() && Auth::user()->role == 'admin')
+                    <div class="pl-3 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                        <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
                         {{ csrf_field() }}
                         <input type="hidden" name="liga" value="{{$liga}}">
                         <input type="hidden" name="serie" value="{{isset($serie) ? $serie : NULL}}">
                         <input type="hidden" name="etapa_id" value="{{$etape[0]->etapa}}">
-                        <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'secondary' : 'success'}} btn-sm">
-                            <i class="fas fa-check"></i>
-                        </button>
-                    </form>
-                </div>
+                            <button class="btn btn-{{$etapa_curenta == NULL || $etapa_curenta !== $etape[0]->etapa ? 'secondary' : 'success'}} btn-sm">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </form>
+                    </div>
+                @endif
                 <div class="col-sm-11 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
                     <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
@@ -380,14 +378,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            #
-        </div>
+        <div class="col-sm-3"></div>
     </div>
     <div class="line"></div>
     <div class="row">
-        <div class="col-sm-2">
-        </div>
+        <div class="col-sm-2"></div>
         <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
@@ -406,8 +401,7 @@
                 <div class="col-sm-12">
                     <div class="fb-comments" data-href="{{$current_url}}" data-numposts="5" data-width="100%"></div>
                 </div>
-            </div>
-        </div>
+            </div></div>
     </div>
 </div>
 @endsection
