@@ -19,7 +19,7 @@ class liga_6_nord extends Seeder
 				'liga'   => 6,
 				'serie'  => 'NORD',
 			],[
-				'echipa' => 'Olimpicii Ulmi',
+				'echipa' => 'Olimpicii Ulmi 3',
 				'liga'   => 6,
 				'serie'  => 'NORD',
 			],[
