@@ -82,7 +82,7 @@ class liga_6_sud extends Seeder
 				'etapa'     => 1,
 				'gazde'     => 'Steagu Rosu Colacu',
 				'g_gazde'   => null,
-				'oaspeti'   => 'Sageata Catunu',
+				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
 			],[
 				'data'      => '02-09-2018',
@@ -150,7 +150,7 @@ class liga_6_sud extends Seeder
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 2,
-				'gazde'     => 'Sageata Catunu',
+				'gazde'     => 'Sageata Catunu 1975',
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
