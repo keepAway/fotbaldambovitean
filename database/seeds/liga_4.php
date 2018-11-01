@@ -14,6 +14,7 @@ class liga_4 extends Seeder
     public function run()
     {
         
+        
         $echipe = [
 			[
 				'echipa' => 'Sportul Voinesti 2016',
