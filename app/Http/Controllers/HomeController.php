@@ -128,7 +128,7 @@ class HomeController extends Controller
         // die;
 
         $__count = count($echipe);
-        $page   = (if($__count % 2 == 0 ? ($__count / 2) : (($_count + 1) / 2));
+        $page   = $__count % 2 == 0 ? ($__count / 2) : (($_count + 1) / 2);
 
         if(isset($tab) && $tab == '1') {
             $echipe = $echipe->sortByDesc(function($echipe) {
