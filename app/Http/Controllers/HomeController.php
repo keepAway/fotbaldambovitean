@@ -128,7 +128,7 @@ class HomeController extends Controller
         // die;
 
         $__count = count($echipe);
-        $page   = ($__count / 2);
+        $page   = (if($__count % 2 == 0 ? ($__count / 2) : (($_count + 1) / 2));
 
         if(isset($tab) && $tab == '1') {
             $echipe = $echipe->sortByDesc(function($echipe) {
@@ -700,15 +700,15 @@ class HomeController extends Controller
             // $data .= file_get_contents('http://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-5-a-sud-6693-et' . $i);
         // }
         $array = [
-            'NORD' => 6692,
-            'SUD'  => 6693,
-            'VEST' => 6694,
+            // 'NORD' => 6692,
+            // 'SUD'  => 6693,
+            // 'VEST' => 6694,
 
-            // 'NORD' => 7000,
-            // 'SUD'  => 7001,
+            'NORD' => 7000,
+            'SUD'  => 7001,
         ];
 
-        if($etapa < 34) {
+        if($etapa < 26) {
             header("Refresh:0; url=/parse-jquery/".$liga."/".$serie."/" . ($etapa + 1));
         }
 
