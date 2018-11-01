@@ -74,7 +74,7 @@ class liga_6_sud extends Seeder
 		];
 
         $etape = [
-			[
+        	[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -82,9 +82,10 @@ class liga_6_sud extends Seeder
 				'etapa'     => 1,
 				'gazde'     => 'Steagu Rosu Colacu',
 				'g_gazde'   => null,
-				'oaspeti'   => 'Sageata Catunu 1975',
+				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -94,7 +95,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -104,7 +106,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 1,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -114,7 +117,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => 4,
-			],[
+			],
+			[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -124,7 +128,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 2,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -134,7 +139,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 7,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '02-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -144,17 +150,19 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 2,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 2,
-				'gazde'     => 'Sageata Catunu 1975',
+				'gazde'     => 'STA',
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -164,7 +172,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => 7,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -174,7 +183,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -184,7 +194,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -194,7 +205,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -204,7 +216,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 6,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '09-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -214,7 +227,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -224,7 +238,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -234,7 +249,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 4,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -244,7 +260,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 7,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -254,7 +271,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -264,7 +282,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 1,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -274,7 +293,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 7,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '16-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -284,7 +304,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 4,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -294,7 +315,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -304,7 +326,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 4,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => 4,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -314,7 +337,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -324,7 +348,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 5,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -334,7 +359,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -344,7 +370,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => 4,
-			],[
+			],
+			[
 				'data'      => '23-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -354,7 +381,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 7,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -364,7 +392,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -374,7 +403,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -384,7 +414,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 5,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => 5,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -394,7 +425,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 6,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => 5,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -404,7 +436,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 1,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -414,7 +447,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 1,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '30-09-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -424,7 +458,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 2,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -434,7 +469,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -444,7 +480,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 7,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -454,7 +491,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 5,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -464,7 +502,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => 4,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -474,7 +513,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 2,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -484,7 +524,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 9,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '07-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -494,7 +535,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 5,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -504,7 +546,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -514,7 +557,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 4,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => 2,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -524,7 +568,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 1,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -534,7 +579,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => 0,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -544,7 +590,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -554,7 +601,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 1,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => 5,
-			],[
+			],
+			[
 				'data'      => '14-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -564,7 +612,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -574,7 +623,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -584,7 +634,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 3,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -594,7 +645,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 4,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -604,7 +656,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 6,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => 5,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -614,7 +667,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 2,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => 1,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -624,7 +678,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 0,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '21-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -634,7 +689,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => 2,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => 3,
-			],[
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -644,67 +700,74 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 9,
 				'gazde'     => 'Sageata Catunu 1975',
-				'g_gazde'   => null,
+				'g_gazde'   => 4,
 				'oaspeti'   => 'Cojasca 2018',
-				'g_oaspeti' => null,
-			],[
+				'g_oaspeti' => 3,
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 9,
 				'gazde'     => 'Vointa Cretu',
-				'g_gazde'   => null,
+				'g_gazde'   => 9,
 				'oaspeti'   => 'Gaita Bilciuresti',
-				'g_oaspeti' => null,
-			],[
+				'g_oaspeti' => 0,
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 9,
 				'gazde'     => 'Juniorul Ciocanesti',
-				'g_gazde'   => null,
+				'g_gazde'   => 5,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
-				'g_oaspeti' => null,
-			],[
+				'g_oaspeti' => 0,
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 9,
 				'gazde'     => 'Avantul Produlesti',
-				'g_gazde'   => null,
+				'g_gazde'   => 1,
 				'oaspeti'   => 'Steagu Rosu Colacu',
-				'g_oaspeti' => null,
-			],[
+				'g_oaspeti' => 3,
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 9,
 				'gazde'     => 'Universitatea Baleni',
-				'g_gazde'   => null,
+				'g_gazde'   => 2,
 				'oaspeti'   => 'Dacia Hulubesti',
-				'g_oaspeti' => null,
-			],[
+				'g_oaspeti' => 8,
+			],
+			[
 				'data'      => '28-10-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
 				'serie'     => 'SUD',
 				'etapa'     => 9,
 				'gazde'     => 'Viitorul Gura Foii',
-				'g_gazde'   => null,
+				'g_gazde'   => 2,
 				'oaspeti'   => 'Vointa Crevedia 2010',
-				'g_oaspeti' => null,
-			],[
+				'g_oaspeti' => 1,
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -714,7 +777,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -724,7 +788,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -734,7 +799,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -744,7 +810,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -754,7 +821,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -764,7 +832,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '04-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -774,7 +843,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -784,7 +854,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -794,7 +865,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -804,7 +876,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -814,7 +887,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -824,7 +898,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -834,7 +909,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '11-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -844,7 +920,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -854,7 +931,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -864,7 +942,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -874,7 +953,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -884,7 +964,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -894,7 +975,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -904,7 +986,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '18-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -914,7 +997,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -924,7 +1008,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -934,7 +1019,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -944,7 +1030,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -954,7 +1041,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -964,7 +1052,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -974,7 +1063,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => '25-11-2018',
 				'ora'       => '14:30',
 				'liga'      => 6,
@@ -984,7 +1074,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -994,7 +1085,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1004,7 +1096,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1014,7 +1107,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1024,7 +1118,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1034,7 +1129,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1044,7 +1140,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1054,7 +1151,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1064,7 +1162,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1074,7 +1173,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1084,7 +1184,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1094,7 +1195,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1104,7 +1206,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1114,7 +1217,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1124,7 +1228,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1134,7 +1239,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1144,7 +1250,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1154,7 +1261,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1164,7 +1272,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1174,7 +1283,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1184,7 +1294,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1194,7 +1305,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1204,7 +1316,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1214,7 +1327,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1224,7 +1338,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1234,7 +1349,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1244,7 +1360,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1254,7 +1371,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1264,7 +1382,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1274,7 +1393,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1284,7 +1404,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1294,7 +1415,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1304,7 +1426,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1314,7 +1437,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1324,7 +1448,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1334,7 +1459,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1344,7 +1470,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1354,7 +1481,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1364,7 +1492,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1374,7 +1503,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1384,7 +1514,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1394,7 +1525,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1404,7 +1536,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1414,7 +1547,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1424,7 +1558,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1434,7 +1569,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1444,7 +1580,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1454,7 +1591,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1464,7 +1602,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1474,7 +1613,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1484,7 +1624,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1494,7 +1635,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1504,7 +1646,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1514,7 +1657,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1524,7 +1668,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1534,7 +1679,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1544,7 +1690,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1554,7 +1701,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1564,7 +1712,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1574,7 +1723,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1584,7 +1734,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1594,7 +1745,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1604,7 +1756,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1614,7 +1767,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1624,7 +1778,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1634,7 +1789,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1644,7 +1800,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1654,7 +1811,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1664,7 +1822,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1674,7 +1833,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1684,7 +1844,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1694,7 +1855,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1704,7 +1866,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1714,7 +1877,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1724,7 +1888,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1734,7 +1899,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1744,7 +1910,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1754,7 +1921,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1764,7 +1932,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'STA',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1774,7 +1943,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Steagu Rosu Colacu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1784,7 +1954,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Neajlovul Puntea de Greci',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1794,7 +1965,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Gaita Bilciuresti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1804,7 +1976,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Cojasca 2018',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1814,7 +1987,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Cuza Voda',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1824,7 +1998,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Sageata Catunu 1975',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1834,7 +2009,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Cretu',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1844,7 +2020,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Juniorul Ciocanesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1854,7 +2031,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Avantul Produlesti',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1864,7 +2042,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Universitatea Baleni',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1874,7 +2053,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Viitorul Gura Foii',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1884,7 +2064,8 @@ class liga_6_sud extends Seeder
 				'g_gazde'   => null,
 				'oaspeti'   => 'Vointa Crevedia 2010',
 				'g_oaspeti' => null,
-			],[
+			],
+			[
 				'data'      => null,
 				'ora'       => null,
 				'liga'      => 6,
@@ -1895,7 +2076,7 @@ class liga_6_sud extends Seeder
 				'oaspeti'   => 'Dacia Hulubesti',
 				'g_oaspeti' => null,
 			]
-		];
+        ];
 
 		Echipe::where('liga', 6)->where('serie', 'SUD')->delete();
 		foreach ($echipe as $echipa) {
