@@ -3,7 +3,7 @@
         <div class="row mb-3">
             <div class="col-sm-3 text-center">
                 <div class="footer-logo">
-                    {{-- <img src="{{URL::asset('img/logo-galben.png')}}" alt="Logo Fotbal Dambovitean"> --}}
+                    {{-- <img src="{{URL::asset('img/logo-galben.png')}}" alt="Fotbal Arena"> --}}
                 </div>
             </div>
             <div class="col-sm-6 text-center">

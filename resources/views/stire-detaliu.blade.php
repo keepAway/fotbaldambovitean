@@ -43,42 +43,41 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="news-detail-wrapper mt-2">
-                <div class="news-detail-header">
-                    <div class="news-details mb-0">
-                        <div class="row">
-                             <div class="col-6 news-date">
-                                {{date('M d, Y, H:s', strtotime($stire->created_at))}}
-                            </div>
-                            <div class="col-6">
-                                <a href="{{'/?categorie='.$stire->categorie_id}}">
-                                    <div class="news-cat float-right"># {{$stire->nume_categorie}}</div>
-                                </a>
+                <div class="container">
+                    <div class="news-detail-header">
+                        <div class="news-details mb-0">
+                            <div class="row">
+                                 <div class="col-6 news-date">
+                                    {{date('M d, Y, H:s', strtotime($stire->created_at))}}
+                                </div>
+                                <div class="col-6">
+                                    <a href="{{'/?categorie='.$stire->categorie_id}}">
+                                        <div class="news-cat float-right"># {{$stire->nume_categorie}}</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <h3 class="mb-4 mt-3">{{$stire->titlu}}</h3>
                     </div>
-                    <h3 class="mb-4 mt-3">{{$stire->titlu}}</h3>
-                </div>
-                <div class="news-detail-img mb-4">
-                    <div class="news-hr">
-                        {{-- <div class="float-left" style="font-weight: bold; color: #888;">
-                            <i class="fas fa-eye fa-lg"></i> {{$stire->views}}
-                        </div> --}}
-                        <div class="float-right" style="font-weight: bold; font-style: italic; color: #888;">
-                            <span style="font-weight: normal;">by </span>{{$stire->autor}}
+                    <div class="news-detail-img mb-4">
+                        <div class="news-hr">
+                            <div class="float-right" style="font-weight: bold; font-style: italic; color: #888;">
+                                <span style="font-weight: normal;">by </span>{{$stire->autor}}
+                            </div>
                         </div>
+                        <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" alt="Fotbal Arena">
                     </div>
-                    <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" alt="Imagine Fotbal Dambovitean">
-                </div>
-                <div class="news-detail-content">{!!html_entity_decode($stire->continut)!!}</div>
-                <div class="news-detail-share mt-5 px-3 py-2 text-center">
-                    <div class="px-3 py-2">
-                        <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                        <a href="{{$pinterestURL}}" class="social-share m-1" target="_blank"><i class="fab fa-pinterest-square fa-3x"></i></a>
-                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                    <div class="news-detail-content">{!!html_entity_decode($stire->continut)!!}</div>
+                    <div class="news-detail-share mt-5 px-3 py-2 text-center">
+                        <div class="px-3 py-2">
+                            <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                            <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                            <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                            <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                            <a href="{{$pinterestURL}}" class="social-share m-1" target="_blank"><i class="fab fa-pinterest-square fa-3x"></i></a>
+                            <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                            <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                        </div>
                     </div>
                 </div>
                 @if ( count($alte_stiri) > 0 )
@@ -86,43 +85,50 @@
                     <h4 class="text-center mb-4 mt-5">Ştiri din aceeaşi categorie</h4>
                     <div class="news-detail-related row mt-5">
                         @foreach ($alte_stiri as $stire)
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <div class="news-block">
+                                    <div class="news-details">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="news-date">
+                                                    {{date('M d, Y, H:s', strtotime($stire->created_at))}}
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <a href="{{url()->current().'/?categorie='.$stire->categorie_id}}">
+                                                    <div class="news-cat float-right">
+                                                        # {{$stire->nume_categorie}}
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                        <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
+                                    </a>
                                     <div class="news-img">
                                         <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                            <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" class="news-img" alt="Imagine Fotbal Dambovitean">
+                                            <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                         </a>
                                         @if ($stire->pin == 1)
                                         <div class="news-top"><b>TOP</b></div>
                                         @endif
+                                        <div class="news-views">
+                                            <i class="fas fa-eye fa-lg"></i>
+                                            <span style="font-style: normal; font-weight: bold;">{{$stire->views}}</span>
+                                        </div>
                                     </div>
-                                    <div class="news-hr">
-                                        <div class="news-views font-weight-bold"><i class="fas fa-eye"></i> {{$stire->views}}</div>
-                                    </div>
-                                    <div class="news-details">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="news-date"><i class="fas fa-calendar-alt"></i> {{date('M d, Y', strtotime($stire->created_at))}}</div>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{'/?categorie='.$stire->categorie_id}}">
-                                                    <div class="news-cat float-right"><i class="fas fa-tags"></i> {{$stire->nume_categorie}}</div>
-                                                </a>
-                                            </div>
-                                        </div>                            
-                                    </div>
-                                    <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <div class="news-title">{{$stire->titlu}}</div>
-                                    </a>
-                                    <p>{{$stire->introducere}}...</p>
-                                    <div class="row">
+                                    {{-- <p>{{$stire->introducere}}...</p> --}}
+                                    <div class="row pt-3">
                                         <div class="col-6">
                                             <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                                 <div class="news-link">Citeşte mai mult</div>
                                             </a>
                                         </div>
                                         <div class="col-6">
-                                            <div class="float-right"><i class="fas fa-user"></i><em> {{$stire->autor}}</em></div>
+                                            <div class="float-right" style="font-weight: bold; font-style: italic;">
+                                                <span style="font-weight: normal;">by </span>{{$stire->autor}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
