@@ -7,7 +7,8 @@
             <i class="fas fa-times fa-2x" style="color: #323b3e;"></i>
         </div>
         <div class="sidebar-header">
-            <a href="/"><img src="{{URL::asset('img/logo-gri.png')}}" alt="Logo Fotbal Arena" style="margin-left: -35px;"></a>
+            <a href="/">
+                <img src="{{URL::asset('img/logo-gri.png')}}" alt="Logo Fotbal Arena" style="height: 95px !important;"></a>
         </div>
 
         <ul class="list-unstyled components">
