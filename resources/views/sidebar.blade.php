@@ -8,7 +8,7 @@
         </div>
         <div class="sidebar-header">
             <a href="/">
-                <img src="{{URL::asset('img/logo-gri.png')}}" alt="Logo Fotbal Arena" style="height: 95px !important;"></a>
+                <img src="{{URL::asset('img/logo-gri-2.png')}}" alt="Logo Fotbal Arena" style="height: 95px !important;"></a>
         </div>
 
         <ul class="list-unstyled components">
