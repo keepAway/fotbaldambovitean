@@ -139,7 +139,6 @@
                     }
 
                     $(id).attr("href", href);
-                    console.log(id, href);
                 });
             }
         });

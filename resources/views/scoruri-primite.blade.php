@@ -37,11 +37,11 @@
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
                         <div class="col-sm-5">
-                            <select class="form-control" id="ligi" style="font-weight: bold;">
+                            <select class="form-control font-weight-bold" id="ligi" style="width: 100% !important; border-radius: 0 !important;">
                                 @foreach($ligi as $liga)
-                                    <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
-                                        {{($__liga == $liga->$liga || $__serie == $liga->serie ? 'selected' : '')}}>
-                                        Liga {{$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
+                                    <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == NULL ? "" : $liga->serie}}" 
+                                        {{($liga->liga == $__liga && $liga->serie == $__serie ? 'selected' : '')}}>
+                                        Liga {{$liga->liga}} {{$liga->serie != NULL ? ', ' . 'Seria ' . $liga->serie : ''}}
                                     </option>
                                 @endforeach
                             </select>
@@ -192,10 +192,10 @@
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
                         <div class="col-sm-12">
-                            <select class="form-control font-weight-bold w-auto m-auto" id="mobile-ligi">
+                            <select class="form-control font-weight-bold w-auto m-auto" id="mobile-ligi" style="width: 100% !important; border-radius: 0 !important;">
                                 @foreach($ligi as $liga)
                                     <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
-                                        {{($__liga == $liga->$liga || $__serie == $liga->serie ? 'selected' : '')}}>
+                                        {{($liga->liga == $__liga && $liga->serie == $__serie ? 'selected' : '')}}>
                                         Liga {{$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
                                     </option>
                                 @endforeach

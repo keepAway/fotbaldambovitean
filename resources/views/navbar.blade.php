@@ -7,7 +7,7 @@
             <i class="fas fa-bars fa-lg" id="sidebarCollapse" style="font-size: 30px; font-weight: bold !important; vertical-align: sub; color: #fff; cursor: pointer;"></i> &nbsp;
         </span>
         
-        <span class="d-inline-block d-lg-none ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="d-inline-block d-lg-none ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
             <i class="fas fa-bars fa-lg" id="sidebarCollapse" style="font-size: 30px; font-weight: bold !important; vertical-align: sub; color: #f4d90c; cursor: pointer;"></i>
         </span>
 
