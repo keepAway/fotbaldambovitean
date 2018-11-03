@@ -832,3 +832,14 @@ input:checked + .slider:before {
 #dismiss {
     top: 23px !important;
 }
+
+.close {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #838383;
+    background-color: #323b3e;
+    border-radius: 100%;
+    text-align: center;
+    margin-right: 6px;
+    line-height: 40px;
+}

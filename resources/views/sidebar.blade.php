@@ -3,8 +3,8 @@
 @endphp
 <div class="wrapper">
     <nav id="sidebar">       
-        <div id="dismiss">
-            <i class="fas fa-arrow-left" style="font-size: 30px; font-weight: bold !important; vertical-align: sub; color: #323b3e; cursor: pointer;"></i>
+        <div class="close" id="dismiss">
+            <i class="fas fa-arrow-left" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
         </div>
         <div class="sidebar-header">
             <a href="/">
