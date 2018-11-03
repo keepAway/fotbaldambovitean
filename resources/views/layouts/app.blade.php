@@ -20,10 +20,10 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <link rel="stylesheet" href="{{ asset('css/app.css?v=1.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css?v=1.1') }}">
-        <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css?v=1.1') }}">
-        <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css?v=1.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
