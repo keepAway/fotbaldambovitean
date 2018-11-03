@@ -65,7 +65,7 @@
                                 <span style="font-weight: normal;">by </span>{{$stire->autor}}
                             </div>
                         </div>
-                        <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" alt="Fotbal Arena">
+                        <img src="{{URL::asset('public/images/'.$stire->imagine)}}" alt="Fotbal Arena">
                     </div>
                     <div class="news-detail-content">{!!html_entity_decode($stire->continut)!!}</div>
                     <div class="news-detail-share mt-5 px-3 py-2 text-center">
