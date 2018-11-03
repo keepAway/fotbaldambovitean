@@ -87,7 +87,7 @@ main {
     position: fixed;
     top: 0;
     left: -250px;
-    height: 100vh;
+    height: 100% !important;
     z-index: 999;
     /*background: #7386D5;*/
     /*background: #455a64;*/
@@ -138,7 +138,7 @@ main {
 }
 
 #sidebar .sidebar-header img {
-    height: 50px;
+    /*height: 50px;*/
     width: auto;
 }
 
