@@ -3,13 +3,13 @@
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" style="padding-left: 15px; padding-right: 15px;">
-        <button type="button" id="sidebarCollapse" class="btn btn-dark">
-            <i class="fas fa-align-justify fa-lg"></i> &nbsp;
-            <span style="font-size: 15px; font-weight: bold !important; vertical-align: sub;"></span>
-        </button>
-        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-align-justify fa-lg"></i>
-        </button>
+        <span style="margin-left: 15px;">
+            <i class="fas fa-bars fa-lg" id="sidebarCollapse" style="font-size: 30px; font-weight: bold !important; vertical-align: sub; color: #fff; cursor: pointer;"></i> &nbsp;
+        </span>
+        
+        <span class="d-inline-block d-lg-none ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars fa-lg" id="sidebarCollapse" style="font-size: 30px; font-weight: bold !important; vertical-align: sub; color: #f4d90c; cursor: pointer;"></i>
+        </span>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto pl-2 pt-2">

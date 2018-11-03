@@ -4,7 +4,7 @@
 <div class="wrapper">
     <nav id="sidebar">       
         <div id="dismiss">
-            <i class="fas fa-times fa-2x" style="color: #323b3e;"></i>
+            <i class="fas fa-arrow-left" style="font-size: 30px; font-weight: bold !important; vertical-align: sub; color: #323b3e; cursor: pointer;"></i>
         </div>
         <div class="sidebar-header">
             <a href="/">
