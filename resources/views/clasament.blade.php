@@ -3,6 +3,8 @@
     $tab         = Request::get('tab') ? Request::get('tab') :  NULL;
     $current_url = Request::fullUrl();
 
+    $page = Request::get('page') ? Request::get('page') : 1;
+
     // Construct sharing URL without using any script
     $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$current_url;
     $twitterURL = 'https://twitter.com/share?url='.$current_url.'&amp;';  
@@ -58,8 +60,7 @@
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
-                    <label style="font-size: 20px; margin-left: 5px;"> Clasament </label> |
-                    Liga {{$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
+                    <label style="font-size: 20px; margin-left: 0px;"> Clasament </label>
                 </div>
 
                 @include('parts/block-penalizare')
@@ -158,6 +159,20 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
+                    <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
+                        <div class="px-3 py-2">
+                            <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                            <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                            <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                            <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                            <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                            <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,23 +289,29 @@
                 <div class="col-sm-12 text-center">
                     {{$etape->appends(\Request::except('page'))->links()}}
                 </div>
-                <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
-                    <div class="px-3 py-2">
-                        <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
+                    <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
+                        <div class="px-3 py-2">
+                            <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                            <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                            <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                            <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                            <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                            <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Etapa tablet/mobile -->
+        <a href="#etape" id="etape"></a>
         <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
+                <div class="col-xs-10 font-weight-bold" style="margin-left: 5px; height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                    Etapa <span style="font-weight: bold; font-style: italic; font-size: 16px">{{$page}}</span>
+                </div>
                 @if(Auth::check() && Auth::user()->role == 'admin')
-                    <div class="pl-3 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
+                    <div class="col-xs-2 font-weight-bold" style="margin-left: 10px; height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                         <form action="{{route('etapa-curenta')}}" method="POST" class="prevent-resubmit">
                         {{ csrf_field() }}
                         <input type="hidden" name="liga" value="{{$liga}}">
@@ -302,10 +323,6 @@
                         </form>
                     </div>
                 @endif
-                <div class="col-sm-11 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
-                    Liga {{$liga}} {{isset($seria) && $seria != NULL ? ' | Seria ' . $seria : ''}}
-                    <label style="font-size: 16px; margin-left: 5px;"> Etape</label>
-                </div>
                 <div class="col-sm-12" style="padding-right: 5px; padding-left: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
                         <table class="table table-hover text-center">
@@ -362,17 +379,31 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-sm-12 text-center">
-                    {{ $etape->appends(\Request::except('page'))->links() }}
-                </div>
-                <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
-                    <div class="px-3 py-2">
-                        <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                <div class="col-sm-12" style="margin-right: 5px; margin-left: 5px; margin-bottom: 15px;">
+                    <div class="row">
+                        <div class="col-3">
+                            <span class="btn btn-dark btn-sm float-right prev" style="height: 100%; width: 50%; font-weight: bold;">
+                                <span style="vertical-align: -webkit-baseline-middle;">
+                                    <i class="fas fa-angle-left fa-lg"></i>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="col-6">
+                            <select class="form-control font-weight-bold" id="change-etapa" style="width: 100% !important; border-radius: 0 !important;">
+                                @for($i=1; $i<=$pagesNumber; $i++)
+                                    <option class="option text-center" {{$i == $page ? 'selected' : ''}} value="{{$i}}">
+                                        Etapa {{$i}}
+                                    </option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <span class="btn btn-dark btn-sm float-left next" style="height: 100%; width: 50%; font-weight: bold;">
+                                <span style="vertical-align: -webkit-baseline-middle;">
+                                    <i class="fas fa-angle-right fa-lg"></i>
+                                </span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -403,4 +434,37 @@
             </div></div>
     </div>
 </div>
+<script>
+    let page = '{{$page}}';
+    let liga = '{{$liga}}'
+    let serie = '{{$seria}}';
+
+    $('.prev').click(function(){
+        let prev = (parseInt(page) - 1);
+        if(serie !== '') {
+            window.location.href = '?seria='+serie+'&page='+prev+'#etape';
+        } else {
+            window.location.href = '?page='+prev+'#etape';
+        }
+    });
+
+    $('.next').click(function(){
+        let next = (parseInt(page) + 1);
+        if(serie !== '') {
+            window.location.href = '?seria='+serie+'&page='+next+'#etape';
+        } else {
+            window.location.href = '?page='+next+'#etape';
+        }
+    });
+
+    $('#change-etapa').change(function(){
+        let page = $(this).val();
+        if(serie !== '') {
+            window.location.href = '?seria='+serie+'&page='+page+'#etape';
+        } else {
+            window.location.href = '?page='+page+'#etape';
+        }
+    });
+
+</script>
 @endsection

@@ -155,7 +155,9 @@ class HomeController extends Controller
             $etapa_curenta = $__check['etapa_curenta'];
         }
 
-        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC')->paginate($page);
+        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC');        
+        $pagesNumber = ($etape->get()->count() / $page);
+        $etape  = $etape->paginate($page);
 
         return view('clasament')->with([
             'liga'              => $liga,
@@ -163,10 +165,10 @@ class HomeController extends Controller
             'echipe'            => $echipe,
             'etape'             => $etape,
             'etapa_curenta'     => $etapa_curenta,
-            'current_page'      => 10,
             'echipe_penalizate' => $echipe_penalizate,
             'pozitieStatus'     => $pozitieStatus,
-            'pozitiiValide'     => $pozitiiValide
+            'pozitiiValide'     => $pozitiiValide,
+            'pagesNumber'       => $pagesNumber
         ]);
     }
 
