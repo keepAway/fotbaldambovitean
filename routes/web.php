@@ -56,5 +56,8 @@ Route::get('/confidentialitate', 'HomeController@confidentialitate')->name('conf
 
 Route::post('/clasament/adauga-penalizare', 'HomeController@adaugaPenalizare')->name('adauga-penalizare');
 
+Route::get('/etapa-curenta', 'HomeController@getEtapaCurenta')->name('get-etapa-curenta');
+
+
 
 

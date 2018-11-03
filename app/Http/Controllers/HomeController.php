@@ -966,4 +966,9 @@ class HomeController extends Controller
             }
         }
     }
+
+    public function getEtapaCurenta() {
+        $etapaCurenta = EtapaCurenta::all();
+        return response()->json(['etapaCurenta' => $etapaCurenta]);
+    }
 }
