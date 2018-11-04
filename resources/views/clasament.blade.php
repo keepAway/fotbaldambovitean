@@ -384,7 +384,7 @@
                         <div class="col-3">
                             <span class="btn btn-dark btn-sm float-right prev" style="height: 100%; width: 50%; font-weight: bold;">
                                 <span style="vertical-align: -webkit-baseline-middle;">
-                                    <i class="fas fa-angle-left fa-lg"></i>
+                                    <i class="fas fa-arrow-left fa-lg"></i>
                                 </span>
                             </span>
                         </div>
@@ -400,7 +400,7 @@
                         <div class="col-3">
                             <span class="btn btn-dark btn-sm float-left next" style="height: 100%; width: 50%; font-weight: bold;">
                                 <span style="vertical-align: -webkit-baseline-middle;">
-                                    <i class="fas fa-angle-right fa-lg"></i>
+                                    <i class="fas fa-arrow-right fa-lg"></i>
                                 </span>
                             </span>
                         </div>

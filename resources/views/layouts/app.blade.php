@@ -20,7 +20,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <link rel="stylesheet" href="{{ asset('css/app.css?v=1.4') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css?v=2.1') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css?v=1.1') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
