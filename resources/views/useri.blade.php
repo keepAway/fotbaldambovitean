@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+@section('title', 'Users List')
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2"></div>

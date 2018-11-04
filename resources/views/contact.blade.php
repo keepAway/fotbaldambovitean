@@ -6,6 +6,8 @@
 
 @extends('layouts.app')
 @section('content')
+@section('title', 'Lasă-ne un mesaj.')
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2"></div>

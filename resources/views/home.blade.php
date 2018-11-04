@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@section('title', '.:: Fotbal Arena ::.')
 <style type="text/css">
     .forma {
         width: 20px;

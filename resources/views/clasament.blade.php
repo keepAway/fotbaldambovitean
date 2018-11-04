@@ -20,6 +20,7 @@
 
 @extends('layouts.app')
 @section('content')
+@section('title', 'Clasament Liga ' . $liga . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page)
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
@@ -60,7 +61,8 @@
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
-                    <label style="font-size: 20px; margin-left: 0px;"> Clasament </label>
+                    <label style="font-size: 20px; margin-left: 5px;"> Clasament </label> | 
+                    Liga {{$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
 
                 @include('parts/block-penalizare')

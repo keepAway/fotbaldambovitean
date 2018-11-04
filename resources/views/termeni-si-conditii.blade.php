@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+@section('title', 'Termeni și condiții')
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-2"></div>
