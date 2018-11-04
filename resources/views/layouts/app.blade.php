@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+@php $shareUrl = Request::fullUrl(); @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -11,12 +12,30 @@
           gtag('config', 'UA-128595058-1');
         </script>
 
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                  appId      : '2136989686622565',
+                  cookie     : true,
+                  xfbml      : true,
+                  version    : 'v3.2'
+                });
+                  
+                FB.AppEvents.logPageView();
+            };
+        </script>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        {{-- facebook --}}
+        <meta property="og:url"           content="{{$shareUrl}}" />
+        <meta property="og:type"          content="fotbal-arena.ro" />
+        <meta property="og:title"         content="Fotbal Arena" />
 
         <title>
             {{-- {{ config('app.name', 'Laravel') }} --}}

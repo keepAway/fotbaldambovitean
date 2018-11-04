@@ -47,15 +47,8 @@
         </div>
     </div>
 
-    {{-- <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v3.1&appId=2136989686622565&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script> --}}
-    
+    <div id="fb-root"></div>
+
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
@@ -168,7 +161,7 @@
                 <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
                     <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
                         <div class="px-3 py-2">
-                            <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                            <a href="{{$facebookURL}}" class="" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
                             <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
                             <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
                             <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
@@ -420,16 +413,6 @@
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <label style="font-size: 16px; margin-left: 5px;"> Comenteaza etapa</label>
                 </div>
-                <div id="fb-root"></div>
-                <script>
-                    (function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s); js.id = id;
-                        js.src = 'https://connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v3.1&appId=2136989686622565&autoLogAppEvents=1';
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));
-                </script>
                 <div class="col-sm-12">
                     <div class="fb-comments" data-href="{{$current_url}}" data-numposts="5" data-width="100%"></div>
                 </div>
