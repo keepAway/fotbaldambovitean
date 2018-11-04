@@ -4,7 +4,7 @@
 <div class="wrapper">
     <nav id="sidebar">       
         <div class="close" id="dismiss">
-            <i class="fas fa-arrow-left" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
+            <i class="fas fa-arrow-left" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer; {{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}"></i>
         </div>
         <div class="sidebar-header">
             <a href="/">
