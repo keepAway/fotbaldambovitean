@@ -8,7 +8,7 @@
         </div>
         <div class="sidebar-header">
             <a href="/">
-                <img src="{{URL::asset('img/logo-gri-2.png')}}" alt="Logo Fotbal Arena" style="height: 95px !important;"></a>
+                <img src="{{URL::asset('img/logo-gri-3.png')}}" alt="Logo Fotbal Arena" style="height: 95px !important;"></a>
         </div>
 
         <ul class="list-unstyled components">
@@ -18,6 +18,7 @@
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2]) }}" id="liga_2" class="sidebar-link{{$current_url == route('clasament', ['liga' => 2]) ? " active" : ""}}">Liga 2</a>
             </li>
+
             <li class="nav-link" style="padding: 0">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ str_contains($current_url, '/liga/3') ? ' active' : '' }}">Liga 3</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">

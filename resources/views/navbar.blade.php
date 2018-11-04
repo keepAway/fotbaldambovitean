@@ -24,9 +24,9 @@
                         <a class="nav-link{{$current_url == route('admin-stiri') ? " active" : ""}}" href="{{ route('admin-stiri') }}">Adauga stire</a>
                     </li>
                 @endif
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link{{$current_url == route('contact') ? " active" : ""}}" href="{{ route('contact') }}">Contact</a>
-                </li>
+                </li>-->
                 @guest
                     <li class="nav-item">
                         <a class="nav-link{{$current_url == route('login') ? " active" : ""}}" href="{{ route('login') }}">{{ __('Login') }}</a>
