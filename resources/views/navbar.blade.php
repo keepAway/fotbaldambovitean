@@ -3,8 +3,8 @@
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" style="padding-left: 15px; padding-right: 15px;">
-        <div class="close" id="dismiss-open">
-            <i class="fas fa-arrow-right" id="sidebarCollapse" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
+        <div class="close dismiss-open" id="sidebarCollapse">
+            <i class="fas fa-arrow-right" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
         </div>
 
         <span class="d-inline-block d-lg-none ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
@@ -50,7 +50,7 @@
                         </form>
                     </li>
                 @endguest
-                <li class="nav-item social-facebook" style="{{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
+                <li class="nav-item social-facebook" style="margin-left: 8px !important; {{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
                     <a class="nav-link" href="https://www.facebook.com/fotbaldambovitean/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </li>
             </ul>
