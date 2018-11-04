@@ -887,7 +887,7 @@ class HomeController extends Controller
 
         $etapa_curenta = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
         $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
-        $__check = ScoruriTrimise::where('liga', $liga)->orderBy('etapa', 'ASC')->get();
+        $__check = ScoruriTrimise::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->get();
 
         $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
 
