@@ -18,7 +18,7 @@
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2]) }}" id="liga_2" class="sidebar-link{{$current_url == route('clasament', ['liga' => 2]) ? " active" : ""}}">Liga 2</a>
             </li>
-            <li class="nav-link" style="padding: 0">
+            {{-- <li class="nav-link" style="padding: 0">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ str_contains($current_url, '/liga/3') ? ' active' : '' }}">Liga 3</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li class="nav-link" style="padding: 0">
@@ -52,7 +52,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 4 ]) }}" id="liga_4" class="sidebar-link{{$current_url == route('clasament', ['liga' => 4 ]) ? " active" : ""}}">Liga 4</a>
             </li>
