@@ -90,7 +90,7 @@ class HomeController extends Controller
         $i=0;
         $j=0;
         foreach ($echipe as $echipa) {
-            $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id');
+            $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
             $penalizare = Penalizari::where('echipa_id', $echipa->id)->first();
             
             if(!empty($penalizare)) {
@@ -708,9 +708,10 @@ class HomeController extends Controller
 
             'NORD' => 7000,
             'SUD'  => 7001,
+            'juniori' => 6687
         ];
 
-        if($etapa < 26) {
+        if($etapa < 34) {
             header("Refresh:0; url=/parse-jquery/".$liga."/".$serie."/" . ($etapa + 1));
         }
 
