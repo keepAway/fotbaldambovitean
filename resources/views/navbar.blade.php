@@ -3,10 +3,10 @@
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" style="padding-left: 15px; padding-right: 15px;">
-        <span style="margin-left: 15px;">
-            <i class="fas fa-bars fa-lg" id="sidebarCollapse" style="font-size: 25px; font-weight: bold !important; vertical-align: sub; color: #fff; cursor: pointer;"></i> &nbsp;
-        </span>
-        
+        <div class="close" id="dismiss-open">
+            <i class="fas fa-arrow-right" id="sidebarCollapse" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
+        </div>
+
         <span class="d-inline-block d-lg-none ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
             <i class="fas fa-bars fa-lg" id="sidebarCollapse" style="font-size: 25px; font-weight: bold !important; vertical-align: sub; color: #f4d90c; cursor: pointer;"></i>
         </span>
