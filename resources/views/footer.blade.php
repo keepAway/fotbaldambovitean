@@ -22,7 +22,7 @@
                         <div class="nav-link">Urmăreşte-ne</div>
                     </li>
                     <li class="nav-item social-facebook" style="{{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
-                        <a class="nav-link" href="https://www.facebook.com/fotbaldambovitean/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="nav-link" href="https://www.facebook.com/fotbalarena/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </li>
                 </ul>
             </div>
