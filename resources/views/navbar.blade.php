@@ -3,7 +3,7 @@
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" style="padding-left: 15px; padding-right: 15px;">
-        <div class="close dismiss-open" id="sidebarCollapse">
+        <div class="close dismiss-open" id="sidebarCollapse" style="{{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
             <i class="fas fa-arrow-right" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
         </div>
 
