@@ -42,8 +42,8 @@
             @yield('title')
         </title>
         
-        <link rel="stylesheet" href="{{ asset('css/app.css?v=2.1') }}">
-        <link rel="stylesheet" href="{{ asset('css/style.css?v=2.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css?v=3.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css?v=3.1') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
