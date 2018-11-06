@@ -1,17 +1,21 @@
 @php
     $current_url = Request::fullUrl();
+    $socialURL = urlencode(Request::fullUrl());
+    $socialTitle = str_replace( ' ', '%20', $stire->titlu);
+
     $pinterestThumbnail = URL::asset('storage/images/'.$stire->imagine);
+
     // Construct sharing URL without using any script
-    $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$current_url;
-    $twitterURL = 'https://twitter.com/share?text='.$stire->titlu.'&amp;url='.$current_url.'&amp;';  
-    $googleURL = 'https://plus.google.com/share?url='.$current_url;
-    $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$current_url.'&amp;title='.$stire->titlu;
-    $pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$current_url.'&amp;media='.$pinterestThumbnail.'&amp;description='.$stire->titlu;
-    $whatsappURL = 'whatsapp://send?text='.$stire->titlu . ' ' . $current_url;
+    $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$socialURL;
+    $twitterURL = 'https://twitter.com/share?text='.$socialTitle.'&amp;url='.$socialURL.'&amp;';  
+    $googleURL = 'https://plus.google.com/share?url='.$socialURL;
+    $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$socialURL.'&amp;title='.$socialTitle;
+    $pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$socialURL.'&amp;media='.$pinterestThumbnail.'&amp;description='.$socialTitle;
+    $whatsappURL = 'whatsapp://send?text='.$socialTitle . ' ' . $socialURL;
 
     // Mail to
-    $body = 'Iata linkul catre articol: '.$current_url;
-    $mailURL = 'mailto:?Subject='.$stire->titlu.'&Body='.$body;
+    $body = 'Iata linkul catre articol: '.$socialURL;
+    $mailURL = 'mailto:?Subject='.$socialTitle.'&Body='.$body;
 @endphp
 
 @extends('layouts.app')
@@ -61,7 +65,7 @@
                         </div>
                         <h3 class="mb-4 mt-3">{{$stire->titlu}}</h3>
                     </div>
-                    <div class="news-detail-img mb-4">
+                    <div class="news-detail-img mb-4 text-center">
                         <div class="news-hr">
                             <div class="float-right" style="font-weight: bold; font-style: italic; color: #888;">
                                 <span style="font-weight: normal;">by </span>{{$stire->autor}}
@@ -77,8 +81,8 @@
                             <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
                             <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
                             <a href="{{$pinterestURL}}" class="social-share m-1" target="_blank"><i class="fab fa-pinterest-square fa-3x"></i></a>
-                            <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                            <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
+                            <a href="{{$mailURL}}" class="m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                            <a href="{{$whatsappURL}}" class="m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
                         </div>
                     </div>
                 </div>
@@ -182,5 +186,27 @@
 
             }
         });
+    });
+
+    var popupMeta = {
+        width: 400,
+        height: 400
+    }
+    $(document).on('click', '.social-share', function(event){
+        event.preventDefault();
+
+        var vPosition = ($(window).width() - popupMeta.width) / 2,
+            hPosition = ($(window).height() - popupMeta.height) / 2;
+
+        var url = $(this).attr('href');
+        var popup = window.open(url, 'Social Share',
+            'width='+popupMeta.width+',height='+popupMeta.height+
+            ',left='+vPosition+',top='+hPosition+
+            ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');
+
+        if (popup) {
+            popup.focus();
+            return false;
+        }
     });
 </script>

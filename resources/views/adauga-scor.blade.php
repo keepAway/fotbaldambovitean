@@ -105,10 +105,10 @@
                                             @if(Auth::check())
                                             <td class="align-middle">
                                                 <div style="white-space: nowrap;">
-                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                     <a class="toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'danger' : 'success'}} display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600;"></i>
                                                     </a>
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp
                                                     @php
                                                         if($etapa->contestatie != '') {
@@ -249,10 +249,10 @@
                                             @if(Auth::check())
                                             <td colspan="2" class="align-middle text-right">
                                                 <div>
-                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                     <a class="mobile-toggle-plus-minus btn btn-sm btn-{{($etapa->contestatie != '' || $etapa->incident != '' || $etapa->alte_detalii != '') ? 'danger' : 'success'}} mobile-display-details-container" data-id="{{$etapa->id}}" style="color: #fff;">
                                                         <i class="plus-minus fas fa-plus" style="font-weight: 600"></i>
                                                     </a>
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
                                                     @php $i = 0; $j = 0; $k = 0; @endphp
                                                     @php
                                                         if($etapa->contestatie != '') {
