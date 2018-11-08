@@ -63,7 +63,7 @@
                             <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                 <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
                             </a>
-                            <div class="news-img">
+                            <div class="news-img-block">
                                 <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                     <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                 </a>

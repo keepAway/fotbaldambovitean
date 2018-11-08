@@ -42,8 +42,8 @@
             @yield('title')
         </title>
         
-        <link rel="stylesheet" href="{{ asset('css/app.css?v=2.1') }}">
-        <link rel="stylesheet" href="{{ asset('css/style.css?v=2.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css?v=3.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css?v=3.1') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
@@ -54,7 +54,7 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/custom.js') }}"></script>
+        <script src="{{ asset('js/custom.js?v=1.1') }}"></script>
         <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
         <script src="{{ asset('js/mask.js') }}"></script>
         <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>

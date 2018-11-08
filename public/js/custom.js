@@ -14,12 +14,23 @@ jQuery(document).ready(function($){
 });
 
 window.onload = function() {
-    // News images same height
+    // News same height
     if ($('.news-block').length > 0) {
         var max =  0;
 
         $('.news-block').each(function(){
-            var curH = $(this).find('.news-img').outerHeight();
+            var curC = $(this).find('.news-title').outerHeight();
+
+            if ( curC > max )
+            {
+                max = curC;
+            }
+        });
+
+        $('.news-block .news-title').height(max);
+
+        $('.news-block').each(function(){
+            var curH = $(this).find('.news-img-block').outerHeight();
 
             if ( curH > max )
             {
@@ -27,6 +38,6 @@ window.onload = function() {
             }
         });
 
-        $('.news-block .news-img').height(max);
+        $('.news-block .news-img-block').height(max);
     }
 }

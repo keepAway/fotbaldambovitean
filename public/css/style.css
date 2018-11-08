@@ -377,12 +377,12 @@ a.article:hover {
     -ms-transform: translate(0px, -5px);
     transform: translate(0px, -5px);
 }
-.news-img {
+.news-img-block {
     position: relative;
     overflow: hidden;
     width: 100%;
 }
-.news-img img:hover {
+.news-img-block img:hover {
     -webkit-transition: all 400ms ease-in;
     -webkit-transform: scale(1.05);
     -ms-transition: all 400ms ease-in;
@@ -684,7 +684,7 @@ input:checked + .slider:before {
     width: 15px;
     text-align:center;
     margin-top: -7px !important;
-    margin-left: -5px !important;
+    margin-left: -100px !important;
     float: right;
     position: absolute;
 }
@@ -795,8 +795,23 @@ input:checked + .slider:before {
     text-decoration: underline;
 }
 
+.news-img-block img {
+    max-height: 300px;
+}
+
+.news-detail-img img {
+    max-width: 600px;
+    max-height: 400px;
+}
+
 
 /* Breakpoints */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .news-img-block img {
+        max-height: 250px;
+    }
+}
+
 @media (min-width: 992px) {
     .navbar .nav-item.social-facebook {
         margin-left: 50px;
