@@ -119,10 +119,10 @@
                                         @if ($stire->pin == 1)
                                         <div class="news-top"><b>TOP</b></div>
                                         @endif
-                                        <div class="news-views">
+                                        {{-- <div class="news-views">
                                             <i class="fas fa-eye fa-lg"></i>
                                             <span style="font-style: normal; font-weight: bold;">{{$stire->views}}</span>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                     {{-- <p>{{$stire->introducere}}...</p> --}}
                                     <div class="row pt-3">
