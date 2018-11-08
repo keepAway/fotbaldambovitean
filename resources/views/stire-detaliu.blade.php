@@ -114,7 +114,7 @@
                                     </a>
                                     <div class="news-img">
                                         <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                            <img src="{{URL::asset('storage/images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
+                                            <img src="{{URL::asset('../public_html/images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                         </a>
                                         @if ($stire->pin == 1)
                                         <div class="news-top"><b>TOP</b></div>
