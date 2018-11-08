@@ -112,17 +112,17 @@
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                         <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
                                     </a>
-                                    <div class="news-img">
+                                    <div class="news-img-block">
                                         <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                             <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                         </a>
                                         @if ($stire->pin == 1)
                                         <div class="news-top"><b>TOP</b></div>
                                         @endif
-                                        {{-- <div class="news-views">
+                                        <div class="news-views">
                                             <i class="fas fa-eye fa-lg"></i>
                                             <span style="font-style: normal; font-weight: bold;">{{$stire->views}}</span>
-                                        </div> --}}
+                                        </div>
                                     </div>
                                     {{-- <p>{{$stire->introducere}}...</p> --}}
                                     <div class="row pt-3">
