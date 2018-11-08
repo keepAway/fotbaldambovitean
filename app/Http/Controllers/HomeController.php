@@ -762,7 +762,7 @@ class HomeController extends Controller
         $view->save();        
 
         // $data['stire_imagine']->storeAs('public/images', $stire->id .'_'.$data['stire_imagine']->getClientOriginalName());
-        $data['stire_imagine']->move(base_path('../public_html/public/images'), $stire->id .'_'.$data['stire_imagine']->getClientOriginalName());
+        $data['stire_imagine']->move(base_path('../public_html/images'), $stire->id .'_'.$data['stire_imagine']->getClientOriginalName());
         // $request->image->move(base_path('public/images'), $filename);
 
         return redirect()->back()->with('status', 'Stirea a fost adaugata.');
