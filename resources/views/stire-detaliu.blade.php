@@ -74,16 +74,8 @@
                         <img src="{{URL::asset('images/'.$stire->imagine)}}" alt="Fotbal Arena">
                     </div>
                     <div class="news-detail-content">{!!html_entity_decode($stire->continut)!!}</div>
-                    <div class="news-detail-share mt-5 px-3 py-2 text-center">
-                        <div class="px-3 py-2">
-                            <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                            <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                            <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                            <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                            <a href="{{$pinterestURL}}" class="social-share m-1" target="_blank"><i class="fab fa-pinterest-square fa-3x"></i></a>
-                            <a href="{{$mailURL}}" class="m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                            <a href="{{$whatsappURL}}" class="m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
-                        </div>
+                    <div class="news-detail-share pt-5 pb-5 text-center">
+                        <div class="addthis_inline_share_toolbox_igh9"></div>
                     </div>
                 </div>
                 @if ( count($alte_stiri) > 0 )
