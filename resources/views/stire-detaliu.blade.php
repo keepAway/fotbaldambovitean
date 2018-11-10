@@ -1,21 +1,5 @@
 @php
     $current_url = Request::fullUrl();
-    $socialURL = urlencode(Request::fullUrl());
-    $socialTitle = str_replace( ' ', '%20', $stire->titlu);
-
-    $pinterestThumbnail = URL::asset('storage/images/'.$stire->imagine);
-
-    // Construct sharing URL without using any script
-    $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$socialURL;
-    $twitterURL = 'https://twitter.com/share?text='.$socialTitle.'&amp;url='.$socialURL.'&amp;';  
-    $googleURL = 'https://plus.google.com/share?url='.$socialURL;
-    $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$socialURL.'&amp;title='.$socialTitle;
-    $pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$socialURL.'&amp;media='.$pinterestThumbnail.'&amp;description='.$socialTitle;
-    $whatsappURL = 'whatsapp://send?text='.$socialTitle . ' ' . $socialURL;
-
-    // Mail to
-    $body = 'Iata linkul catre articol: '.$socialURL;
-    $mailURL = 'mailto:?Subject='.$socialTitle.'&Body='.$body;
 @endphp
 
 @extends('layouts.app')

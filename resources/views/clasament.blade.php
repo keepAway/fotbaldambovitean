@@ -2,20 +2,7 @@
     $seria       = Request::get('seria') ? Request::get('seria') :  NULL;
     $tab         = Request::get('tab') ? Request::get('tab') :  NULL;
     $current_url = Request::fullUrl();
-
     $page = Request::get('page') ? Request::get('page') : 1;
-
-    // Construct sharing URL without using any script
-    $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$current_url;
-    $twitterURL = 'https://twitter.com/share?url='.$current_url.'&amp;';  
-    $googleURL = 'https://plus.google.com/share?url='.$current_url;
-    $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$current_url.'&amp:';
-    $whatsappURL = 'whatsapp://send?text=Clasament' . ' ' . $current_url;
-
-    // Mail to
-    $body = 'Iata linkul catre articol: '.$current_url;
-    $mailURL = 'mailto:?Subject=Clasament&Body='.$body;
-
 @endphp
 
 @extends('layouts.app')
@@ -161,12 +148,6 @@
                 <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
                     <div class="news-detail-share pt-3 pb-3 text-center m-auto">
                         <div class="addthis_inline_share_toolbox_igh9"></div>
-                        {{-- <a href="{{$facebookURL}}" class="" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -286,12 +267,6 @@
                 <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
                     <div class="news-detail-share pt-3 pb-3 text-center m-auto">
                         <div class="addthis_inline_share_toolbox_igh9"></div>
-                        {{-- <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -402,12 +377,6 @@
                 <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
                     <div class="news-detail-share pt-3 pb-3 text-center m-auto">
                         <div class="addthis_inline_share_toolbox_igh9"></div>
-                        {{-- <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a> --}}
                     </div>
                 </div>
             </div>
