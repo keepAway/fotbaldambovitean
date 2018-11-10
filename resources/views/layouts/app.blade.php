@@ -94,5 +94,7 @@
         </div>
         @include('footer')
         @include('cookie')
+        {{-- share functionality --}}
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5be61ed0fc326e98"></script>
     </body>
 </html>

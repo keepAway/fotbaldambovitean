@@ -94,7 +94,7 @@
                             <tbody>
                                 <?php $i = 1; ?>
                                 @foreach($echipe as $echipa)
-                                <tr>
+                                <tr style="border-bottom: 1px solid #dee2e6 !important;">
                                     <td class="font-weight-bold" style="width: 1%; text-align: center; color: #fff; 
                                         background-color: {{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['culoare'] : '#323b3e'}} !important;" data-toggle="tooltip" data-placement="top" title="{{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['status'] : ''}}">
                                         {{$i++}}.
@@ -130,7 +130,7 @@
                                     <td class="{{$tab == 3 ? 'd-none' : ''}}">
                                         <b>{{$tab == NULL ? $echipa->t_puncte : ($tab == 1 ? $echipa->a_puncte : $echipa->d_puncte)}}</b>
                                     </td>
-                                    <td class="{{$tab == 3 ? 'd-inline-flex' : 'd-none d-sm-inline-flex'}}">
+                                    <td class="{{$tab == 3 ? 'd-inline-flex' : 'd-none d-sm-inline-flex'}}" style="border-top: none !important;">
                                         {{-- <div class="forma" style="background: #656565; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Etapa urmatoare: ">
                                             ?
                                         </div> --}}
@@ -159,15 +159,14 @@
             </div>
             <div class="row">
                 <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
-                    <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
-                        <div class="px-3 py-2">
-                            <a href="{{$facebookURL}}" class="" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                            <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                            <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                            <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                            <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                            <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
-                        </div>
+                    <div class="news-detail-share pt-3 pb-3 text-center m-auto">
+                        <div class="addthis_inline_share_toolbox_igh9"></div>
+                        {{-- <a href="{{$facebookURL}}" class="" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -285,15 +284,14 @@
                     {{$etape->appends(\Request::except('page'))->links()}}
                 </div>
                 <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
-                    <div class="news-detail-share mt-5 px-3 py-2 text-center m-auto">
-                        <div class="px-3 py-2">
-                            <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
-                            <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
-                            <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
-                            <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
-                            <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
-                            <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a>
-                        </div>
+                    <div class="news-detail-share pt-3 pb-3 text-center m-auto">
+                        <div class="addthis_inline_share_toolbox_igh9"></div>
+                        {{-- <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -399,6 +397,17 @@
                                 </span>
                             </span>
                         </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" style="background: #F8F8F8; margin-right: 5px; margin-left: 5px; margin-bottom: 10px;">
+                    <div class="news-detail-share pt-3 pb-3 text-center m-auto">
+                        <div class="addthis_inline_share_toolbox_igh9"></div>
+                        {{-- <a href="{{$facebookURL}}" class="social-share m-1" target="_blank"><i class="fab fa-facebook-square fa-3x"></i></a>
+                        <a href="{{$twitterURL}}" class="social-share m-1" target="_blank"><i class="fab fa-twitter-square fa-3x"></i></a>
+                        <a href="{{$googleURL}}" class="social-share m-1" target="_blank"><i class="fab fa-google-plus-square fa-3x"></i></a>
+                        <a href="{{$linkedInURL}}" class="social-share m-1" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+                        <a href="{{$mailURL}}" class="social-share m-1"><i class="fas fa-envelope-square fa-3x"></i></a>
+                        <a href="{{$whatsappURL}}" class="social-share m-1 d-sm-none"><i class="fab fa-whatsapp-square fa-3x"></i></a> --}}
                     </div>
                 </div>
             </div>
