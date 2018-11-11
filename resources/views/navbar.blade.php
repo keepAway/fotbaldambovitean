@@ -16,6 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link{{$current_url == url('/') ? " active" : ""}}" href="{{ url('/') }}">Stiri</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link{{$current_url == route('trimite-scor', ['liga' => 4]) ? " active" : ""}}" href="{{ route('trimite-scor', ['liga' => 4]) }}">Adauga scor</a>
                 </li>
@@ -29,7 +30,7 @@
                 </li>
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link{{$current_url == route('login') ? " active" : ""}}" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" id="login-modal" style="cursor: pointer;">{{ __('Login') }}</a>
                     </li>
                 @else
                     <li class="nav-item">
@@ -57,3 +58,11 @@
         </div>
     </div>
 </nav>
+
+@include('auth/login')
+
+<script type="text/javascript">
+    $('#login-modal').click(function(){
+        $('.modal').modal('show');
+    });
+</script>
