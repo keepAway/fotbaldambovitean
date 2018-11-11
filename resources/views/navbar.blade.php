@@ -60,9 +60,57 @@
 </nav>
 
 @include('auth/login')
+@include('auth/register')
 
 <script type="text/javascript">
-    $('#login-modal').click(function(){
-        $('.modal').modal('show');
+    $('#login-modal').click(function() {
+        $('.login-modal').modal('show');
+    });
+
+    $('#register-modal').click(function() {
+        $('.login-modal').modal('hide');
+        $('.register-modal').modal('show');
+    });
+
+    $('.loginBtnCustom').click(function(){
+        let email = $('#email').val().trim();
+        let password = $('#password').val().trim();
+        let fields = ['email', 'password'];
+
+        $('#credentials').text('').addClass('d-none');
+
+        fields.forEach(function(item){
+            $('#'+item+'-response').addClass('d-none');
+            $('#'+item).removeClass('is-invalid');
+        });
+        
+        $.ajax({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url: "{{ route('json-login') }}",
+            type: 'POST',
+            data: {
+                email: email,
+                password: password
+            },
+            success: function( response ) {
+
+                if(response.success == false && response.message == '') {
+                    response.errors.forEach(function(item){
+                        $('#'+item).addClass('is-invalid');
+                        $('#'+item+'-response').removeClass('d-none');
+                    });
+                    return;
+                }
+
+                if(response.success == false && response.message != '') {
+                    $('#credentials').text(response.message).removeClass('d-none');
+                    return;
+                }
+
+                if(response.success == true) {
+                    location.reload();
+                }
+            }
+        }); 
     });
 </script>

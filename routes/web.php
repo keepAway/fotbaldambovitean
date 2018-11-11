@@ -60,4 +60,9 @@ Route::get('/etapa-curenta', 'HomeController@getEtapaCurenta')->name('get-etapa-
 
 
 
+///// login & register
+Route::post('login', 'Auth\LoginController@doLogin')->name('json-login');
+
+
+
 
