@@ -2,6 +2,7 @@
 @php $shareUrl = Request::fullUrl(); @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <title>@yield('title')</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128595058-1"></script>
         <script>
@@ -34,16 +35,14 @@
 
         {{-- facebook --}}
         <meta property="og:url"           content="{{$shareUrl}}" />
-        <meta property="og:type"          content="fotbal-arena.ro" />
-        <meta property="og:title"         content="Fotbal Arena" />
-
-        <title>
-            {{-- {{ config('app.name', 'Laravel') }} --}}
-            @yield('title')
-        </title>
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="@yield('title')" />
+        <meta property="og:description"   content="@yield('description')" />
+        <meta property="og:image"         content="@yield('image')" />
+        
         
         <link rel="stylesheet" href="{{ asset('css/app.css?v=3.1') }}">
-        <link rel="stylesheet" href="{{ asset('css/style.css?v=5.1') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css?v=5.2') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}">
         <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">

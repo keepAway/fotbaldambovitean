@@ -3,11 +3,17 @@
     $tab         = Request::get('tab') ? Request::get('tab') :  NULL;
     $current_url = Request::fullUrl();
     $page = Request::get('page') ? Request::get('page') : 1;
+    
+    $__title = 'Clasament Liga ' . $liga . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page;
+    $__image = asset('images/1_logo_.jpg');
+    $__description = '#clasament, #rezultate, #etapa' . $page . ', liga' . $liga . ', '. ($seria != '' ? '#seria-' . strtolower($seria) . ', ' : ''). '#fotbaldambovitean, #dambovita';
 @endphp
 
 @extends('layouts.app')
+@section('title', $__title)
+@section('image', $__image)
+@section('description', $__description)
 @section('content')
-@section('title', 'Clasament Liga ' . $liga . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page)
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">

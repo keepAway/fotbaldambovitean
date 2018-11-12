@@ -39,7 +39,7 @@
     </div>
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-7" id="news-wrapper">
+        <div class="col-sm-7 mt-5" id="news-wrapper">
             <div class="row">
                 @foreach ($stiri as $stire)
                     <div class="col-lg-6">
