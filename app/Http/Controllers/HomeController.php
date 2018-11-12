@@ -53,7 +53,7 @@ class HomeController extends Controller
                 ->join('users', 'stiri.user_id', '=', 'users.id')
                     ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
                         ->orderBy('stiri.created_at', 'DESC')
-                            ->paginate(8);
+                            ->paginate(12);
         } else {
             $stiri = Stiri::where('categorie_id', $cat)
                 ->join('views', 'stiri.id', '=', 'views.stire_id')
@@ -62,7 +62,7 @@ class HomeController extends Controller
                     ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
                         ->orderBy('pin', true)
                             ->orderBy('stiri.created_at', 'DESC')
-                                ->paginate(8);
+                                ->paginate(12);
         }
         
         return view('home')->with(['stiri' => $stiri]);       
