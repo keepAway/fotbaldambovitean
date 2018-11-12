@@ -1,5 +1,5 @@
  @if(Auth::check() && Auth::user()->role == 'admin')
-    {{-- <div class="col-sm-12 d-none d-lg-block font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
+    <div class="col-sm-12 d-none d-lg-block font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
         <form action="{{route('adauga-penalizare')}}" method="POST" class="prevent-resubmit" style="display: inline-block !important;">
             {{ csrf_field() }}
             <div class="row">
@@ -21,5 +21,5 @@
                 </div>
             </div>
         </form>
-    </div> --}}
+    </div>
 @endif

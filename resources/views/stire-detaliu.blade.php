@@ -1,10 +1,13 @@
 @php
     $current_url = Request::fullUrl();
+    $__description = '#' . strtolower($stire->nume_categorie) . ' #fotbaldambovitean, #dambovita, #delegari, #fotbal-arena';
 @endphp
 
 @extends('layouts.app')
 @section('content')
-@section('title', $stire->titlu)
+@section("title", $stire->titlu)
+@section("image", asset('images/' . $stire->imagine))
+@section("description", $__description)
 
 <div class="container-fluid">
     <div class="row">
