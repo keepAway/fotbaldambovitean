@@ -113,4 +113,44 @@
             }
         }); 
     });
+
+    $('#register-request').click(function() {
+
+        let name = $('#reg_name').val().trim();
+        let email = $('#reg_email').val().trim();
+        let password = $('#reg_password').val().trim();
+        let password_confirm = $('#reg_password_confirm').val().trim();
+        
+        let fields = ['name', 'email', 'password', 'password_confirm'];
+
+        fields.forEach(function(item){
+            $('#'+item+'_response').addClass('d-none');
+            $('#'+item).removeClass('is-invalid');
+        });
+
+        console.log('outside');
+
+        $.ajax({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url: "{{ route('register') }}",
+            type: 'POST',
+            data: {
+                name: name,
+                email: email,
+                password: password,
+                password_confirm: password_confirm
+            },
+            success: function( response ) {
+                console.log('inside');
+            },
+            error: function( response ) {
+                if(response.status == 422) {
+                    Object.keys(response.responseJSON.errors).forEach(function(key){
+                        $('#reg_'+key).addClass('is-invalid');
+                        $('#'+key+'_response').removeClass('d-none');
+                    });
+                }
+            }
+        });
+    })
 </script>
