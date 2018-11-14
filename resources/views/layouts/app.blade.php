@@ -25,20 +25,21 @@
                 }(document, 'script', 'facebook-jssdk'));
             };
         </script>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" property="og:description" content="@yield('description')">
+        {{-- stiri fotbal, liga a 4-a, campionat, cupa, divizia, rezultate, clasament, dambovita, targoviste --}}
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         {{-- facebook --}}
-        <meta property="og:url"           content="{{$shareUrl}}" />
-        <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="@yield('title')" />
-        <meta property="og:description"   content="@yield('description')" />
-        <meta property="og:image"         content="@yield('image')" />
+        <meta property="og:url"   content="{{$shareUrl}}" />
+        <meta property="og:type"  content="website" />
+        <meta property="og:title" content="@yield('title')" />
+        {{-- <meta name="description"  property="og:description" content="@yield('description')" /> --}}
+        <meta property="og:image" content="@yield('image')" />
         
         
         <link rel="stylesheet" href="{{ asset('css/app.css?v=3.1') }}">
@@ -64,6 +65,7 @@
         <div id="app">
             @include('navbar')
             @include('sidebar')
+            @section("description", "Clasamente detaliate si statistici din fotbalul dambovitean, plus multe alte facilitati. Oferim clasamentele detaliate pentru Liga 2, Liga 3, Liga 4, Liga 5, seriile Sud, Nord, Vest si Liga 6, seriile Nord si Sud plus informatii si avancronici la zi din fotbalul dambovitean.");
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#sidebar").mCustomScrollbar({

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 @section('title', 'Confidențialitate')
+@section("description", 'Acest document are rolul de a vă informa cu privire la prelucrarea datelor dumneavoastră cu caracter personal, în contextul utilizării paginii de internet www.fotbal-arena.ro')
+
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-2"></div>

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 @section('title', 'Termeni și condiții')
-
+@section("description", ">Prezenții Termeni și condiții (\"Condiții\") stabilesc care sunt condițiile de utilizare ale site-ul www.fotbal-arena.ro (\"Site-ul\"). Termenii şi condițiile pot fi schimbate în orice moment de către administratorul site-ului, fără notificarea prealabilă a persoanelor care îl utilizează. Prin utilizarea Site-ului acceptați automat aceste Condiții. Vă rugăm să le citiți cu atenție.");
+    
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-2"></div>

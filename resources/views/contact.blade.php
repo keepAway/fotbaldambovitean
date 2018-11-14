@@ -7,6 +7,7 @@
 @extends('layouts.app')
 @section('content')
 @section('title', 'Lasă-ne un mesaj.')
+@section("description", 'Ai o informatie, un scor, sau vrei doar sa vorbim, lasa-ne un mesaj si te vom contacta in cel mai scurt timp posibil. Facem tot ce ne sta in putere sa dezvoltam fotbalul dambovitean asa ca orice informatie este binevenita.')
 
 <div class="container-fluid">
     <div class="row">

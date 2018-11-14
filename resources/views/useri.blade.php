@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @section('title', 'Users List')
+@section('description', 'Fotbal Arena @ Private Area')
 
 <div class="container-fluid">
     <div class="row">

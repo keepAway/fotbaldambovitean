@@ -2,11 +2,14 @@
     $__liga  = Request::get('liga');
     $__serie = Request::get('serie');
     $__serie = gettype($__serie) != NULL ? $__serie : NULL;
+    $__image = asset('images/1_logo_.jpg');
 @endphp
 
 @extends('layouts.app')
 @section('content')
-@section('title', 'Trimite-ne un scor!')
+@section("title", 'Trimite-ne scorul unui meci desfasurat azi.')
+@section("image", asset($__image))
+@section("description", 'Aceasta optiune ofera posibilitatea utilizatorilor fotbal-arena.ro de a adauga scorul meciurilor.')
 
 <div class="container-fluid">
     <div class="row">
