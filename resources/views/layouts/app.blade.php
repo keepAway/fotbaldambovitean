@@ -2,15 +2,14 @@
 @php $shareUrl = Request::fullUrl(); @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>@yield('title')</title>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script>
-             (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-7606412229703320",
-                  enable_page_level_ads: true
-             });
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4051259731437503",
+            enable_page_level_ads: true
+          });
         </script>
-
+        <title>@yield('title')</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128595058-1"></script>
         <script>
