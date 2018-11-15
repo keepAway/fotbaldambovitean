@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @section('title', '.:: Fotbal Arena ::.')
+@section("description", 'Ai o informatie, un scor, sau vrei doar sa vorbim, lasa-ne un mesaj si te vom contacta in cel mai scurt timp posibil. Facem tot ce ne sta in putere sa dezvoltam fotbalul dambovitean asa ca orice informatie este binevenita.')
 <style type="text/css">
     .forma {
         width: 20px;
