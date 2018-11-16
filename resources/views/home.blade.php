@@ -110,7 +110,7 @@
                                         <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                     </a>
                                 </div>
-                                <div class="col-12" style="padding-left:  0px; padding-right: 0px; padding-top: 5px;">
+                                <div class="col-12" style="padding-left:  0px; padding-right: 0px; padding-top: 5px; height: 75px !important;">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                         <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
                                     </a>
