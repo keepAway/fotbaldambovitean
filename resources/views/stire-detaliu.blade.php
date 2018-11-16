@@ -35,8 +35,8 @@
         <div class="col-sm-3"></div>
     </div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="news-detail-wrapper mt-2">
                 <div class="container">
                     <div class="news-detail-header">
@@ -67,73 +67,105 @@
                         <div class="addthis_inline_share_toolbox_igh9"></div>
                     </div>
                 </div>
-                @if ( count($alte_stiri) > 0 )
-                    <div class="news-hr"></div>
-                    <h4 class="text-center mb-4 mt-5">Ştiri din aceeaşi categorie</h4>
-                    <div class="news-detail-related row mt-5">
-                        @foreach ($alte_stiri as $stire)
-                            <div class="col-lg-6">
-                                <div class="news-block">
-                                    <div class="news-details">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="news-date">
-                                                    {{date('M d, Y, H:s', strtotime($stire->created_at))}}
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <a href="{{url()->current().'/?categorie='.$stire->categorie_id}}">
-                                                    <div class="news-cat float-right">
-                                                        # {{$stire->nume_categorie}}
-                                                    </div>
-                                                </a>
+            </div>
+            @if ( count($alte_stiri) > 0 )
+                <div class="row display-small">
+                    @foreach ($alte_stiri as $stire)
+                        <div class="col-lg-6">
+                            <div class="news-block">
+                                <div class="news-details">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="news-date">
+                                                {{date('M d, Y, H:s', strtotime($stire->created_at))}}
                                             </div>
                                         </div>
+                                        <div class="col-6">
+                                            <a href="{{url()->current().'/?categorie='.$stire->categorie_id}}">
+                                                <div class="news-cat float-right">
+                                                    # {{$stire->nume_categorie}}
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
-                                    </a>
-                                    <div class="news-img-block">
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
                                         <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
                                             <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                         </a>
-                                        @if ($stire->pin == 1)
-                                        <div class="news-top"><b>TOP</b></div>
-                                        @endif
-                                        <div class="news-views">
-                                            <i class="fas fa-eye fa-lg"></i>
-                                            <span style="font-style: normal; font-weight: bold;">{{$stire->views}}</span>
-                                        </div>
                                     </div>
-                                    {{-- <p>{{$stire->introducere}}...</p> --}}
-                                    <div class="row pt-3">
-                                        <div class="col-6">
-                                            <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                                <div class="news-link">Citeşte mai mult</div>
-                                            </a>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="float-right" style="font-weight: bold; font-style: italic;">
-                                                <span style="font-weight: normal;">by </span>{{$stire->autor}}
-                                            </div>
+                                    <div class="col-8">
+                                        <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                            <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12"> 
+                                        <div style="float: right;"> 
+                                            @if(Auth::check() && Auth::user()->role == 'admin')
+                                                <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                    <div class="text-center mb-5">
-                        <a href="{{'/'}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">Toate ştirile</a>
-                    </div>
-                @endif
-            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="row display-large">
+                    @foreach ($alte_stiri as $stire)
+                        <div class="col-lg-6">
+                            <div class="news-block">
+                                <div class="news-details">
+                                    <div class="row" style="margin-left: 0px !important; margin-right: 0px !important;">
+                                        <div class="col-6">
+                                            <div class="news-date">
+                                                {{date('M d, Y, H:s', strtotime($stire->created_at))}}
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="{{url()->current().'/?categorie='.$stire->categorie_id}}">
+                                                <div class="news-cat float-right">
+                                                    # {{$stire->nume_categorie}}
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-left: 0px !important; margin-right: 0px !important;">
+                                    <div class="col-12 thumb">
+                                        <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                            <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
+                                        </a>
+                                    </div>
+                                    <div class="col-12" style="padding-left:  0px; padding-right: 0px; padding-top: 5px; height: 75px !important;">
+                                        <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                            <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12"> 
+                                        <div style="float: right;"> 
+                                            @if(Auth::check() && Auth::user()->role == 'admin')
+                                                <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="text-center mb-5">
+                    <a href="{{'/'}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
+                </div>
+            @endif
         </div>
         <div class="col-sm-3"></div>
     </div>
     <div class="line"></div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <label style="font-size: 16px; margin-left: 5px;"> Comenteaza stirea</label>
@@ -153,6 +185,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-3"></div>
     </div>
 </div>
 @endsection
