@@ -117,9 +117,9 @@
                                 </div>
                                 <div class="col-12"> 
                                     <div style="float: right;"> 
-                                        @if(Auth::user()->role == 'admin')
+                                        {{-- @if(Auth::user()->role == 'admin') --}}
                                             <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
-                                        @endif
+                                        {{-- @endif --}}
                                     </div>
                                 </div>
                             </div>
