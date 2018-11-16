@@ -15,29 +15,29 @@ jQuery(document).ready(function($){
 
 window.onload = function() {
     // News same height
-    if ($('.news-block').length > 0) {
-        var max =  0;
+    // if ($('.news-block').length > 0) {
+    //     var max =  0;
 
-        $('.news-block').each(function(){
-            var curC = $(this).find('.news-title').outerHeight();
+    //     $('.news-block').each(function(){
+    //         var curC = $(this).find('.news-title').outerHeight();
 
-            if ( curC > max )
-            {
-                max = curC;
-            }
-        });
+    //         if ( curC > max )
+    //         {
+    //             max = curC;
+    //         }
+    //     });
 
-        $('.news-block .news-title').height(max);
+    //     $('.news-block .news-title').height(max);
 
-        $('.news-block').each(function(){
-            var curH = $(this).find('.news-img-block').outerHeight();
+    //     $('.news-block').each(function(){
+    //         var curH = $(this).find('.news-img-block').outerHeight();
 
-            if ( curH > max )
-            {
-                max = curH;
-            }
-        });
+    //         if ( curH > max )
+    //         {
+    //             max = curH;
+    //         }
+    //     });
 
-        $('.news-block .news-img-block').height(max);
-    }
+    //     $('.news-block .news-img-block').height(max);
+    // }
 }

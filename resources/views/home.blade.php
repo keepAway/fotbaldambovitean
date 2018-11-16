@@ -39,9 +39,9 @@
         <div class="col-sm-3"></div>
     </div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-7 mt-5" id="news-wrapper">
-            <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 mt-5" id="news-wrapper">
+            <div class="row display-small">
                 @foreach ($stiri as $stire)
                     <div class="col-lg-6">
                         <div class="news-block">
@@ -61,31 +61,65 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
-                            </a>
-                            <div class="news-img-block">
-                                <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                    <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
-                                </a>
-                                @if ($stire->pin == 1)
-                                <div class="news-top"><b>TOP</b></div>
-                                @endif
-                                <div class="news-views">
-                                    <i class="fas fa-eye fa-lg"></i>
-                                    <span style="font-style: normal; font-weight: bold;">{{$stire->views}}</span>
-                                </div>
-                            </div>
-                            {{-- <p>{{$stire->introducere}}...</p> --}}
-                            <div class="row pt-3">
-                                <div class="col-6">
+                            <div class="row">
+                                <div class="col-4">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <div class="news-link">Citeşte mai mult</div>
+                                        <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
                                     </a>
                                 </div>
-                                <div class="col-6">
-                                    <div class="float-right" style="font-weight: bold; font-style: italic;">
-                                        <span style="font-weight: normal;">by </span>{{$stire->autor}}
+                                <div class="col-8">
+                                    <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                        <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
+                                    </a>
+                                </div>
+                                <div class="col-12"> 
+                                    <div style="float: right;"> 
+                                        @if(Auth::user()->role == 'admin')
+                                            <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="row display-large">
+                @foreach ($stiri as $stire)
+                    <div class="col-lg-6">
+                        <div class="news-block">
+                            <div class="news-details">
+                                <div class="row" style="margin-left: 0px !important; margin-right: 0px !important;">
+                                    <div class="col-6">
+                                        <div class="news-date">
+                                            {{date('M d, Y, H:s', strtotime($stire->created_at))}}
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="{{url()->current().'/?categorie='.$stire->categorie_id}}">
+                                            <div class="news-cat float-right">
+                                                # {{$stire->nume_categorie}}
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-left: 0px !important; margin-right: 0px !important;">
+                                <div class="col-12 thumb">
+                                    <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                        <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
+                                    </a>
+                                </div>
+                                <div class="col-12" style="padding-left:  0px; padding-right: 0px; padding-top: 5px;">
+                                    <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
+                                        <div class="news-title">{{substr($stire->titlu, 0, 100)}}</div>
+                                    </a>
+                                </div>
+                                <div class="col-12"> 
+                                    <div style="float: right;"> 
+                                        @if(Auth::user()->role == 'admin')
+                                            <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

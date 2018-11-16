@@ -16,9 +16,9 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-3">
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-6">
             @if ( count( $errors ) > 0 )
                 @foreach ($errors->all() as $error)
                     <div class="row">
@@ -43,8 +43,8 @@
     <div id="fb-root"></div>
 
     <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-7 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
                     <label style="font-size: 20px; margin-left: 5px;"> Clasament </label> | 
@@ -169,9 +169,9 @@
     <div class="line"></div> --}}
 
     <div class="row">
-        <div class="col-sm-2"></div>
+        <div class="col-sm-3"></div>
         <!-- Etapa desktop -->
-        <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-6 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 @if(Auth::check() && Auth::user()->role == 'admin')
                     <div class="pl-2 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
@@ -279,7 +279,7 @@
         </div>
         <!-- Etapa tablet/mobile -->
         <a href="#etape" id="etape"></a>
-        <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-6 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-xs-10 font-weight-bold" style="margin-left: 5px; height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     Etapa <span style="font-weight: bold; font-style: italic; font-size: 16px">{{$page}}</span>
@@ -391,8 +391,8 @@
     </div>
     <div class="line"></div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-7" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <label style="font-size: 16px; margin-left: 5px;"> Comenteaza etapa</label>
