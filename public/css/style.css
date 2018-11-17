@@ -749,7 +749,7 @@ input:checked + .slider:before {
 }
 
 .container-fluid {
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 
 .scor-color {
