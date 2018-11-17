@@ -11,11 +11,11 @@
 @section("image", asset($__image))
 @section("description", 'Aceasta optiune ofera posibilitatea utilizatorilor fotbal-arena.ro de a adauga scorul meciurilor.')
 
-<div class="container-fluid">
+<div class="container-fluid" style="height: 100vh;">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-3">
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-6">
             @if ( count( $errors ) > 0 )
                 @foreach ($errors->all() as $error)
                     <div class="row">
@@ -37,9 +37,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2"></div>
+        <div class="col-sm-3"></div>
         {{-- Desktop --}}
-        <div class="col-sm-7 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-6 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
@@ -190,7 +190,7 @@
         </div>
 
         {{-- Tablet/Mobile --}}
-        <div class="col-sm-7 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
+        <div class="col-sm-6 d-xl-none" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="margin-top: 20px; margin-bottom: 5px; font-size: 20px;">
                     <div class="row">
