@@ -11,7 +11,7 @@
 @section("image", asset($__image))
 @section("description", 'Aceasta optiune ofera posibilitatea utilizatorilor fotbal-arena.ro de a adauga scorul meciurilor.')
 
-<div class="container-fluid" style="height: 100vh;">
+<div class="container-fluid" style="min-height: 100vh;">
     <div class="row">
         <div class="col-sm-3">
         </div>
