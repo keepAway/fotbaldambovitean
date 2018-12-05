@@ -158,7 +158,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+            @include('parts/page-plugin')
+        </div>
     </div>
 
     <div class="line"></div>{{-- 
