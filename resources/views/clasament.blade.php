@@ -43,7 +43,9 @@
     <div id="fb-root"></div>
 
     <div class="row">
-        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+            @include('parts/page-reporter')
+        </div>
         <div class="col-lg-6 col-md-12 col-sm-12" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">

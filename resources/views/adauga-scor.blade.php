@@ -37,7 +37,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+            @include('parts/page-reporter')
+        </div>
         {{-- Desktop --}}
         <div class="col-sm-6 d-none d-xl-block" style="background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.15);">
             <div class="row">
