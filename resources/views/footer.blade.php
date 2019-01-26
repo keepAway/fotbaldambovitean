@@ -2,9 +2,11 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-sm-3 text-center">
-                <div class="footer-logo">
-                    {{-- <img src="{{URL::asset('img/logo-galben.png')}}" alt="Fotbal Arena"> --}}
-                </div>
+                <ul class="nav navbar-nav ml-auto pl-2 flex-row justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link pl-2 pr-2" href="mailto:contact@fotbal-arena.ro" style="text-transform: none;">contact@fotbal-arena.ro</a>
+                    </li>
+                </ul>
             </div>
             <div class="col-sm-6 text-center">
                 <ul class="nav navbar-nav ml-auto pl-2 flex-row justify-content-center">
@@ -29,7 +31,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <p class="copyright">© {{date('Y')}} Fotbal Arena - Toate drepturile rezervate</p>
+                <p class="copyright">© 2018 - {{date('Y')}} | Fotbal Arena - Toate drepturile rezervate</p>
             </div>
         </div>
     </div>
