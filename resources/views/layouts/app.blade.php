@@ -56,6 +56,8 @@
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+        <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+
         <script src="{{ asset('js/solid.js') }}"></script>
         <script src="{{ asset('js/fontawesome.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
