@@ -4,7 +4,7 @@
             <div class="col-sm-3 text-center">
                 <ul class="nav navbar-nav ml-auto pl-2 flex-row justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link pl-2 pr-2" href="mailto:contact@fotbal-arena.ro" style="text-transform: none;">contact@fotbal-arena.ro</a>
+                        <a class="nav-link pl-2 pr-2" href="mailto:contact@fotbal-arena.ro" style="text-transform: none;"><span class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: #f4d90c;"></span>&nbsp; &nbsp; contact@fotbal-arena.ro</a>
                     </li>
                 </ul>
             </div>
