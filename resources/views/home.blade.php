@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="col-8">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <div class="news-title">{{(strlen($stire->titlu) > 100) ? substr($stire->titlu,0,97).'...' : $stire->titlu}}</div>
+                                        <div class="news-title">{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}</div>
                                     </a>
                                 </div>
                                 <div class="col-12"> 
@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="col-12" style="padding-left:  0px; padding-right: 0px; padding-top: 5px; height: 75px !important;">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <div class="news-title">{{(strlen($stire->titlu) > 100) ? substr($stire->titlu,0,97).'...' : $stire->titlu}}</div>
+                                        <div class="news-title">{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}</div>
                                     </a>
                                 </div>
                                 <div class="col-12"> 
