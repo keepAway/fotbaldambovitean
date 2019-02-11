@@ -1,5 +1,5 @@
 <div class="text-center mb-2" style="background-color: #323b3e; position: relative;">
-	<div class="pt-2 pr-2" style="position: absolute; top: 0; right: 0; color: #f4d90c"><em>{{date('d-m-Y')}}</em></div>
+	<div class="pt-2 pr-2" style="position: absolute; bottom: 0; right: 0; color: #f4d90c"><em>{{date('d-m-Y')}}</em></div>
 	<div class="pt-3 pb-3 pl-2 pr-2">
 		<strong><h6 style="color: #f4d90c">Știați că...</h6></strong>
 		<p style="color: #fff;">Înfiinţat pe 11 februarie 1916, Sportul Studenţesc rămâne unul dintre cluburile de mare tradiţie ale fotbalului românesc. Primul preşedinte al grupării nou înfiinţate a fost reputatul matematician Traian Lălescu. Unul dintre oamenii care au ajutat la fondarea acestei echipe a fost Octav Luchide, secretar general al Federaţiei de Fotbal din România (între 1930-1942), organizatorul sistemului divizionar ca formulă de desfăşurare a campionatului naţional de fotbal.</p>
