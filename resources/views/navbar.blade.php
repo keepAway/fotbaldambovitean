@@ -1,6 +1,5 @@
 @php
     $current_url = \Request::route()->getName();
-    echo '<pre>'; var_dump($current_url); echo '</pre>';
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" style="padding-left: 15px; padding-right: 15px;">
