@@ -19,7 +19,7 @@ Route::post('/clasament/adauga-scor', 'HomeController@adaugaScor')->name('adauga
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/auth/facebook',          'Auth\SocialAuthController@facebookRedirect')->name('auth-facebook');
 Route::get('/auth/facebook/callback', 'Auth\SocialAuthController@handleFacebookCallback');

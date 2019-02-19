@@ -1,9 +1,10 @@
 @php
-    $current_url = Request::fullUrl();
+    $current_url = \Request::route()->getName();
+    echo '<pre>'; var_dump($current_url); echo '</pre>';
 @endphp
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container" style="padding-left: 15px; padding-right: 15px;">
-        <div class="close dismiss-open" id="sidebarCollapse" style="{{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
+        <div class="close dismiss-open" id="sidebarCollapse" style="{{$current_url == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
             <i class="fas fa-arrow-right" style="font-size: 25px; font-weight: bold !important; vertical-align: text-top; color: #fff; cursor: pointer;"></i>
         </div>
 
@@ -13,20 +14,38 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto pl-2 pt-2">
+                <div  style="position: relative;">
+                    <li class="nav-item nav-icon-search">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-search fa-lg" style="color: #f4d90c;"></i>
+                        </a>
+                    </li>
+                    <span class="arrow-up d-none" style="position: absolute;"></span>
+                    <form action="{{route('home')}}" method="GET" class="d-none" id="search-form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control" placeholder="Caută o știre..." />
+                                <div class="form-group ml-auto mr-auto">
+                                    <input type="submit" class="btn btn-dark" value="Caută" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <li class="nav-item">
-                    <a class="nav-link{{$current_url == url('/') ? " active" : ""}}" href="{{ url('/') }}">Stiri</a>
+                    <a class="nav-link{{$current_url == 'home' ? " active" : ""}}" href="{{ url('/') }}">Stiri</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link{{$current_url == route('trimite-scor', ['liga' => 4]) ? " active" : ""}}" href="{{ route('trimite-scor', ['liga' => 4]) }}">Adauga scor</a>
+                    <a class="nav-link{{$current_url == 'trimite-scor' ? " active" : ""}}" href="{{ route('trimite-scor', ['liga' => 4]) }}">Adauga scor</a>
                 </li>
                 @if(Auth::check() && (Auth::user()->role == 'admin'))
                     <li class="nav-item">
-                        <a class="nav-link{{$current_url == route('admin-stiri') ? " active" : ""}}" href="{{ route('admin-stiri') }}">Adauga stire</a>
+                        <a class="nav-link{{$current_url == 'admin-stiri' ? " active" : ""}}" href="{{ route('admin-stiri') }}">Adauga stire</a>
                     </li>
                 @endif
                 <li class="nav-item d-none">
-                    <a class="nav-link{{$current_url == route('contact') ? " active" : ""}}" href="{{ route('contact') }}">Contact</a>
+                    <a class="nav-link{{$current_url == 'contact' ? " active" : ""}}" href="{{ route('contact') }}">Contact</a>
                 </li>
                 @guest
                     <li class="nav-item">
@@ -51,7 +70,7 @@
                         </form>
                     </li>
                 @endguest
-                <li class="nav-item social-facebook" style="margin-left: 8px !important; {{\Request::route()->getName() == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
+                <li class="nav-item social-facebook" style="margin-left: 8px !important; {{$current_url == 'stire-detaliu' ? 'padding-top: 6px !important;' : ''}}">
                     <a class="nav-link" href="https://www.facebook.com/fotbalarena/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </li>
             </ul>
@@ -152,5 +171,25 @@
                 }
             }
         });
-    })
+    });
+
+    $('.nav-icon-search').click(function(e) {
+        e.preventDefault();
+        if($('#search-form, .arrow-up').hasClass('d-none')) {
+            $('#search-form, .arrow-up').removeClass('d-none');
+        } else {
+            $('#search-form, .arrow-up').addClass('d-none');
+        }
+    });
+
+    $(document).mouseup(function(e) {
+        var container = $("#search-form");
+        var container2 = $('.nav-icon-search');
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0 && !container2.is(e.target) && container2.has(e.target).length === 0) 
+        {
+            container.addClass('d-none');
+            $('.arrow-up').addClass('d-none');
+        }
+    });
 </script>

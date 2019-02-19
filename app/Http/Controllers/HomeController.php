@@ -39,9 +39,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $cat = isset($_GET["categorie"]) ? $_GET["categorie"] : "0";
+    public function index(Request $request)
+    {   
+        $data = $request->all();
+        $cat    = isset($_GET["categorie"]) ? $_GET["categorie"] : "0";
+        $search = isset($_GET['search']) && $_GET['search'] != "" ? $_GET['search'] : NULL;
 
         $all_used_cats = Stiri::pluck('categorie_id');
         $unique_used_cats = array_unique($all_used_cats->all());
@@ -51,19 +53,27 @@ class HomeController extends Controller
                 ->join('views', 'stiri.id', '=', 'views.stire_id')
                 ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
                 ->join('users', 'stiri.user_id', '=', 'users.id')
-                    ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
-                        ->orderBy('stiri.created_at', 'DESC')
-                            ->paginate(20);
+                    ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor');
         } else {
             $stiri = Stiri::where('categorie_id', $cat)
                 ->join('views', 'stiri.id', '=', 'views.stire_id')
                 ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
                 ->join('users', 'stiri.user_id', '=', 'users.id')
                     ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
-                        ->orderBy('pin', true)
-                            ->orderBy('stiri.created_at', 'DESC')
-                                ->paginate(20);
+                        ->orderBy('pin', true);
         }
+
+        if($search) {
+            $exp = explode(' ', $search);
+            foreach ($exp as $item) {
+                $stiri = $stiri->where(function ($query) use ($item){
+                    $query->where('titlu','LIKE', '%'.$item.'%');
+                    $query->orWhere('continut','LIKE', '%'.$item.'%');
+                });
+            }
+        }
+
+        $stiri = $stiri->orderBy('stiri.created_at', 'DESC')->paginate(20);
         
         return view('home')->with(['stiri' => $stiri]);       
     }
