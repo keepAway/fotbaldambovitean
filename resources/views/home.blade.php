@@ -53,10 +53,10 @@
                         @endphp
                             <div class="col-lg-12 text-center">
                                 <h4>{!!count($stiri) > 0 ? '<div class="text-center mb-3">
-    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
-</div>Rezultatele căutării: '.'"'.$search.'"' : '<br><br>Nu a fost găsit nici un rezultat<br><br><div class="text-center mb-5">
-    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
-</div>'!!}</h4>
+                                    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
+                                </div>Rezultatele căutării: '.'"'.$search.'"' : '<br><br>Nu a fost găsit nici un rezultat<br><br><div class="text-center mb-5">
+                                    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
+                                </div>'!!}</h4>
                             </div>
                         @php
                     }
@@ -109,10 +109,10 @@
                         @endphp
                             <div class="col-lg-12 text-center">
                                 <h4>{!!count($stiri) > 0 ? '<div class="text-center mb-3">
-    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
-</div>Rezultatele căutării: '.'"'.$search.'"' : 'Nu a fost găsit nici un rezultat<br><br><div class="text-center mb-5">
-    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
-</div>'!!}</h4>
+                                    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
+                                </div>Rezultatele căutării: '.'"'.$search.'"' : 'Nu a fost găsit nici un rezultat<br><br><div class="text-center mb-5">
+                                    <a href="/" class="btn btn-secondary btn-sm" role="button" aria-pressed="true" style="border-radius: 0;">Toate ştirile</a>
+                                </div>'!!}</h4>
                             </div>
                         @php
                     }

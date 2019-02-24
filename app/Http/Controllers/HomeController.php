@@ -41,39 +41,42 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {   
-        $data = $request->all();
-        $cat    = isset($_GET["categorie"]) ? $_GET["categorie"] : "0";
-        $search = isset($_GET['search']) && $_GET['search'] != "" ? $_GET['search'] : NULL;
+        $data       = $request->all();
 
-        $all_used_cats = Stiri::pluck('categorie_id');
-        $unique_used_cats = array_unique($all_used_cats->all());
+        $categories = Categorie::pluck('id')->toArray();
+        $cat        = isset($_GET["categorie"]) ? $_GET["categorie"] : null;
+        $search     = isset($_GET['search']) && $_GET['search'] != "" ? $_GET['search'] : NULL;
 
-        if($cat == "0" || !in_array($cat, $unique_used_cats)) {
-            $stiri = Stiri::orderBy('pin', true)
-                ->join('views', 'stiri.id', '=', 'views.stire_id')
-                ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
-                ->join('users', 'stiri.user_id', '=', 'users.id')
-                    ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor');
-        } else {
-            $stiri = Stiri::where('categorie_id', $cat)
-                ->join('views', 'stiri.id', '=', 'views.stire_id')
-                ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
-                ->join('users', 'stiri.user_id', '=', 'users.id')
-                    ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
-                        ->orderBy('pin', true);
+        $stiri = Stiri::join('views', 'stiri.id', '=', 'views.stire_id')
+                        ->join('categorii', 'stiri.categorie_id', '=', 'categorii.id')
+                        ->join('users', 'stiri.user_id', '=', 'users.id')
+                            ->select('stiri.*', 'views.counter as views', 'categorii.nume as nume_categorie', 'users.name as autor')
+                            ->orderBy('pin', true)
+                            ->orderBy('stiri.created_at', 'DESC');
+
+        if(!empty($cat) && in_array($cat, $categories)) {
+            $stiri = $stiri->where('categorie_id', $cat);
         }
 
-        if($search) {
+        if(!empty($search)) {
             $exp = explode(' ', $search);
             foreach ($exp as $item) {
                 $stiri = $stiri->where(function ($query) use ($item){
                     $query->where('titlu','LIKE', '%'.$item.'%');
                     $query->orWhere('continut','LIKE', '%'.$item.'%');
+
+                    /*$query->selectRaw("IF(LOCATE('".$item."',stiri.titlu) > 0, 1, 0) AS found_in_title");
+                    $query->selectRaw("IF(LOCATE('".$item."',stiri.continut) > 0, 1, 0) AS found_in_content");
+                    $query->where('stiri.titlu','LIKE', '%'.$item.'%');
+                    $query->orWhere('stiri.continut','LIKE', '%'.$item.'%');
+                    $query->orderBy('found_in_title', 'DESC');
+                    $query->orderBy('found_in_content', 'DESC');*/
                 });
             }
+            //echo '<pre>'; var_dump($stiri->get()); echo '</pre>';die;
         }
 
-        $stiri = $stiri->orderBy('stiri.created_at', 'DESC')->paginate(20);
+        $stiri = $stiri->paginate(20);
         
         return view('home')->with(['stiri' => $stiri]);       
     }
