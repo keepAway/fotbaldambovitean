@@ -92,10 +92,8 @@
                                     </a>
                                 </div>
                                 <div class="col-12"> 
-                                    <div style="float: right;"> 
-                                        @if(Auth::check() && Auth::user()->role == 'admin')
-                                            <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
-                                        @endif
+                                    <div style="float: right;">
+                                        <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
                                     </div>
                                 </div>
                             </div>
@@ -148,10 +146,8 @@
                                     </a>
                                 </div>
                                 <div class="col-12"> 
-                                    <div style="float: right;"> 
-                                        @if(Auth::check() && Auth::user()->role == 'admin')
-                                            <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
-                                        @endif
+                                    <div style="float: right;">
+                                        <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
                                     </div>
                                 </div>
                             </div>

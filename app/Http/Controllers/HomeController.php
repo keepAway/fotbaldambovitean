@@ -64,15 +64,10 @@ class HomeController extends Controller
                 $stiri = $stiri->where(function ($query) use ($item){
                     $query->where('titlu','LIKE', '%'.$item.'%');
                     $query->orWhere('continut','LIKE', '%'.$item.'%');
-
-                    /*$query->selectRaw("IF(LOCATE('".$item."',stiri.titlu) > 0, 1, 0) AS found_in_title");
-                    $query->selectRaw("IF(LOCATE('".$item."',stiri.continut) > 0, 1, 0) AS found_in_content");
-                    $query->where('stiri.titlu','LIKE', '%'.$item.'%');
-                    $query->orWhere('stiri.continut','LIKE', '%'.$item.'%');
-                    $query->orderBy('found_in_title', 'DESC');
-                    $query->orderBy('found_in_content', 'DESC');*/
                 });
             }
+
+            /*$stiri = $stiri->whereRaw("MATCH (titlu,continut) AGAINST ('".$search."' IN NATURAL LANGUAGE MODE)");*/
             //echo '<pre>'; var_dump($stiri->get()); echo '</pre>';die;
         }
 
