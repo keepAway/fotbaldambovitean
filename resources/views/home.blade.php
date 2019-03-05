@@ -91,11 +91,13 @@
                                         <div class="news-title">{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}</div>
                                     </a>
                                 </div>
+                                @if(Auth::check())
                                 <div class="col-12"> 
                                     <div style="float: right;">
                                         <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -145,11 +147,13 @@
                                         <div class="news-title">{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}</div>
                                     </a>
                                 </div>
+                                @if(Auth::check())
                                 <div class="col-12"> 
                                     <div style="float: right;">
                                         <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
