@@ -715,9 +715,9 @@ class HomeController extends Controller
             // 'SUD'  => 6693,
             // 'VEST' => 6694,
 
-            'NORD' => 7000,
-            'SUD'  => 7001,
-            'juniori' => 6687
+            //'NORD' => 7000,
+            //'SUD'  => 7001,
+            'liga4' => 6655
         ];
 
         if($etapa < 34) {
@@ -729,7 +729,10 @@ class HomeController extends Controller
             $x = '0' . $x;
         }
 
-        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-'.$liga.'-a-'.strtolower($serie).'-'.$array[$serie].'-et' . $x);
+        /*$data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-'.$liga.'-a-'.$serie.'/meciuri/etapa-' . $x);*/
+
+        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/'.$liga.'-'.$serie.'/meciuri/etapa-' . $x);
+
         return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
     }
 
@@ -819,7 +822,7 @@ class HomeController extends Controller
         $etapa_curenta = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
         $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
 
-        if(!in_array($liga, [3,4,5,6])){
+        if(!in_array($liga, [3,4,5,6,7])){
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
@@ -891,7 +894,7 @@ class HomeController extends Controller
         $liga  = $data['liga'];
         $serie = (isset($data['serie']) && $data['serie'] != null ? $data['serie'] : NULL);
 
-        if(!in_array($liga, [3,4,5,6])){
+        if(!in_array($liga, [3,4,5,6,7])){
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 

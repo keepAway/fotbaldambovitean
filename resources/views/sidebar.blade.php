@@ -14,9 +14,9 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li class="nav-link" style="padding: 0">
+            {{-- <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2]) }}" id="liga_1" class="sidebar-link{{$liga == 1 ? " active" : ""}}">Liga 1</a>
-            </li>
+            </li> --}}
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2]) }}" id="liga_2" class="sidebar-link{{$liga == 2 ? " active" : ""}}">Liga 2</a>
             </li>
@@ -98,6 +98,25 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-link" style="padding: 0">
+                <a href="#homeSubmenuLiga7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 7 ? ' active' : '' }}">Juniori</a>
+                <ul class="collapse list-unstyled" id="homeSubmenuLiga7">
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 7]) }}" id="liga_7" class="sidebar-link{{$liga == 7 ? " active" : ""}}">
+                            <i class="fas fa-angle-right mr-1"></i>
+                            Juniori D (U13)
+                        </a>
+                    </li>
+                    {{-- <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Sud']) }}" id="liga_6_Sud" class="sidebar-link{{$liga == 6 && $seria == 'Sud' ? " active" : ""}}">
+                            <i class="fas fa-angle-right mr-1"></i>
+                            Liga 6 Sud
+                        </a>
+                    </li> --}}
+                </ul>
+            </li>
+
             <hr>
             @if(Auth::check() && Auth::user()->role == 'admin')
             <li class="nav-link" style="padding: 0">

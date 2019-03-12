@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 16px;">
                     <label style="font-size: 20px; margin-left: 5px;"> Clasament </label> | 
-                    Liga {{$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
+                     {{$liga == 7 ? 'Juniori D (U13)' : 'Liga '.$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
 
                 @include('parts/block-penalizare')
@@ -192,7 +192,7 @@
                 @endif
                 <div class="col-sm-11 font-weight-bold float-left" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 16px;">
                     <label style="font-size: 20px; margin-left: 5px;"> Etape </label> | 
-                    Liga {{$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
+                    {{$liga == 7 ? 'Juniori D (U13)' : 'Liga '.$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">

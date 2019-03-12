@@ -50,7 +50,7 @@
                                 @foreach($ligi as $liga)
                                     <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
                                         {{($liga->liga == $__liga && $liga->serie == $__serie ? 'selected' : '')}}>
-                                        Liga {{$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
+                                        {{$liga->liga == 7 ? 'Juniori D (U13)' : 'Liga '.$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
                                     </option>
                                 @endforeach
                             </select>
@@ -201,7 +201,7 @@
                                 @foreach($ligi as $liga)
                                     <option class="option" data-liga="{{$liga->liga}}" data-serie="{{$liga->serie == null ? null : $liga->serie}}" 
                                         {{($liga->liga == $__liga && $liga->serie == $__serie ? 'selected' : '')}}>
-                                        Liga {{$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
+                                        {{$liga->liga == 7 'Juniori D (U13)' : 'Liga '.$liga->liga}} {{$liga->serie != null ? ', ' . 'Seria ' . $liga->serie : ''}}
                                     </option>
                                 @endforeach
                             </select>
