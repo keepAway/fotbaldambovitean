@@ -4,7 +4,7 @@
     $current_url = Request::fullUrl();
     $page = Request::get('page') ? Request::get('page') : 1;
     
-    $__title = 'Clasament Liga ' . $liga . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page;
+    $__title = 'Clasament ' . ($liga == 7 ? 'Juniori D (U13)' : ($liga == 8 ? 'Juniori E (U11)' : 'Liga ' . $liga)) . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page;
     $__image = asset('images/1_logo_.jpg');
     $__description = '#clasament, #rezultate, #etapa' . $page . ', liga' . $liga . ', '. ($seria != '' ? '#seria-' . strtolower($seria) . ', ' : ''). '#fotbaldambovitean, #dambovita';
 @endphp
