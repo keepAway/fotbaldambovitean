@@ -108,12 +108,12 @@
                             Juniori D (U13)
                         </a>
                     </li>
-                    {{-- <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Sud']) }}" id="liga_6_Sud" class="sidebar-link{{$liga == 6 && $seria == 'Sud' ? " active" : ""}}">
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 8,]) }}" id="liga_8" class="sidebar-link{{$liga == 8 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
-                            Liga 6 Sud
+                            Juniori E (U11)
                         </a>
-                    </li> --}}
+                    </li>
                 </ul>
             </li>
 

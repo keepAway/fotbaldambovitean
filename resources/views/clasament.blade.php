@@ -192,7 +192,7 @@
                 @endif
                 <div class="col-sm-11 font-weight-bold float-left" style="height: 40px; margin-top: 20px; margin-bottom: 5px; font-size: 16px;">
                     <label style="font-size: 20px; margin-left: 5px;"> Etape </label> | 
-                    {{$liga == 7 ? 'Juniori D (U13)' : 'Liga '.$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
+                    {{$liga == 7 ? 'Juniori D (U13)' : ($liga == 8 ? 'Juniori E (U11)' : 'Liga '.$liga)}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <div class="table-responsive-sm table-responsive-md table-responsive-lg">
@@ -218,7 +218,7 @@
                                     <tr>
                                         <td class="align-middle"><b>{{$etapa->etapa}}</b></td>
                                         @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
-                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
+                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{is_null($etapa->data) ? 'Data nu este disponibila' : date("M d, Y", strtotime($etapa->data))}}, <b>{{is_null($etapa->ora) ? 'hh:mm' : $etapa->ora}}</b></td>
                                         @else
                                             <td class="font-weight-bold align-middle"></td>
                                         @endif
@@ -310,7 +310,7 @@
                                     {{ csrf_field() }}
                                     <tr style="background-color: #323b3e; color: #fff;">
                                         <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                        <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{$etapa->ora}}</b></td>
+                                        <td class="text-right font-italic">{{is_null($etapa->data) ? 'Data nu este disponibila' : date("M d, Y", strtotime($etapa->data))}}, <b>{{is_null($etapa->ora) ? 'hh:mm' : $etapa->ora}}</b></td>
                                     </tr>
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>

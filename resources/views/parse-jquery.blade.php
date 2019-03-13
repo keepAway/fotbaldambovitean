@@ -23,8 +23,8 @@
 	    return [year, month, day].join('-');
 	}
 
-	for (var i = 1; i <= 7; i++) {
-		var liga  = 7;
+	for (var i = 1; i <= 4; i++) {
+		var liga  = 8;
 		var serie = null;
 		var etapa = '{{$etapa}}';
 

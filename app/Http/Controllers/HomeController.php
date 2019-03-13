@@ -720,7 +720,7 @@ class HomeController extends Controller
             'liga4' => 6655
         ];
 
-        if($etapa < 34) {
+        if($etapa < 14) {
             header("Refresh:0; url=/parse-jquery/".$liga."/".$serie."/" . ($etapa + 1));
         }
 
@@ -822,7 +822,7 @@ class HomeController extends Controller
         $etapa_curenta = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
         $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
 
-        if(!in_array($liga, [3,4,5,6,7])){
+        if(!in_array($liga, [3,4,5,6,7,8])){
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
@@ -894,7 +894,7 @@ class HomeController extends Controller
         $liga  = $data['liga'];
         $serie = (isset($data['serie']) && $data['serie'] != null ? $data['serie'] : NULL);
 
-        if(!in_array($liga, [3,4,5,6,7])){
+        if(!in_array($liga, [3,4,5,6,7,8])){
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
