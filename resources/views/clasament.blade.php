@@ -6,7 +6,7 @@
     
     $__title = 'Clasament ' . ($liga == 7 ? 'Juniori D (U13)' : ($liga == 8 ? 'Juniori E (U11)' : 'Liga ' . $liga)) . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page;
     $__image = asset('images/1_logo_.jpg');
-    $__description = '#clasament, #rezultate, #etapa' . $page . ', liga' . $liga . ', '. ($seria != '' ? '#seria-' . strtolower($seria) . ', ' : ''). '#fotbaldambovitean, #dambovita';
+    $__description = '#clasament, #rezultate, #etapa' . $page . ', ' . ($liga == 7 ? 'Juniori D (U13)' : ($liga == 8 ? 'Juniori E (U11)' : 'Liga ' . $liga)) . ', '. ($seria != '' ? '#seria-' . strtolower($seria) . ', ' : ''). '#fotbaldambovitean, #dambovita';
 @endphp
 
 @extends('layouts.app')
