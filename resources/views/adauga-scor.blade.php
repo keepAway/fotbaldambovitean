@@ -85,7 +85,7 @@
                                     {{ csrf_field() }}
                                         <tr>
                                             <td class="align-middle" style="white-space: nowrap;"><b>{{$etapa->etapa}}</b></td>
-                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{($etapa->ora) ? $etapa->ora : '00:00'}}</b></td>
+                                            <td class="font-italic align-middle text-left" style="white-space: nowrap;">{{is_null($etapa->data) ? 'Data nu este disponibila' : date("M d, Y", strtotime($etapa->data))}}, <b>{{($etapa->ora) ? $etapa->ora : '00:00'}}</b></td>
                                             <td class="text-right align-middle font-weight-bold">{{$etapa->gazde}}</td>
                                             <td class="align-middle">
                                                 @if(Auth::check())
@@ -224,7 +224,7 @@
                                         {{ csrf_field() }}
                                         <tr style="background-color: #323b3e; color: #fff;">
                                             <td class="text-left">Etapa: {{$etapa->etapa}}</td>
-                                            <td class="text-right font-italic">{{date("M d, Y", strtotime($etapa->data))}}, <b>{{($etapa->ora) ? $etapa->ora : '00:00'}}</td>
+                                            <td class="text-right font-italic">{{is_null($etapa->data) ? 'Data nu este disponibila' : date("M d, Y", strtotime($etapa->data))}}, <b>{{($etapa->ora) ? $etapa->ora : '00:00'}}</td>
                                         </tr>
                                         <tr>
                                             <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
