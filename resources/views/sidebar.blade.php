@@ -14,9 +14,9 @@
         </div>
 
         <ul class="list-unstyled components">
-            {{-- <li class="nav-link" style="padding: 0">
+            <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2]) }}" id="liga_1" class="sidebar-link{{$liga == 1 ? " active" : ""}}">Liga 1</a>
-            </li> --}}
+            </li>
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2]) }}" id="liga_2" class="sidebar-link{{$liga == 2 ? " active" : ""}}">Liga 2</a>
             </li>

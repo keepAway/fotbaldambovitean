@@ -86,7 +86,12 @@ class HomeController extends Controller
             $serie = $data['seria'];
         }
 
-        $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', '!=', 'STA')->get();
+        if($liga == 1) {
+            $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where(['sezon' => '2019/2020'])->where('echipa', '!=', 'STA')->get();
+        } else {
+            $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', '!=', 'STA')->get();
+        }
+
         $echipe_penalizate = [];
 
         $pozitieStatus = PozitieStatus::where('liga', $liga)->where('serie', $serie)->get()->toArray();
@@ -99,7 +104,11 @@ class HomeController extends Controller
         $i=0;
         $j=0;
         foreach ($echipe as $echipa) {
-            $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
+            if($liga == 1) {
+                $forma = Forma::where('echipa', $echipa->echipa)->where([ 'forma.sezon' => '2019/2020' ])->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
+            } else {
+                $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
+            }
             $penalizare = Penalizari::where('echipa_id', $echipa->id)->first();
             
             if(!empty($penalizare)) {
@@ -131,8 +140,6 @@ class HomeController extends Controller
             $echipe[$i]['forma'] = $forma;
             $i++;
         }
-
-
         // dd($echipe_penalizate);
         // die;
 
