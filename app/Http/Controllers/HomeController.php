@@ -105,7 +105,7 @@ class HomeController extends Controller
         $j=0;
         foreach ($echipe as $echipa) {
             if($liga == 1) {
-                $forma = Forma::where('echipa', $echipa->echipa)->where([ 'forma.sezon' => '2019/2020' ])->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
+                $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->where([ 'forma.sezon' => '2019/2020' ])->orderBy('etapa', 'DESC');
             } else {
                 $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
             }
@@ -255,6 +255,7 @@ class HomeController extends Controller
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
+                    $forma->sezon = '2019/2020';
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $gazde;
                     $forma->forma    = 'V';
@@ -262,6 +263,7 @@ class HomeController extends Controller
                     $forma->save();
 
                     $forma = new Forma;
+                    $forma->sezon = '2019/2020';
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $oaspeti;
                     $forma->forma    = 'I';
@@ -311,6 +313,7 @@ class HomeController extends Controller
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
+                    $forma->sezon = '2019/2020';
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $gazde;
                     $forma->forma    = 'E';
@@ -318,6 +321,7 @@ class HomeController extends Controller
                     $forma->save();
 
                     $forma = new Forma;
+                    $forma->sezon = '2019/2020';
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $oaspeti;
                     $forma->forma    = 'E';
@@ -364,6 +368,7 @@ class HomeController extends Controller
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
+                    $forma->sezon = '2019/2020';
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $gazde;
                     $forma->forma    = 'I';
@@ -371,6 +376,7 @@ class HomeController extends Controller
                     $forma->save();
 
                     $forma = new Forma;
+                    $forma->sezon = '2019/2020';
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $oaspeti;
                     $forma->forma    = 'V';
