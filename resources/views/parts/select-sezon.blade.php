@@ -1,3 +1,7 @@
+@php
+	$current_sezon = substr($current_url, strpos($current_url, "sezon/") + 6);
+	$current_sezon = substr($current_sezon, 0, 9);
+@endphp
 @if($liga == 2)
 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
     <div class="row">
@@ -19,6 +23,13 @@
 </div>
 @endif
 <script type="text/javascript">
+	let current_sezon = '{{$current_sezon}}';
+	$("#sezons option").each(function() {
+		if(current_sezon == $(this).val()) {
+			$(this).attr("selected","selected");
+		}
+	});
+
 	$(document).ready(function($){
         $('#sezons').on('change', function() {
 		  	let sezon = this.value;
