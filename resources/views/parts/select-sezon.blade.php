@@ -22,7 +22,7 @@
 	$(document).ready(function($){
         $('#sezons').on('change', function() {
 		  	let sezon = this.value;
-		  	window.location.href = 'clasament/liga/2/sezon/'+sezon;
+		  	window.location.href = '/clasament/liga/2/sezon/'+sezon;
 		});
     });
 </script>
