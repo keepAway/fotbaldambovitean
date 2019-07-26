@@ -14,7 +14,7 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/clasament/liga/{liga}', 'HomeController@clasament')->name('clasament');
+Route::get('/clasament/liga/{liga}/sezon/{sezon}', 'HomeController@clasament')->name('clasament');
 Route::post('/clasament/adauga-scor', 'HomeController@adaugaScor')->name('adauga-scor');
 
 Auth::routes();

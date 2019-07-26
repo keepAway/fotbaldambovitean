@@ -77,20 +77,21 @@ class HomeController extends Controller
     }
 
 
-    public function clasament(Int $liga, Request $request){
+    public function clasament(Int $liga, String $sezon, Request $request){
         $data  = $request->all();
         $tab   = isset($data['tab']) ? $data['tab'] : NULL;
         $serie = NULL;
+        $sezon = str_replace('-', '/', $sezon);
 
         if(isset($data['seria']) && $data['seria'] != NULL){
             $serie = $data['seria'];
         }
 
-        if($liga == 1) {
-            $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where(['sezon' => '2019/2020'])->where('echipa', '!=', 'STA')->get();
-        } else {
-            $echipe = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', '!=', 'STA')->get();
-        }
+        $echipe = Echipe::where('liga', $liga)
+                            ->where('serie', $serie)
+                            ->where('sezon', $sezon)
+                            ->where('echipa', '!=', 'STA')
+                            ->get();
 
         $echipe_penalizate = [];
 
@@ -104,11 +105,8 @@ class HomeController extends Controller
         $i=0;
         $j=0;
         foreach ($echipe as $echipa) {
-            if($liga == 1) {
-                $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->where([ 'forma.sezon' => '2019/2020' ])->orderBy('etapa', 'DESC');
-            } else {
-                $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->orderBy('etapa', 'DESC');
-            }
+            $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->where('forma.sezon', $sezon)->orderBy('etapa', 'DESC');
+
             $penalizare = Penalizari::where('echipa_id', $echipa->id)->first();
             
             if(!empty($penalizare)) {
@@ -164,18 +162,19 @@ class HomeController extends Controller
             });
         }
 
-
         $etapa_curenta = NULL;
         $__check = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
         if(!empty($__check)){
             $etapa_curenta = $__check['etapa_curenta'];
         }
 
-        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC');        
+        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->where('sezon', $sezon)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC');
+
         $pagesNumber = ($etape->get()->count() / $page);
         $etape  = $etape->paginate($page);
 
         return view('clasament')->with([
+            'sezon'             => $sezon,
             'liga'              => $liga,
             'serie'             => $serie,
             'echipe'            => $echipe,

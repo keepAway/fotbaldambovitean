@@ -7,6 +7,7 @@
     $__title = 'Clasament ' . ($liga == 7 ? 'Juniori D (U13)' : ($liga == 8 ? 'Juniori E (U11)' : 'Liga ' . $liga)) . ($seria != '' ? ', Seria ' . $seria : '') . ', Etapa ' . $page;
     $__image = asset('images/1_logo_.jpg');
     $__description = '#clasament, #rezultate, #etapa' . $page . ', ' . ($liga == 7 ? 'Juniori D (U13)' : ($liga == 8 ? 'Juniori E (U11)' : 'Liga ' . $liga)) . ', '. ($seria != '' ? '#seria-' . strtolower($seria) . ', ' : ''). '#fotbaldambovitean, #dambovita';
+    $sezon = str_replace('/', '-', $sezon);
 @endphp
 
 @extends('layouts.app')
@@ -53,21 +54,22 @@
                      {{$liga == 7 ? 'Juniori D (U13)' : 'Liga '.$liga}}{{isset($seria) && $seria != NULL ? ', Seria ' . $seria : ''}}
                 </div>
 
+                @include('parts/select-sezon')
                 @include('parts/block-penalizare')
                 
                 <div class="col-sm-12" style="padding-left: 5px; padding-right: 5px;">
                     <ul class="nav nav-tabs font-weight-bold" style="background-color: #323b3e; color: #fff; border: 1px solid #323b3e; border-radius: 0;">
                         <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
-                            <a class="nav-link" style="border-radius: 0; color: {{$tab == NULL ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria]) }}">Total</a>
+                            <a class="nav-link" style="border-radius: 0; color: {{$tab == NULL ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'sezon' => $sezon]) }}">Total</a>
                         </li>
                         <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
-                            <a class="nav-link" style="border-radius: 0; color:  {{$tab == '1' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab' => 1]) }}">Acasa</a>
+                            <a class="nav-link" style="border-radius: 0; color:  {{$tab == '1' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab' => 1, 'sezon' => $sezon]) }}">Acasa</a>
                         </li>
                         <li class="nav-item" style="padding-left: 0px; padding-right: 0px;">
-                            <a class="nav-link" style="border-radius: 0; color: {{$tab == '2' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 2]) }}">Deplasare</a>
+                            <a class="nav-link" style="border-radius: 0; color: {{$tab == '2' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 2, 'sezon' => $sezon]) }}">Deplasare</a>
                         </li>
                         <li class="nav-item d-block d-sm-none" style="padding-left: 0px; padding-right: 0px;">
-                            <a class="nav-link" style="border-radius: 0; color: {{$tab == '3' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 3]) }}">Forma</a>
+                            <a class="nav-link" style="border-radius: 0; color: {{$tab == '3' ? '#f4d90c !important' : ''}}" href="{{ route('clasament', ['liga' => $liga, 'seria' => $seria, 'tab'=> 3, 'sezon' => $sezon]) }}">Forma</a>
                         </li>
                     </ul>
                     <div class="table-responsive-sm table-responsive-md pb-2">
@@ -421,6 +423,7 @@
     let page = '{{$page}}';
     let liga = '{{$liga}}'
     let serie = '{{$seria}}';
+    let sezon = '{{$sezon}}';
 
     $('.prev').click(function(){
         let prev = (parseInt(page) - 1);
