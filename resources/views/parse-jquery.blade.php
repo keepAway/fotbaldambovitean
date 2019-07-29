@@ -23,8 +23,9 @@
 	    return [year, month, day].join('-');
 	}
 
-	for (var i = 1; i <= 4; i++) {
-		var liga  = 8;
+	var jocuri_pe_etapa = 9;
+	for (var i = 1; i <= jocuri_pe_etapa; i++) {
+		var liga  = 4;
 		var serie = null;
 		var etapa = '{{$etapa}}';
 
@@ -47,7 +48,6 @@
 			g_oaspeti = rezultat[1].trim();
 		}
 
-		console.log('[');
 		console.log('\'data\' =>'  + (data == null  ? null : '\'' + data + '\'') +',');
 		console.log('\'ora\'  =>'  + (ora  == null  ? null : '\'' + ora + '\'') + ',');
 		console.log('\'liga\' =>' + liga + ',');
@@ -57,7 +57,7 @@
 		console.log('\'g_gazde\'' + '=>' + g_gazde + ',');
 		console.log('\'oaspeti\'' + '=>' + (oaspeti == ''  ? null : '\'' + oaspeti) + '\'' + ',');
 		console.log('\'g_oaspeti\'' + '=>' + g_oaspeti + ',');
-		console.log('],');
+		console.log('],[');
 
 		/*if(i % 2 != 0) {
 			console.log($('.matchCompetitionList').text());

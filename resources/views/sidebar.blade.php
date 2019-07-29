@@ -56,7 +56,7 @@
                 </ul>
             </li> --}}
             <li class="nav-link" style="padding: 0">
-                <a href="{{ route('clasament', ['liga' => 4, 'sezon' => '2018-2019']) }}" id="liga_4" class="sidebar-link{{$liga == 4 ? " active" : ""}}">Liga 4</a>
+                <a href="{{ route('clasament', ['liga' => 4, 'sezon' => '2019-2020']) }}" id="liga_4" class="sidebar-link{{$liga == 4 ? " active" : ""}}">Liga 4</a>
             </li>
             <li class="nav-link" style="padding: 0">
                 <a href="#homeSubmenuLiga5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 5 ? ' active' : '' }}">Liga 5</a>
@@ -150,7 +150,7 @@
                 response.etapaCurenta.forEach(function(item) {
                     let href = '';
                     let id = '#liga_';
-                    let sezon = (item.liga == 1 || item.liga == 2) ? '2019-2020' : '2018-2019';
+                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4) ? '2019-2020' : '2018-2019';
 
                     if(item.serie !== null) {
                         href = '/clasament/liga/'+item.liga+'/sezon/'+sezon+'?seria='+item.serie+'&page='+item.etapa_curenta;
