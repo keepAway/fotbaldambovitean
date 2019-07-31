@@ -421,7 +421,7 @@
 </div>
 <script>
     let page = '{{$page}}';
-    let liga = '{{$liga}}'
+    let liga = '{{$liga}}';
     let serie = '{{$seria}}';
     let sezon = '{{$sezon}}';
 

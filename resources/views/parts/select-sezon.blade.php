@@ -24,7 +24,7 @@
 @endif
 <script type="text/javascript">
 	let current_sezon = '{{$current_sezon}}';
-    let liga = '{{$liga}}';
+    let current_liga = '{{$liga}}';
 	$("#sezons option").each(function() {
 		if(current_sezon == $(this).val()) {
 			$(this).attr("selected","selected");
@@ -34,7 +34,7 @@
 	$(document).ready(function($){
         $('#sezons').on('change', function() {
 		  	let sezon = this.value;
-		  	window.location.href = '/clasament/liga/'+liga+'/sezon/'+sezon;
+		  	window.location.href = '/clasament/liga/'+current_liga+'/sezon/'+sezon;
 		});
     });
 </script>
