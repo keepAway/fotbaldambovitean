@@ -26,7 +26,7 @@
 	var jocuri_pe_etapa = 9;
 	for (var i = 1; i <= jocuri_pe_etapa; i++) {
 		var liga  = 5;
-		var serie = 'NORD';
+		var serie = 'SUD';
 		var etapa = '{{$etapa}}';
 
 		var data_ora = $('#page_wrapper .panel-calendar-match:nth-child('+i+')').find('.matchCompetitionList:first').text();
@@ -55,7 +55,7 @@
 		console.log('\'g_gazde\'' + ' => ' + g_gazde + ',');
 		console.log('\'g_oaspeti\'' + ' => ' + g_oaspeti + ',');
 		console.log('\'liga\' => ' + liga + ',');
-		console.log('\'serie\' => ' + serie + ',');
+		console.log('\'serie\' => ' + '\'' + serie + '\'' + ',');
 		console.log('\'sezon\' => ' + '\'2019/2020\'' + ',');
 		console.log('\'etapa\' => ' + etapa + ',');
 		
