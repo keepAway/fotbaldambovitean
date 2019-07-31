@@ -197,10 +197,11 @@ class HomeController extends Controller
         $oaspeti   = $data['oaspeti'];
         $liga      = $data['liga'];
         $serie     = $data['serie'];
+        $sezon     = str_replace('-', '/', $data['sezon']);
         $update    = $data['update'];
 
-        $echipa_gazde   = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', $gazde)->first();
-        $echipa_oaspeti = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', $oaspeti)->first();
+        $echipa_gazde   = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', $gazde)->where('sezon', $sezon)->first();
+        $echipa_oaspeti = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', $oaspeti)->where('sezon', $sezon)->first();
 
         if((isset($g_gazde) && $g_gazde != '') && (isset($g_oaspeti) && $g_oaspeti != '')){
             //adaugare clasament
@@ -388,7 +389,7 @@ class HomeController extends Controller
             
             //@endof adaugare clasament
             if($update == 'true') {
-                $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde', $gazde)->where('oaspeti', $oaspeti)->first();
+                $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde', $gazde)->where('oaspeti', $oaspeti)->where('sezon', $sezon)->first();
                 
                 $old_gazde   = $meci->g_gazde;
                 $old_oaspeti = $meci->g_oaspeti;
@@ -680,7 +681,7 @@ class HomeController extends Controller
             //@endof modificare clasament
 
             //adaugare scor
-            $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde', $gazde)->where('oaspeti', $oaspeti)->first();
+            $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde', $gazde)->where('oaspeti', $oaspeti)->where('sezon', $sezon)->first();
             $meci->g_gazde   = $g_gazde;
             $meci->g_oaspeti = $g_oaspeti;
             $meci->adaugat   = true;

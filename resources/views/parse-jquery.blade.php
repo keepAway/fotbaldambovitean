@@ -25,8 +25,8 @@
 
 	var jocuri_pe_etapa = 9;
 	for (var i = 1; i <= jocuri_pe_etapa; i++) {
-		var liga  = 4;
-		var serie = null;
+		var liga  = 5;
+		var serie = 'NORD';
 		var etapa = '{{$etapa}}';
 
 		var data_ora = $('#page_wrapper .panel-calendar-match:nth-child('+i+')').find('.matchCompetitionList:first').text();
@@ -48,15 +48,17 @@
 			g_oaspeti = rezultat[1].trim();
 		}
 
-		console.log('\'data\' =>'  + (data == null  ? null : '\'' + data + '\'') +',');
-		console.log('\'ora\'  =>'  + (ora  == null  ? null : '\'' + ora + '\'') + ',');
-		console.log('\'liga\' =>' + liga + ',');
-		console.log('\'serie\' =>' + serie + ',');
-		console.log('\'etapa\' =>' + etapa + ',');
-		console.log('\'gazde\'' + '=>' + (gazde == ''  ? null : '\'' + gazde + '\'') + ',');
-		console.log('\'g_gazde\'' + '=>' + g_gazde + ',');
-		console.log('\'oaspeti\'' + '=>' + (oaspeti == ''  ? null : '\'' + oaspeti) + '\'' + ',');
-		console.log('\'g_oaspeti\'' + '=>' + g_oaspeti + ',');
+		console.log('\'data\' => '  + (data == null  ? null : '\'' + data + '\'') +',');
+		console.log('\'ora\'  => '  + (ora  == null  ? null : '\'' + ora + '\'') + ',');
+		console.log('\'gazde\'' + ' => ' + (gazde == ''  ? null : '\'' + gazde + '\'') + ',');
+		console.log('\'oaspeti\'' + ' => ' + (oaspeti == ''  ? null : '\'' + oaspeti) + '\'' + ',');
+		console.log('\'g_gazde\'' + ' => ' + g_gazde + ',');
+		console.log('\'g_oaspeti\'' + ' => ' + g_oaspeti + ',');
+		console.log('\'liga\' => ' + liga + ',');
+		console.log('\'serie\' => ' + serie + ',');
+		console.log('\'sezon\' => ' + '\'2019/2020\'' + ',');
+		console.log('\'etapa\' => ' + etapa + ',');
+		
 		console.log('],[');
 
 		/*if(i % 2 != 0) {

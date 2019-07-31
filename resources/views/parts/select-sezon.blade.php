@@ -2,13 +2,16 @@
 	$current_sezon = substr($current_url, strpos($current_url, "sezon/") + 6);
 	$current_sezon = substr($current_sezon, 0, 9);
 @endphp
-@if($liga == 2 || $liga == 4)
 <div class="col-sm-12 font-weight-bold" style="height: 40px; margin-top: 20px; margin-bottom: 5px;font-size: 20px;">
     <div class="row">
         <div class="col-sm-12">
             <select class="form-control radius-0" name="sezons" id="sezons">
+                @if( ($liga == 5 && ($seria != 'Sud' && $seria != 'Vest')) && $liga != 6 && $liga != 7 && $liga != 8)
                 <option value="2019-2020">Sezon 2019-2020</option>
+                @endif
+                @if($liga != 1)
                 <option value="2018-2019">Sezon 2018-2019</option>
+                @endif
             </select>
         </div>
         {{-- <div class="col-sm-2">
@@ -21,10 +24,10 @@
         </div> --}}
     </div>
 </div>
-@endif
 <script type="text/javascript">
 	let current_sezon = '{{$current_sezon}}';
     let current_liga = '{{$liga}}';
+    let current_serie = '{{$seria}}';
 	$("#sezons option").each(function() {
 		if(current_sezon == $(this).val()) {
 			$(this).attr("selected","selected");
@@ -34,7 +37,11 @@
 	$(document).ready(function($){
         $('#sezons').on('change', function() {
 		  	let sezon = this.value;
-		  	window.location.href = '/clasament/liga/'+current_liga+'/sezon/'+sezon;
+            if(current_serie) {
+                window.location.href = '/clasament/liga/'+current_liga+'/sezon/'+sezon+'?seria='+current_serie;
+            } else {
+		  	   window.location.href = '/clasament/liga/'+current_liga+'/sezon/'+sezon;
+            }
 		});
     });
 </script>

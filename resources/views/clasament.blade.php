@@ -261,6 +261,7 @@
                                                 <input type="hidden" name="liga" value="{{$etapa->liga}}">
                                                 <input type="hidden" name="serie" value="{{$etapa->serie}}">
                                                 <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                                <input type="hidden" name="sezon" value="{{$sezon}}">
                                             </td>
                                             @else
                                                 <td class="font-weight-bold align-middle"></td>
@@ -349,6 +350,7 @@
                                                 <input type="hidden" name="liga" value="{{$etapa->liga}}">
                                                 <input type="hidden" name="serie" value="{{$etapa->serie}}">
                                                 <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                                <input type="hidden" name="sezon" value="{{$sezon}}">
                                             </td>
                                         </tr>
                                         @endif
