@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-sm-12">
             <select class="form-control radius-0" name="sezons" id="sezons">
-                @if( ($liga == 5 && $seria != 'Sud') && ($liga == 5 && $seria != 'Vest') && $liga != 6 && $liga != 7 && $liga != 8)
+                @if( ($liga == 5 && $seria == 'Nord') || $liga == 2 || $liga == 4 || $liga == 1)
                 <option value="2019-2020">Sezon 2019-2020</option>
                 @endif
                 @if($liga != 1)
