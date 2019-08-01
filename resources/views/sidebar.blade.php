@@ -150,7 +150,7 @@
                 response.etapaCurenta.forEach(function(item) {
                     let href = '';
                     let id = '#liga_';
-                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4 || (item.liga == 5 && item.serie == 'Nord') || (item.liga == 5 && item.serie == 'Sud')) ? '2019-2020' : '2018-2019';
+                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4 || item.liga == 5) ? '2019-2020' : '2018-2019';
 
                     if(item.serie !== null) {
                         href = '/clasament/liga/'+item.liga+'/sezon/'+sezon+'?seria='+item.serie+'&page='+item.etapa_curenta;

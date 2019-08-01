@@ -26,7 +26,7 @@
 	var jocuri_pe_etapa = 9;
 	for (var i = 1; i <= jocuri_pe_etapa; i++) {
 		var liga  = 5;
-		var serie = 'SUD';
+		var serie = 'VEST';
 		var etapa = '{{$etapa}}';
 
 		var data_ora = $('#page_wrapper .panel-calendar-match:nth-child('+i+')').find('.matchCompetitionList:first').text();
