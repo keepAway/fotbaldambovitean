@@ -255,7 +255,7 @@ class HomeController extends Controller
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
-                    $forma->sezon = '2019/2020';
+                    $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $gazde;
                     $forma->forma    = 'V';
@@ -263,7 +263,7 @@ class HomeController extends Controller
                     $forma->save();
 
                     $forma = new Forma;
-                    $forma->sezon = '2019/2020';
+                    $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $oaspeti;
                     $forma->forma    = 'I';
@@ -313,7 +313,7 @@ class HomeController extends Controller
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
-                    $forma->sezon = '2019/2020';
+                    $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $gazde;
                     $forma->forma    = 'E';
@@ -321,7 +321,7 @@ class HomeController extends Controller
                     $forma->save();
 
                     $forma = new Forma;
-                    $forma->sezon = '2019/2020';
+                    $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $oaspeti;
                     $forma->forma    = 'E';
@@ -368,7 +368,7 @@ class HomeController extends Controller
                     $echipa_oaspeti->save();
 
                     $forma = new Forma;
-                    $forma->sezon = '2019/2020';
+                    $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $gazde;
                     $forma->forma    = 'I';
@@ -376,7 +376,7 @@ class HomeController extends Controller
                     $forma->save();
 
                     $forma = new Forma;
-                    $forma->sezon = '2019/2020';
+                    $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
                     $forma->echipa   = $oaspeti;
                     $forma->forma    = 'V';
