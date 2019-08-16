@@ -18,58 +18,72 @@ class liga_6_sud extends Seeder
 				'echipa' => 'Vointa Cretu',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Neajlovul Puntea de Greci',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Vointa Crevedia 2010',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Sageata Catunu 1975',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Cojasca 2018',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Viitorul Gura Foii',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Steagu Rosu Colacu',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Gaita Bilciuresti',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Dacia Hulubesti',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Juniorul Ciocanesti',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Avantul Produlesti',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Viitorul Cuza Voda',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'Universitatea Baleni',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			],[
 				'echipa' => 'STA',
 				'liga'   => 6,
 				'serie'  => 'SUD',
+				'sezon'  => '2019/2020'
 			]
 		];
 
@@ -2078,16 +2092,21 @@ class liga_6_sud extends Seeder
 			]
         ];
 
-		Echipe::where('liga', 6)->where('serie', 'SUD')->delete();
+		/*Echipe::where('liga', 6)->where('serie', 'SUD')
+								->where('sezon', '2019/2020')
+								->delete();*/
 		foreach ($echipe as $echipa) {
 			$adauga = new Echipe;
 			$adauga->echipa = trim($echipa['echipa']);
 			$adauga->liga   = $echipa['liga'];
 			$adauga->serie  = $echipa['serie'];
+			$adauga->sezon  = $echipa['sezon'];
 			$adauga->save();
 		}
 
-		Etape::where('liga', 6)->where('serie', 'SUD')->delete();
+		/*Etape::where('liga', 6)->where('serie', 'SUD')
+								->where('sezon', '2019/2020')
+								->delete();*/
 		foreach ($etape as $etapa) {
 			$adauga = new Etape;
 			$adauga->gazde     = trim($etapa['gazde']);
@@ -2097,8 +2116,9 @@ class liga_6_sud extends Seeder
 			$adauga->liga      = $etapa['liga'];
 			$adauga->serie     = $etapa['serie'];
 			$adauga->etapa     = $etapa['etapa'];
-			$adauga->data      = $etapa['data'] != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL;
+			$adauga->data      = $etapa['data']/* != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL*/;
 			$adauga->ora       = $etapa['ora'];
+			$adauga->sezon     = $etapa['sezon'];
 			$adauga->save();
 		}
     }

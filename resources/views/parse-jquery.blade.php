@@ -23,10 +23,10 @@
 	    return [year, month, day].join('-');
 	}
 
-	var jocuri_pe_etapa = 9;
+	var jocuri_pe_etapa = 7;
 	for (var i = 1; i <= jocuri_pe_etapa; i++) {
-		var liga  = 5;
-		var serie = 'VEST';
+		var liga  = 6;
+		var serie = 'NORD';
 		var etapa = '{{$etapa}}';
 
 		var data_ora = $('#page_wrapper .panel-calendar-match:nth-child('+i+')').find('.matchCompetitionList:first').text();

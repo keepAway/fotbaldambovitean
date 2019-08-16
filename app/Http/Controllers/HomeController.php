@@ -733,7 +733,7 @@ class HomeController extends Controller
             'liga4' => 6655
         ];
 
-        if($etapa < 34) {
+        if($etapa < 26) {
             header("Refresh:0; url=/parse-jquery/".$liga."/".$serie."/" . ($etapa + 1));
         }
 

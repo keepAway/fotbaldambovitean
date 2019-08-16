@@ -62,19 +62,19 @@
                 <a href="#homeSubmenuLiga5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 5 ? ' active' : '' }}">Liga 5</a>
                 <ul class="collapse list-unstyled" id="homeSubmenuLiga5">
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Nord', 'sezon' => '2018-2019']) }}" id="liga_5_Nord" class="sidebar-link{{$liga == 5 && $seria == 'Nord' ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Nord', 'sezon' => '2019-2020']) }}" id="liga_5_Nord" class="sidebar-link{{$liga == 5 && $seria == 'Nord' ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Liga 5 Nord
                         </a>
                     </li>
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Sud', 'sezon' => '2018-2019']) }}" id="liga_5_Sud" class="sidebar-link{{$liga == 5 && $seria == 'Sud' ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Sud', 'sezon' => '2019-2020']) }}" id="liga_5_Sud" class="sidebar-link{{$liga == 5 && $seria == 'Sud' ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Liga 5 Sud
                         </a>
                     </li>
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Vest', 'sezon' => '2018-2019']) }}" id="liga_5_Vest" class="sidebar-link{{$liga == 5 && $seria == 'Vest' ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 5, 'seria' => 'Vest', 'sezon' => '2019-2020']) }}" id="liga_5_Vest" class="sidebar-link{{$liga == 5 && $seria == 'Vest' ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Liga 5 Vest
                         </a>
@@ -85,7 +85,7 @@
                 <a href="#homeSubmenuLiga6" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 6 ? ' active' : '' }}">Liga 6</a>
                 <ul class="collapse list-unstyled" id="homeSubmenuLiga6">
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Nord', 'sezon' => '2018-2019']) }}" id="liga_6_Nord" class="sidebar-link{{$liga == 6 && $seria == 'Nord' ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 6, 'seria' => 'Nord', 'sezon' => '2019-2020']) }}" id="liga_6_Nord" class="sidebar-link{{$liga == 6 && $seria == 'Nord' ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Liga 6 Nord
                         </a>
@@ -150,7 +150,7 @@
                 response.etapaCurenta.forEach(function(item) {
                     let href = '';
                     let id = '#liga_';
-                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4 || item.liga == 5) ? '2019-2020' : '2018-2019';
+                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4 || item.liga == 5 || (item.liga == 6 && item.serie == 'Nord')) ? '2019-2020' : '2018-2019';
 
                     if(item.serie !== null) {
                         href = '/clasament/liga/'+item.liga+'/sezon/'+sezon+'?seria='+item.serie+'&page='+item.etapa_curenta;
