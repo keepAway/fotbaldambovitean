@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -38,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('guest');
+        $this->middleware('guest');
     }
 
     /**
@@ -56,13 +57,13 @@ class RegisterController extends Controller
         //     print_r($data);
         // echo '</pre>';
         // die;
-        $validator = Validator::make($data, [
+        return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-        ])->validate();
-
-        return response()->json(['test'], 200);
+        ]);
+        //echo '<pre>'; var_dump($validator); echo '</pre>';die;
+        //return response()->json(['test'], 200);
     }
 
     /**
@@ -73,10 +74,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        return $user;
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+        \Session::flash('registered',"You have successfully registered.");
+
+        return $this->registered($request, $user)
+                        ?: redirect('/');
     }
 }
