@@ -94,7 +94,7 @@
                                 @if(Auth::check())
                                 <div class="col-12"> 
                                     <div style="float: right;">
-                                        <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
+                                        <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i class="fas fa-eye"></i> {{$stire->views}}</strong>
                                     </div>
                                 </div>
                                 @endif
@@ -150,7 +150,7 @@
                                 @if(Auth::check())
                                 <div class="col-12"> 
                                     <div style="float: right;">
-                                        <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i> {{$stire->views}} views</i></strong>
+                                        <strong>{{($stire->pin == 1) ? 'Pined,' : ''}} &nbsp;<i class="fas fa-eye"></i> {{$stire->views}}</strong>
                                     </div>
                                 </div>
                                 @endif

@@ -59,7 +59,7 @@
                     <div class="news-detail-img mb-4 text-center">
                         <div class="news-hr">
                             <div class="float-right" style="font-weight: bold; font-style: italic; color: #888;">
-                                <span style="font-weight: normal;">by </span>{{$stire->autor}}
+                                <i class="fas fa-user"></i> <b>{{$stire->autor}}</b>
                             </div>
                         </div>
                         <img src="{{URL::asset('images/'.$stire->imagine)}}" alt="Fotbal Arena">
