@@ -103,7 +103,7 @@
                 <a href="#homeSubmenuLiga7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 7 ? ' active' : '' }}">Juniori</a>
                 <ul class="collapse list-unstyled" id="homeSubmenuLiga7">
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 7, 'sezon' => '2018-2019']) }}" id="liga_7" class="sidebar-link{{$liga == 7 ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 7, 'sezon' => '2019-2020']) }}" id="liga_7" class="sidebar-link{{$liga == 7 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Juniori D (U13)
                         </a>
@@ -150,7 +150,7 @@
                 response.etapaCurenta.forEach(function(item) {
                     let href = '';
                     let id = '#liga_';
-                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4 || item.liga == 5 || item.liga == 6) ? '2019-2020' : '2018-2019';
+                    let sezon = (item.liga == 1 || item.liga == 2 || item.liga == 4 || item.liga == 5 || item.liga == 6 || item.liga == 7) ? '2019-2020' : '2018-2019';
 
                     if(item.serie !== null) {
                         href = '/clasament/liga/'+item.liga+'/sezon/'+sezon+'?seria='+item.serie+'&page='+item.etapa_curenta;

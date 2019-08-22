@@ -12,8 +12,7 @@ class liga_4 extends Seeder
      * @return void
      */
     public function run()
-    {
-        
+    { 
         
         $echipe = [
 			[

@@ -730,7 +730,7 @@ class HomeController extends Controller
 
             //'NORD' => 7000,
             //'SUD'  => 7001,
-            'liga4' => 6655
+            //'liga4' => 6655
         ];
 
         if($etapa < 30) {
@@ -742,9 +742,10 @@ class HomeController extends Controller
             $x = '0' . $x;
         }
 
-        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-'.$liga.'-a-'.$serie.'/meciuri/etapa-' . $x);
+        /*$data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/liga-a-'.$liga.'-a-'.$serie.'/meciuri/etapa-' . $x);*/
 
-        /*$data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/'.$liga.'-'.$serie.'/meciuri/etapa-' . $x);*/
+        /*Juniori*/
+        $data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/'.$liga.'-'.$serie.'/meciuri/etapa-' . $x);
 
         return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
     }
