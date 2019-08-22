@@ -23,9 +23,9 @@
 	    return [year, month, day].join('-');
 	}
 
-	var jocuri_pe_etapa = 8;
+	var jocuri_pe_etapa = 5;
 	for (var i = 1; i <= jocuri_pe_etapa; i++) {
-		var liga  = 7;
+		var liga  = 8;
 		var serie = null;
 		var etapa = '{{$etapa}}';
 
