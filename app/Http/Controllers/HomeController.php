@@ -105,7 +105,11 @@ class HomeController extends Controller
         $i=0;
         $j=0;
         foreach ($echipe as $echipa) {
-            $forma = Forma::where('echipa', $echipa->echipa)->join('etape', 'forma.etapa_id', '=', 'etape.id')->where('forma.sezon', $sezon)->orderBy('etapa', 'DESC');
+            $forma = Forma::where('echipa', $echipa->echipa)
+                            ->join('etape', 'forma.etapa_id', '=', 'etape.id')
+                            ->where('etape.liga', $liga)
+                            ->where('forma.sezon', $sezon)
+                            ->orderBy('etapa', 'DESC');
 
             $penalizare = Penalizari::where('echipa_id', $echipa->id)->first();
             
