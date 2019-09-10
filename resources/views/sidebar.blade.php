@@ -20,41 +20,41 @@
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2, 'sezon' => '2019-2020']) }}" id="liga_2" class="sidebar-link{{$liga == 2 ? " active" : ""}}">Liga 2</a>
             </li>
-            {{-- <li class="nav-link" style="padding: 0">
+            <li class="nav-link" style="padding: 0">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ str_contains($current_url, '/liga/3') ? ' active' : '' }}">Liga 3</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li class="nav-link" style="padding: 0">
+<!--                     <li class="nav-link" style="padding: 0">
                         <a href="{{ route('clasament', ['liga' => 3, 'seria' => 1]) }}" id="liga_3_1" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 1]) ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 1
                         </a>
                     </li>
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 2]) }}" id="liga_3_2" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 2]) ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 2, 'sezon' => '2019-2020']) }}" id="liga_3_2" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 2]) ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 2
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 3]) }}" id="liga_3_3" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 3]) ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 3, 'sezon' => '2019-2020']) }}" id="liga_3_3" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 3, 'sezon' => '2019-2020']) ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 3
                         </a>
                     </li>
-                    <li class="nav-link" style="padding: 0">
+                    <!-- <li class="nav-link" style="padding: 0">
                         <a href="{{ route('clasament', ['liga' => 3, 'seria' => 4]) }}" id="liga_3_4" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 4]) ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 4
                         </a>
-                    </li>
-                    <li class="nav-link" style="padding: 0">
+                    </li> -->
+ <!--                    <li class="nav-link" style="padding: 0">
                         <a href="{{ route('clasament', ['liga' => 3, 'seria' => 5]) }}" id="liga_3_5" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 5]) ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 5
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
-            </li> --}}
+            </li>
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 4, 'sezon' => '2019-2020']) }}" id="liga_4" class="sidebar-link{{$liga == 4 ? " active" : ""}}">Liga 4</a>
             </li>

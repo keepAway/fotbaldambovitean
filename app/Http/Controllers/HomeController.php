@@ -150,19 +150,19 @@ class HomeController extends Controller
 
         if(isset($tab) && $tab == '1') {
             $echipe = $echipe->sortByDesc(function($echipe) {
-                return [$echipe->a_puncte, $echipe->a_golaveraj];
+                return [$echipe->a_puncte, $echipe->a_golaveraj, $echipe->a_marcate];
             });
         }
         
         if(isset($tab) && $tab == '2') {
             $echipe = $echipe->sortByDesc(function($echipe) {
-                return [$echipe->d_puncte, $echipe->d_golaveraj];
+                return [$echipe->d_puncte, $echipe->d_golaveraj, $echipe->d_marcate];
             });
         }
 
         if($tab == NULL || $tab == '3') {
             $echipe = $echipe->sortByDesc(function($echipe) {
-                return [$echipe->t_puncte, $echipe->t_golaveraj];
+                return [$echipe->t_puncte, $echipe->t_golaveraj, $echipe->t_marcate];
             });
         }
 

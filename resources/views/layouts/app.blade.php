@@ -2,6 +2,14 @@
 @php $shareUrl = Request::fullUrl(); @endphp
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Start Alexa Certify Javascript -->
+        <script type="text/javascript">
+        _atrk_opts = { atrk_acct:"yBBst1DlQy20Y8", domain:"fotbal-arena.ro",dynamic: true};
+        (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+        </script>
+        <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=yBBst1DlQy20Y8" style="display:none" height="1" width="1" alt="" /></noscript>
+        <!-- End Alexa Certify Javascript -->  
+
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({

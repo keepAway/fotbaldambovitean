@@ -317,44 +317,54 @@
                                     </tr>
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->gazde}}</td>
-                                        <td class="text-right">
-                                            @if(Auth::check() && Auth::user()->role == 'admin')
-                                                <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control text-center" name="g_gazde" style="width: 70px; float: right;">
-                                            @else
-                                                <span class="font-weight-bold scor-color text-center">
-                                                    {{$etapa->g_gazde}}
-                                                </span>
-                                            @endif
-                                        </td>
+                                        @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                            <td class="text-right">
+                                                @if(Auth::check() && Auth::user()->role == 'admin')
+                                                    <input type="number" min="0" value="{{$etapa->g_gazde}}" class="form-control text-center" name="g_gazde" style="width: 70px; float: right;">
+                                                @else
+                                                    <span class="font-weight-bold scor-color text-center">
+                                                        {{$etapa->g_gazde}}
+                                                    </span>
+                                                @endif
+                                            </td>
+                                        @else
+                                            <td></td>
+                                        @endif
                                     <tr>
                                         <td class="text-left align-middle font-weight-bold">{{$etapa->oaspeti}}</td>
-                                        <td class="text-right">
-                                            @if(Auth::check() && Auth::user()->role == 'admin')
-                                                <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control text-center" name="g_oaspeti" style="width: 70px; float: right;">
-                                            @else
-                                                <span class="font-weight-bold scor-color text-center">
-                                                    {{$etapa->g_oaspeti}}
-                                                </span>
-                                            @endif
-                                        </td>
-                                        
-                                    </tr>
-                                    </tr>
-                                        @if(Auth::check() && Auth::user()->role == 'admin')
-                                        <tr>
-                                            <td colspan="2" class="text-right">
-                                                <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
-                                                <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
-                                                <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
-                                                <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
-                                                <input type="hidden" name="liga" value="{{$etapa->liga}}">
-                                                <input type="hidden" name="serie" value="{{$etapa->serie}}">
-                                                <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
-                                                <input type="hidden" name="sezon" value="{{$sezon}}">
+                                        @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                            <td class="text-right">
+                                                @if(Auth::check() && Auth::user()->role == 'admin')
+                                                    <input type="number" min="0" value="{{$etapa->g_oaspeti}}" class="form-control text-center" name="g_oaspeti" style="width: 70px; float: right;">
+                                                @else
+                                                    <span class="font-weight-bold scor-color text-center">
+                                                        {{$etapa->g_oaspeti}}
+                                                    </span>
+                                                @endif
                                             </td>
-                                        </tr>
+                                        @else
+                                            <td></td>
                                         @endif
                                     </tr>
+
+                                    @if(($etapa->gazde != 'STA' && $etapa->oaspeti != 'STA'))
+                                        </tr>
+                                            @if(Auth::check() && Auth::user()->role == 'admin')
+                                            <tr>
+                                                <td colspan="2" class="text-right">
+                                                    <button type="submit" class="btn btn-{{$etapa->adaugat == true ? 'danger' : 'success'}} btn-sm"> {{$etapa->adaugat == true ? 'Modifica' : 'Adauga'}} </button>
+                                                    <input type="hidden" name="id_etapa" value="{{$etapa->id}}">
+                                                    <input type="hidden" name="gazde" value="{{$etapa->gazde}}">
+                                                    <input type="hidden" name="oaspeti" value="{{$etapa->oaspeti}}">
+                                                    <input type="hidden" name="liga" value="{{$etapa->liga}}">
+                                                    <input type="hidden" name="serie" value="{{$etapa->serie}}">
+                                                    <input type="hidden" name="update" value="{{$etapa->adaugat == true ? 'true' : 'false'}}">
+                                                    <input type="hidden" name="sezon" value="{{$sezon}}">
+                                                </td>
+                                            </tr>
+                                            @endif
+                                        </tr>
+                                    @endif
                                     </form>
                                 @endforeach
                             </tbody>
