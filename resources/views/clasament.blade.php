@@ -91,63 +91,65 @@
                             <tbody>
                                 <?php $i = 1; ?>
                                 @foreach($echipe as $echipa)
-                                <tr style="border-bottom: 1px solid #dee2e6 !important;">
-                                    <td class="font-weight-bold" style="width: 1%; text-align: center; color: #fff; 
-                                        background-color: {{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['culoare'] : '#323b3e'}} !important;" data-toggle="tooltip" data-placement="top" title="{{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['status'] : ''}}">
-                                        {{$i++}}.
-                                    </td>
-                                    <td class="text-left font-weight-bold team-name">
-                                        {{$echipa->echipa}}
-                                        @if($echipa->penalizata && $tab == NULL)
-                                            <span>
-                                                <span class="red-badge">-{{$echipa->puncte_penalizate}}p</span>
-                                            </span>
-                                        @endif
-                                    </td>
-                                    <td class="{{$tab == 3 ? 'd-none' : ''}}">
-                                        {{$tab == NULL ? $echipa->t_meciuri : ($tab == 1 ? $echipa->a_meciuri : $echipa->d_meciuri)}}
-                                    </td>
-                                    <td class="{{$tab == 3 ? 'd-none' : ''}}">
-                                        {{$tab == NULL ? $echipa->t_victorii : ($tab == 1 ? $echipa->a_victorii : $echipa->d_victorii)}}
-                                    </td>
-                                    <td class="d-none d-sm-table-cell">
-                                        {{$tab == NULL ? $echipa->t_egaluri : ($tab == 1 ? $echipa->a_egaluri : $echipa->d_egaluri)}}
-                                    </td>
-                                    <td class="d-none d-sm-table-cell">
-                                        {{$tab == NULL ? $echipa->t_infrangeri : ($tab == 1 ? $echipa->a_infrangeri : $echipa->d_infrangeri)}}
-                                    </td>
-                                    <td class="text-nowrap{{$tab == 3 ? ' d-none' : ''}}">
-                                        {{$tab == NULL ? $echipa->t_marcate : ($tab == 1 ? $echipa->a_marcate : $echipa->d_marcate)}}
-                                         - 
-                                        {{$tab == NULL ? $echipa->t_primite : ($tab == 1 ? $echipa->a_primite : $echipa->d_primite)}}
-                                    </td>
-                                    <td class="d-none d-sm-table-cell">
-                                        {{$tab == NULL ? $echipa->t_golaveraj : ($tab == 1 ? $echipa->a_golaveraj : $echipa->d_golaveraj)}}
-                                    </td>
-                                    <td class="{{$tab == 3 ? 'd-none' : ''}}">
-                                        <b>{{$tab == NULL ? $echipa->t_puncte : ($tab == 1 ? $echipa->a_puncte : $echipa->d_puncte)}}</b>
-                                    </td>
-                                    <td class="{{$tab == 3 ? 'd-inline-flex' : 'd-none d-sm-inline-flex'}}" style="border-top: none !important;">
-                                        {{-- <div class="forma" style="background: #656565; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Etapa urmatoare: ">
-                                            ?
-                                        </div> --}}
-                                        @foreach($echipa->forma as $forma)
-                                            @if($forma->forma == 'V')
-                                                <div class="forma" style="background: #28a745; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
-                                                    {{$forma->forma}}
-                                                </div>
-                                            @elseif($forma->forma == 'E')
-                                                <div class="forma" style="background: #FFA500; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
-                                                    {{$forma->forma}}
-                                                </div>
-                                            @else
-                                                <div class="forma" style="background: #DB4727; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
-                                                    î
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    </td>
-                                </tr>
+                                    @if($echipa->echipa != 'STA')
+                                        <tr style="border-bottom: 1px solid #dee2e6 !important;">
+                                            <td class="font-weight-bold" style="width: 1%; text-align: center; color: #fff; 
+                                                background-color: {{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['culoare'] : '#323b3e'}} !important;" data-toggle="tooltip" data-placement="top" title="{{in_array($i, $pozitiiValide) ? $pozitieStatus[$i]['status'] : ''}}">
+                                                {{$i++}}.
+                                            </td>
+                                            <td class="text-left font-weight-bold team-name">
+                                                {{$echipa->echipa}}
+                                                @if($echipa->penalizata && $tab == NULL)
+                                                    <span>
+                                                        <span class="red-badge">-{{$echipa->puncte_penalizate}}p</span>
+                                                    </span>
+                                                @endif
+                                            </td>
+                                            <td class="{{$tab == 3 ? 'd-none' : ''}}">
+                                                {{$tab == NULL ? $echipa->t_meciuri : ($tab == 1 ? $echipa->a_meciuri : $echipa->d_meciuri)}}
+                                            </td>
+                                            <td class="{{$tab == 3 ? 'd-none' : ''}}">
+                                                {{$tab == NULL ? $echipa->t_victorii : ($tab == 1 ? $echipa->a_victorii : $echipa->d_victorii)}}
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                {{$tab == NULL ? $echipa->t_egaluri : ($tab == 1 ? $echipa->a_egaluri : $echipa->d_egaluri)}}
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                {{$tab == NULL ? $echipa->t_infrangeri : ($tab == 1 ? $echipa->a_infrangeri : $echipa->d_infrangeri)}}
+                                            </td>
+                                            <td class="text-nowrap{{$tab == 3 ? ' d-none' : ''}}">
+                                                {{$tab == NULL ? $echipa->t_marcate : ($tab == 1 ? $echipa->a_marcate : $echipa->d_marcate)}}
+                                                 - 
+                                                {{$tab == NULL ? $echipa->t_primite : ($tab == 1 ? $echipa->a_primite : $echipa->d_primite)}}
+                                            </td>
+                                            <td class="d-none d-sm-table-cell">
+                                                {{$tab == NULL ? $echipa->t_golaveraj : ($tab == 1 ? $echipa->a_golaveraj : $echipa->d_golaveraj)}}
+                                            </td>
+                                            <td class="{{$tab == 3 ? 'd-none' : ''}}">
+                                                <b>{{$tab == NULL ? $echipa->t_puncte : ($tab == 1 ? $echipa->a_puncte : $echipa->d_puncte)}}</b>
+                                            </td>
+                                            <td class="{{$tab == 3 ? 'd-inline-flex' : 'd-none d-sm-inline-flex'}}" style="border-top: none !important;">
+                                                {{-- <div class="forma" style="background: #656565; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Etapa urmatoare: ">
+                                                    ?
+                                                </div> --}}
+                                                @foreach($echipa->forma as $forma)
+                                                    @if($forma->forma == 'V')
+                                                        <div class="forma" style="background: #28a745; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
+                                                            {{$forma->forma}}
+                                                        </div>
+                                                    @elseif($forma->forma == 'E')
+                                                        <div class="forma" style="background: #FFA500; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
+                                                            {{$forma->forma}}
+                                                        </div>
+                                                    @else
+                                                        <div class="forma" style="background: #DB4727; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="{{$forma->g_gazde}} : {{$forma->g_oaspeti}} ({{$forma->gazde}} - {{$forma->oaspeti}})">
+                                                            î
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endforeach
                             </tbody>
                         </table>

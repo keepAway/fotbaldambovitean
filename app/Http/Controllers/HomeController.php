@@ -90,7 +90,7 @@ class HomeController extends Controller
         $echipe = Echipe::where('liga', $liga)
                             ->where('serie', $serie)
                             ->where('sezon', $sezon)
-                            ->where('echipa', '!=', 'STA')
+                            /*->where('echipa', '!=', 'STA')*/
                             ->get();
 
         $echipe_penalizate = [];
