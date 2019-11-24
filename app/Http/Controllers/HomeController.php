@@ -90,7 +90,12 @@ class HomeController extends Controller
         $echipe = Echipe::where('liga', $liga)
                             ->where('serie', $serie)
                             ->where('sezon', $sezon)
-                            /*->where('echipa', '!=', 'STA')*/
+                            ->join('toate_echipele', 'echipe.echipa_id', '=', 'toate_echipele.id')
+                            ->selectRaw('
+                                toate_echipele.team AS echipa,
+                                toate_echipele.logo as logo,
+                                echipe.*
+                            ')
                             ->get();
 
         $echipe_penalizate = [];
@@ -105,10 +110,19 @@ class HomeController extends Controller
         $i=0;
         $j=0;
         foreach ($echipe as $echipa) {
-            $forma = Forma::where('echipa', $echipa->echipa)
+            $forma = Forma::where([ 'echipa_id' => $echipa->echipa_id ])
                             ->join('etape', 'forma.etapa_id', '=', 'etape.id')
-                            ->where('etape.liga', $liga)
-                            ->where('forma.sezon', $sezon)
+                            ->join('toate_echipele AS teg', 'etape.gazde_id', 'teg.id')
+                            ->join('toate_echipele AS teo', 'etape.oaspeti_id', 'teo.id')
+                            ->where([ 'etape.liga' => $liga ])
+                            ->where([ 'forma.sezon' => $sezon ])
+                            ->where([ 'etape.serie' => $serie ])
+                            ->selectRaw('
+                                forma.*,
+                                etape.*,
+                                teg.team AS gazde,
+                                teo.team AS oaspeti
+                            ')
                             ->orderBy('etapa', 'DESC');
 
             $penalizare = Penalizari::where('echipa_id', $echipa->id)->first();
@@ -172,7 +186,25 @@ class HomeController extends Controller
             $etapa_curenta = $__check['etapa_curenta'];
         }
 
-        $etape  = Etape::where('liga', $liga)->where('serie', $serie)->where('sezon', $sezon)->orderBy('etapa', 'ASC')->orderBy('data', 'ASC')->orderBy('ora', 'ASC');
+        $query = [
+            ['liga','=', $liga],
+            ['serie','=',$serie],
+            ['sezon','=',$sezon]
+        ];
+        
+        $etape  = Etape::where($query)
+                        ->join('toate_echipele AS teg', 'etape.gazde_id', 'teg.id')
+                        ->join('toate_echipele AS teo', 'etape.oaspeti_id', 'teo.id')
+                        ->orderBy('etapa', 'ASC')
+                        ->selectRaw('
+                            etape.*,
+                            teg.team AS gazde,
+                            teg.logo AS logo_gazde,
+                            teo.team AS oaspeti,
+                            teo.logo AS logo_oaspeti
+                        ')
+                        ->orderBy('data', 'ASC')
+                        ->orderBy('ora', 'ASC');
 
         $pagesNumber = ($etape->get()->count() / $page);
         $etape  = $etape->paginate($page);
@@ -197,15 +229,15 @@ class HomeController extends Controller
         $g_gazde   = $data['g_gazde'];
         $g_oaspeti = $data['g_oaspeti'];
         $id_etapa  = $data['id_etapa'];
-        $gazde     = $data['gazde'];
-        $oaspeti   = $data['oaspeti'];
+        $gazde     = $data['gazde_id'];
+        $oaspeti   = $data['oaspeti_id'];
         $liga      = $data['liga'];
         $serie     = $data['serie'];
         $sezon     = str_replace('-', '/', $data['sezon']);
         $update    = $data['update'];
 
-        $echipa_gazde   = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', $gazde)->where('sezon', $sezon)->first();
-        $echipa_oaspeti = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa', $oaspeti)->where('sezon', $sezon)->first();
+        $echipa_gazde   = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa_id', $gazde)->where('sezon', $sezon)->first();
+        $echipa_oaspeti = Echipe::where('liga', $liga)->where('serie', $serie)->where('echipa_id', $oaspeti)->where('sezon', $sezon)->first();
 
         if((isset($g_gazde) && $g_gazde != '') && (isset($g_oaspeti) && $g_oaspeti != '')){
             //adaugare clasament
@@ -261,7 +293,7 @@ class HomeController extends Controller
                     $forma = new Forma;
                     $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
-                    $forma->echipa   = $gazde;
+                    $forma->echipa_id   = $gazde;
                     $forma->forma    = 'V';
                     $forma->gazde    = true;
                     $forma->save();
@@ -269,7 +301,7 @@ class HomeController extends Controller
                     $forma = new Forma;
                     $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
-                    $forma->echipa   = $oaspeti;
+                    $forma->echipa_id   = $oaspeti;
                     $forma->forma    = 'I';
                     $forma->oaspeti  = true;
                     $forma->save();
@@ -319,7 +351,7 @@ class HomeController extends Controller
                     $forma = new Forma;
                     $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
-                    $forma->echipa   = $gazde;
+                    $forma->echipa_id   = $gazde;
                     $forma->forma    = 'E';
                     $forma->gazde    = true;
                     $forma->save();
@@ -327,7 +359,7 @@ class HomeController extends Controller
                     $forma = new Forma;
                     $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
-                    $forma->echipa   = $oaspeti;
+                    $forma->echipa_id   = $oaspeti;
                     $forma->forma    = 'E';
                     $forma->oaspeti  = true;
                     $forma->save();
@@ -374,7 +406,7 @@ class HomeController extends Controller
                     $forma = new Forma;
                     $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
-                    $forma->echipa   = $gazde;
+                    $forma->echipa_id   = $gazde;
                     $forma->forma    = 'I';
                     $forma->gazde    = true;
                     $forma->save();
@@ -382,7 +414,7 @@ class HomeController extends Controller
                     $forma = new Forma;
                     $forma->sezon    = $sezon;
                     $forma->etapa_id = $id_etapa;
-                    $forma->echipa   = $oaspeti;
+                    $forma->echipa_id   = $oaspeti;
                     $forma->forma    = 'V';
                     $forma->oaspeti  = true;
                     $forma->save();
@@ -393,7 +425,7 @@ class HomeController extends Controller
             
             //@endof adaugare clasament
             if($update == 'true') {
-                $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde', $gazde)->where('oaspeti', $oaspeti)->where('sezon', $sezon)->first();
+                $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde_id', $gazde)->where('oaspeti_id', $oaspeti)->where('sezon', $sezon)->first();
                 
                 $old_gazde   = $meci->g_gazde;
                 $old_oaspeti = $meci->g_oaspeti;
@@ -685,7 +717,7 @@ class HomeController extends Controller
             //@endof modificare clasament
 
             //adaugare scor
-            $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde', $gazde)->where('oaspeti', $oaspeti)->where('sezon', $sezon)->first();
+            $meci = Etape::where('liga', $liga)->where('serie', $serie)->where('gazde_id', $gazde)->where('oaspeti_id', $oaspeti)->where('sezon', $sezon)->first();
             $meci->g_gazde   = $g_gazde;
             $meci->g_oaspeti = $g_oaspeti;
             $meci->adaugat   = true;
@@ -753,6 +785,18 @@ class HomeController extends Controller
         /*$data = file_get_contents('https://www.frf-ajf.ro/dambovita/competitii-fotbal/'.$liga.'-'.$serie.'/meciuri/etapa-' . $x);*/
 
         return view('parse-jquery')->with(['data' => $data, 'liga' => $liga, 'serie' => $serie, 'etapa' => $etapa])->render();      
+    }
+
+    public function parseMinifotbal($url) {
+        $data = file_get_contents('http://www.campionateminifotbal.ro/campionatul-judetean-de-minifotbal-dambovita/competitii/2018/' . $url);
+        return view('parse-minifotbal')->with([ 'data' => $data, 'url' => $url ])->render();      
+        die;
+    }
+
+    public function parseLiga3($url) {
+        $data = file_get_contents('https://www.frfotbal.ro/index.php?' . $url);
+        return view('parse-liga-3')->with([ 'data' => $data, 'url' => $url ])->render();      
+        die;
     }
 
     public function adminStiri() {
@@ -841,7 +885,7 @@ class HomeController extends Controller
         $etapa_curenta = EtapaCurenta::where('liga', $liga)->where('serie', $serie)->first();
         $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
 
-        if(!in_array($liga, [3,4,5,6,7,8])){
+        if(!in_array($liga, [1,3,4,5,6,7,8])){
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
@@ -871,7 +915,7 @@ class HomeController extends Controller
                 $i++;
             }
         }
-        $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
+        $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orWhereIn('serie', ['superliga', 'campionatul-firmelor'])->orderBy('liga')->orderBy('serie')->distinct()->get();
 
         return view('adauga-scor')->with(['etape' => $etape, 'ligi' => $ligi]);
     }
@@ -913,7 +957,7 @@ class HomeController extends Controller
         $liga  = $data['liga'];
         $serie = (isset($data['serie']) && $data['serie'] != null ? $data['serie'] : NULL);
 
-        if(!in_array($liga, [3,4,5,6,7,8])){
+        if(!in_array($liga, [1,3,4,5,6,7,8])){
             return redirect()->back()->withErrors('Liga indisponibila');
         }
 
@@ -921,7 +965,7 @@ class HomeController extends Controller
         $etapa_curenta = !empty($etapa_curenta) ? $etapa_curenta->etapa_curenta : 1;
         $__check = ScoruriTrimise::where('liga', $liga)->where('serie', $serie)->orderBy('etapa', 'ASC')->get();
 
-        $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orderBy('liga')->orderBy('serie')->distinct()->get();
+        $ligi = Echipe::select('liga', 'serie')->where('liga', '>=', 3)->orWhereIn('serie', ['superliga', 'campionatul-firmelor'])->orderBy('liga')->orderBy('serie')->distinct()->get();
 
         return view('scoruri-primite')->with(['etape' => $__check, 'ligi' => $ligi]);
     }
@@ -1006,5 +1050,30 @@ class HomeController extends Controller
     public function getEtapaCurenta() {
         $etapaCurenta = EtapaCurenta::all();
         return response()->json(['etapaCurenta' => $etapaCurenta]);
+    }
+
+    public function adaugaData (Request $request)
+    {
+        $data = $request->all();
+
+        $id_etapa = $data['etapa_id'];
+        $date = $data['data'];
+
+        $etapa = Etape::where('id', $id_etapa)->first();
+        if(empty($etapa)) {
+            return redirect()->back()->withErrors('Ceva nu a mers bine, te rugam reincearca.');
+        }
+
+        $formated_date = date('Y-m-d', strtotime($date));
+        $time = date('H:i', strtotime($date));
+
+        $etapa->data = $formated_date;
+        $etapa->ora  = $time;
+
+        if($etapa->save()) {
+            return redirect()->back()->with('status', 'Data a fost adaugata.');
+        } else {
+            return redirect()->back()->withErrors('Ceva nu a mers bine, te rugam reincearca.');
+        }
     }
 }

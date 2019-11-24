@@ -15,7 +15,8 @@
 
         <ul class="list-unstyled components">
             <li class="nav-link" style="padding: 0">
-                <a href="{{ route('clasament', ['liga' => 1, 'sezon' => '2019-2020']) }}" id="liga_1" class="sidebar-link{{$liga == 1 ? " active" : ""}}">Liga 1</a>
+                <a href="{{ route('clasament', ['liga' => 1, 'sezon' => '2019-2020']) }}" id="liga_1" 
+                    class="sidebar-link{{($liga == 1 && !isset($serie)) ? " active" : ""}}">Liga 1</a>
             </li>
             <li class="nav-link" style="padding: 0">
                 <a href="{{ route('clasament', ['liga' => 2, 'sezon' => '2019-2020']) }}" id="liga_2" class="sidebar-link{{$liga == 2 ? " active" : ""}}">Liga 2</a>
@@ -23,40 +24,40 @@
             <li class="nav-link" style="padding: 0">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ str_contains($current_url, '/liga/3') ? ' active' : '' }}">Liga 3</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-<!--                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 1]) }}" id="liga_3_1" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 1]) ? " active" : ""}}">
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 1, 'sezon' => '2019-2020']) }}" id="liga_3_1" class="sidebar-link{{$liga == 3 && $seria == 1 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 1
                         </a>
                     </li>
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 2, 'sezon' => '2019-2020']) }}" id="liga_3_2" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 2]) ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 2, 'sezon' => '2019-2020']) }}" id="liga_3_2" class="sidebar-link{{$liga == 3 && $seria == 2 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 2
                         </a>
-                    </li> -->
+                    </li>
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 3, 'sezon' => '2019-2020']) }}" id="liga_3_3" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 3, 'sezon' => '2019-2020']) ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 3, 'sezon' => '2019-2020']) }}" id="liga_3_3" class="sidebar-link{{$liga == 3 && $seria == 3 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 3
                         </a>
                     </li>
-                    <!-- <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 4]) }}" id="liga_3_4" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 4]) ? " active" : ""}}">
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 4, 'sezon' => '2019-2020']) }}" id="liga_3_4" class="sidebar-link{{$liga == 3 && $seria == 4 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 4
                         </a>
-                    </li> -->
- <!--                    <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 5]) }}" id="liga_3_5" class="sidebar-link{{$current_url == route('clasament', ['liga' => 3, 'seria' => 5]) ? " active" : ""}}">
+                    </li>
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 3, 'seria' => 5, 'sezon' => '2019-2020']) }}" id="liga_3_5" class="sidebar-link{{$liga == 3 && $seria == 5 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
                             Seria 5
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
             </li>
             <li class="nav-link" style="padding: 0">
-                <a href="{{ route('clasament', ['liga' => 4, 'sezon' => '2019-2020']) }}" id="liga_4" class="sidebar-link{{$liga == 4 ? " active" : ""}}">Liga 4</a>
+                <a href="{{ route('clasament', ['liga' => 4, 'sezon' => '2019-2020']) }}" id="liga_4" class="sidebar-link{{($liga == 4 && !isset($serie)) ? " active" : ""}}">Liga 4</a>
             </li>
             <li class="nav-link" style="padding: 0">
                 <a href="#homeSubmenuLiga5" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 5 ? ' active' : '' }}">Liga 5</a>
@@ -100,8 +101,21 @@
             </li>
 
             <li class="nav-link" style="padding: 0">
-                <a href="#homeSubmenuLiga7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ $liga == 7 ? ' active' : '' }}">Juniori</a>
+                <a href="#homeSubmenuLiga7" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar-link{{ 
+                    ($liga == 7 || ($liga == 4 && $seria == 'juniori') || ($liga==1 && $serie='elitelor-u-16'))? ' active' : '' }}">Juniori</a>
                 <ul class="collapse list-unstyled" id="homeSubmenuLiga7">
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 4, 'seria' => 'juniori', 'sezon' => '2019-2020']) }}" id="liga_4_juniori" class="sidebar-link{{$liga == 4 && $seria == 'juniori' ? " active" : ""}}">
+                            <i class="fas fa-angle-right mr-1"></i>
+                            Liga 4
+                        </a>
+                    </li>
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 8, 'sezon' => '2019-2020']) }}" id="liga_8" class="sidebar-link{{$liga == 8 ? " active" : ""}}">
+                            <i class="fas fa-angle-right mr-1"></i>
+                            Juniori E (U11)
+                        </a>
+                    </li>
                     <li class="nav-link" style="padding: 0">
                         <a href="{{ route('clasament', ['liga' => 7, 'sezon' => '2019-2020']) }}" id="liga_7" class="sidebar-link{{$liga == 7 ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
@@ -109,9 +123,28 @@
                         </a>
                     </li>
                     <li class="nav-link" style="padding: 0">
-                        <a href="{{ route('clasament', ['liga' => 8, 'sezon' => '2019-2020']) }}" id="liga_8" class="sidebar-link{{$liga == 8 ? " active" : ""}}">
+                        <a href="{{ route('clasament', ['liga' => 1, 'seria' => 'elitelor-u-16', 'sezon' => '2019-2020']) }}" id="liga_1_elitelor-u-16" class="sidebar-link{{$liga == 1 && $seria == 'elitelor-u-16' ? " active" : ""}}">
                             <i class="fas fa-angle-right mr-1"></i>
-                            Juniori E (U11)
+                            Liga Elitelor U16
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-link" style="padding: 0px;">
+                <a href="#homeSubmenuLiga1Minifotbal" data-toggle="collapse" aria-expanded="false" 
+                    class="dropdown-toggle sidebar-link{{ $liga == 1 && in_array($serie, ['superliga', 'campionatul-firmelor']) ? ' active' : '' }}">Minifotbal</a>
+                <ul class="collapse list-unstyled" id="homeSubmenuLiga1Minifotbal">
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 1, 'seria' => 'superliga', 'sezon' => '2019-2020']) }}" id="liga_1_superliga" class="sidebar-link{{$liga == 1 && $seria == 'superliga' ? " active" : ""}}">
+                            <i class="fas fa-angle-right mr-1"></i>
+                            Superliga
+                        </a>
+                    </li>
+                    <li class="nav-link" style="padding: 0">
+                        <a href="{{ route('clasament', ['liga' => 1, 'seria' => 'campionatul-firmelor', 'sezon' => '2019-2020']) }}" id="liga_1_campionatul-firmelor" class="sidebar-link{{$liga == 1 && $seria == 'campionatul-firmelor' ? " active" : ""}}">
+                            <i class="fas fa-angle-right mr-1"></i>
+                            Campionatul Firmelor
                         </a>
                     </li>
                 </ul>
@@ -152,7 +185,7 @@
                     let id = '#liga_';
                     let sezon = '2019-2020';
 
-                    if(item.serie !== null) {
+                    if(item.serie != null) {
                         href = '/clasament/liga/'+item.liga+'/sezon/'+sezon+'?seria='+item.serie+'&page='+item.etapa_curenta;
                         id += item.liga + '_' + item.serie;
                     } else {
@@ -160,6 +193,7 @@
                         id += item.liga;
                     }
 
+                    // console.log(id, item.etapa_curenta);
                     $(id).attr("href", href);
                 });
             }

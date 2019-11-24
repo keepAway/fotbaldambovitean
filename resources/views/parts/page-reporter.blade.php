@@ -7,10 +7,12 @@
 </div>-->
 <div class="text-center mb-2" style="background-color: #323b3e">
 	<div class="pt-3 pb-3 pl-2 pr-2">
+		<strong><h6 style="color: #f4d90c">Alătură-te celor mai tari echipe de minifotbal din Dâmbovița!</h6></strong>
+		<p style="color: #fff;">Continuă înscrierile în Superliga și Campionatul Firmelor Liga 2, Minifotbal Dâmbovița. Înscrie-te!<br>
+		<strong><a href="tel:0726846238" style="color: #f4d90c">0726846238</a></strong><br>
+		<strong><a href="tel:0720004354" style="color: #f4d90c">0720004354</a></strong>
+		</p>
 		<strong><h6 style="color: #f4d90c">Fii reporter fotbal-arena.ro!</h6></strong>
-		<p style="color: #fff;">Vrei să te faci cunoscut? Noi te facem mare în fotbalul mic.</p>
-		<p style="color: #fff;">Ai aflat un zvon? Ai informații despre o echipă, un jucător sau un eveniment din fotbalul dâmbovițean?</p>
-		<p style="color: #fff;">Trimite-ne tot ce crezi că ar vrea şi alţii să vadă la adresa <a href="mailto:contact@fotbal-arena.ro" style="color: #f4d90c">contact@fotbal-arena.ro</a> şi noi vom publica pe site, sub semnătura ta!</p>
-		<p style="color: #fff;">Tot ce mişcă în fotbalul dâmbovițean este pe fotbal-arena.ro!</p>
+		<p style="color: #fff;">Ai informații despre o echipă, un jucător sau un eveniment din fotbalul dâmbovițean? Trimite-ne tot ce crezi că ar vrea şi alţii să vadă la adresa <a href="mailto:contact@fotbal-arena.ro" style="color: #f4d90c">contact@fotbal-arena.ro</a> şi noi vom publica pe site, sub semnătura ta!</p>
 	</div>
 </div>

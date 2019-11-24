@@ -30,6 +30,8 @@ Route::get('/auth/google/callback', 'Auth\SocialAuthController@handleGoogleCallb
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/parse-jquery/{liga}/{serie}/{etapa}', 'HomeController@parseJquery')->name('parse-jquery');
+Route::get('/parse-minifotbal/{url}', 'HomeController@parseMinifotbal')->name('parse-minifotbal');
+Route::get('/parse-liga-3/{url}', 'HomeController@parseLiga3')->name('parse-liga-3');
 
 
 Route::post('/contact-us', 'HomeController@contactUs')->name('contact-us');
@@ -57,6 +59,8 @@ Route::get('/confidentialitate', 'HomeController@confidentialitate')->name('conf
 Route::post('/clasament/adauga-penalizare', 'HomeController@adaugaPenalizare')->name('adauga-penalizare');
 
 Route::get('/etapa-curenta', 'HomeController@getEtapaCurenta')->name('get-etapa-curenta');
+
+Route::post('/adauga-data', 'HomeController@adaugaData')->name('adauga-data');
 
 
 

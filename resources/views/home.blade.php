@@ -83,7 +83,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
+                                        <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}" title="{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}">
                                     </a>
                                 </div>
                                 <div class="col-8">
@@ -139,7 +139,7 @@
                             <div class="row" style="margin-left: 0px !important; margin-right: 0px !important;">
                                 <div class="col-12 thumb">
                                     <a href="{{ route('stire-detaliu', ['id' => $stire->id]) }}">
-                                        <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="Fotbal Arena">
+                                        <img src="{{URL::asset('images/'.$stire->imagine)}}" class="news-img" alt="{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}" title="{{(mb_strlen($stire->titlu, 'utf8') > 100) ? mb_substr($stire->titlu,0,97,'UTF-8').'...' : $stire->titlu}}">
                                     </a>
                                 </div>
                                 <div class="col-12" style="padding-left:  0px; padding-right: 0px; padding-top: 5px; height: 75px !important;">

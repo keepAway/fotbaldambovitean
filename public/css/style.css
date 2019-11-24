@@ -702,8 +702,8 @@ input:checked + .slider:before {
     /*width: 15px;*/
     /*height: 15px;*/
     text-align:center;
-    margin-top: -8px !important;
-    margin-left: 0px !important;
+    margin-top: -15px !important;
+    margin-left: 5px !important;
     padding-top: 2px;
     float: right;
     position: absolute;

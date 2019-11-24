@@ -35,9 +35,9 @@
                     <a class="nav-link{{$current_url == 'home' ? " active" : ""}}" href="{{ url('/') }}">Stiri</a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link{{$current_url == 'trimite-scor' ? " active" : ""}}" href="{{ route('trimite-scor', ['liga' => 4]) }}">Adauga scor</a>
-                </li>
+                </li> -->
                 @if(Auth::check() && (Auth::user()->role == 'admin'))
                     <li class="nav-item">
                         <a class="nav-link{{$current_url == 'admin-stiri' ? " active" : ""}}" href="{{ route('admin-stiri') }}">Adauga stire</a>

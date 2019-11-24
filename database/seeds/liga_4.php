@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Echipe;
 use App\Etape;
+use App\ToateEchipele;
 
 class liga_4 extends Seeder
 {
@@ -117,7 +118,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -128,7 +129,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -139,7 +140,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -150,7 +151,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -161,7 +162,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -172,7 +173,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -183,7 +184,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -194,7 +195,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -205,7 +206,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 1
 			],[
@@ -216,7 +217,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -227,7 +228,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -238,7 +239,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -249,7 +250,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -260,7 +261,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -271,7 +272,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -282,7 +283,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -293,7 +294,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -304,7 +305,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 2
 			],[
@@ -315,7 +316,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -326,7 +327,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -337,7 +338,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -348,7 +349,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -359,7 +360,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -370,7 +371,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -381,7 +382,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -392,7 +393,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -403,7 +404,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 3
 			],[
@@ -414,7 +415,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -425,7 +426,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -436,7 +437,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -447,7 +448,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -458,7 +459,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -469,7 +470,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -480,7 +481,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -491,7 +492,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -502,7 +503,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 4
 			],[
@@ -513,7 +514,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -524,7 +525,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -535,7 +536,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -546,7 +547,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -557,7 +558,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -568,7 +569,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -579,7 +580,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -590,7 +591,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -601,7 +602,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 5
 			],[
@@ -612,7 +613,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -623,7 +624,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -634,7 +635,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -645,7 +646,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -656,7 +657,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -667,7 +668,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -678,7 +679,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -689,7 +690,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -700,7 +701,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 6
 			],[
@@ -711,7 +712,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -722,7 +723,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -733,7 +734,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -744,7 +745,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -755,7 +756,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -766,7 +767,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -777,7 +778,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -788,7 +789,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -799,7 +800,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 7
 			],[
@@ -810,7 +811,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -821,7 +822,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -832,7 +833,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -843,7 +844,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -854,7 +855,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -865,7 +866,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -876,7 +877,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -887,7 +888,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -898,7 +899,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 8
 			],[
@@ -909,7 +910,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -920,7 +921,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -931,7 +932,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -942,7 +943,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -953,7 +954,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -964,7 +965,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -975,7 +976,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -986,7 +987,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -997,7 +998,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 9
 			],[
@@ -1008,7 +1009,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1019,7 +1020,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1030,7 +1031,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1041,7 +1042,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1052,7 +1053,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1063,7 +1064,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1074,7 +1075,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1085,7 +1086,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1096,7 +1097,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 10
 			],[
@@ -1107,7 +1108,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1118,7 +1119,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1129,7 +1130,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1140,7 +1141,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1151,7 +1152,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1162,7 +1163,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1173,7 +1174,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1184,7 +1185,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1195,7 +1196,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 11
 			],[
@@ -1206,7 +1207,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1217,7 +1218,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1228,7 +1229,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1239,7 +1240,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1250,7 +1251,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1261,7 +1262,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1272,7 +1273,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1283,7 +1284,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1294,7 +1295,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 12
 			],[
@@ -1305,7 +1306,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1316,7 +1317,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1327,7 +1328,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1338,7 +1339,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1349,7 +1350,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1360,7 +1361,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1371,7 +1372,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1382,7 +1383,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1393,7 +1394,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 13
 			],[
@@ -1404,7 +1405,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1415,7 +1416,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1426,7 +1427,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1437,7 +1438,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1448,7 +1449,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1459,7 +1460,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1470,7 +1471,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1481,7 +1482,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1492,7 +1493,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 14
 			],[
@@ -1503,7 +1504,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1514,7 +1515,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1525,7 +1526,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1536,7 +1537,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1547,7 +1548,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1558,7 +1559,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1569,7 +1570,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1580,7 +1581,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1591,7 +1592,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 15
 			],[
@@ -1602,7 +1603,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1613,7 +1614,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1624,7 +1625,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1635,7 +1636,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1646,7 +1647,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1657,7 +1658,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1668,7 +1669,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1679,7 +1680,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1690,7 +1691,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 16
 			],[
@@ -1701,7 +1702,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1712,7 +1713,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1723,7 +1724,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1734,7 +1735,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1745,7 +1746,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1756,7 +1757,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1767,7 +1768,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1778,7 +1779,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1789,7 +1790,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 17
 			],[
@@ -1800,7 +1801,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1811,7 +1812,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1822,7 +1823,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1833,7 +1834,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1844,7 +1845,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1855,7 +1856,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1866,7 +1867,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1877,7 +1878,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1888,7 +1889,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 18
 			],[
@@ -1899,7 +1900,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1910,7 +1911,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1921,7 +1922,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1932,7 +1933,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1943,7 +1944,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1954,7 +1955,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1965,7 +1966,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1976,7 +1977,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1987,7 +1988,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 19
 			],[
@@ -1998,7 +1999,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2009,7 +2010,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2020,7 +2021,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2031,7 +2032,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2042,7 +2043,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2053,7 +2054,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2064,7 +2065,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2075,7 +2076,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2086,7 +2087,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 20
 			],[
@@ -2097,7 +2098,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2108,7 +2109,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2119,7 +2120,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2130,7 +2131,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2141,7 +2142,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2152,7 +2153,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2163,7 +2164,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2174,7 +2175,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2185,7 +2186,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 21
 			],[
@@ -2196,7 +2197,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2207,7 +2208,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2218,7 +2219,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2229,7 +2230,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2240,7 +2241,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2251,7 +2252,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2262,7 +2263,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2273,7 +2274,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2284,7 +2285,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 22
 			],[
@@ -2295,7 +2296,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2306,7 +2307,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2317,7 +2318,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2328,7 +2329,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2339,7 +2340,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2350,7 +2351,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2361,7 +2362,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2372,7 +2373,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2383,7 +2384,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 23
 			],[
@@ -2394,7 +2395,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2405,7 +2406,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2416,7 +2417,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2427,7 +2428,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2438,7 +2439,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2449,7 +2450,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2460,7 +2461,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2471,7 +2472,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2482,7 +2483,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 24
 			],[
@@ -2493,7 +2494,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2504,7 +2505,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2515,7 +2516,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2526,7 +2527,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2537,7 +2538,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2548,7 +2549,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2559,7 +2560,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2570,7 +2571,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2581,7 +2582,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 25
 			],[
@@ -2592,7 +2593,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2603,7 +2604,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2614,7 +2615,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2625,7 +2626,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2636,7 +2637,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2647,7 +2648,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2658,7 +2659,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2669,7 +2670,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2680,7 +2681,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 26
 			],[
@@ -2691,7 +2692,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2702,7 +2703,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2713,7 +2714,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2724,7 +2725,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2735,7 +2736,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2746,7 +2747,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2757,7 +2758,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2768,7 +2769,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2779,7 +2780,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 27
 			],[
@@ -2790,7 +2791,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2801,7 +2802,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2812,7 +2813,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2823,7 +2824,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2834,7 +2835,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2845,7 +2846,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2856,7 +2857,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2867,7 +2868,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2878,7 +2879,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 28
 			],[
@@ -2889,7 +2890,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2900,7 +2901,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2911,7 +2912,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2922,7 +2923,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2933,7 +2934,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2944,7 +2945,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2955,7 +2956,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2966,7 +2967,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2977,7 +2978,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 29
 			],[
@@ -2988,7 +2989,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -2999,7 +3000,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3010,7 +3011,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3021,7 +3022,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3032,7 +3033,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3043,7 +3044,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3054,7 +3055,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3065,7 +3066,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3076,7 +3077,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 30
 			],[
@@ -3087,7 +3088,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3098,7 +3099,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3109,7 +3110,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3120,7 +3121,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3131,7 +3132,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3142,7 +3143,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3153,7 +3154,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3164,7 +3165,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3175,7 +3176,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 31
 			],[
@@ -3186,7 +3187,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3197,7 +3198,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3208,7 +3209,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3219,7 +3220,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3230,7 +3231,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3241,7 +3242,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3252,7 +3253,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3263,7 +3264,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3274,7 +3275,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 32
 			],[
@@ -3285,7 +3286,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3296,7 +3297,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3307,7 +3308,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3318,7 +3319,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3329,7 +3330,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3340,7 +3341,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3351,7 +3352,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3362,7 +3363,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3373,7 +3374,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 33
 			],[
@@ -3384,7 +3385,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3395,7 +3396,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3406,7 +3407,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3417,7 +3418,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3428,7 +3429,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3439,7 +3440,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3450,7 +3451,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3461,7 +3462,7 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			],[
@@ -3472,39 +3473,48 @@ class liga_4 extends Seeder
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 4,
-				'serie'     => null,
+				'serie'     => 'juniori',
 				'sezon'     => '2019/2020',
 				'etapa'     => 34
 			]
 		];
 
-		/*Echipe::where('liga', 4)->where('serie', null)
-								->where('sezon', '2019/2020')
-								->delete();*/
 		foreach ($echipe as $echipa) {
-			$adauga = new Echipe;
-			$adauga->echipa = trim($echipa['echipa']);
-			$adauga->liga   = $echipa['liga'];
-			$adauga->serie  = $echipa['serie'];
-			$adauga->sezon  = $echipa['sezon'];
-			$adauga->save();
+
+			$check = ToateEchipele::where('team', trim($echipa['echipa']))->first();
+			if(is_null($check)) {
+				$adauga = new ToateEchipele;
+				$adauga->team = trim($echipa['echipa']);
+				$adauga->save();
+			}
+
+			// Echipe::where('echipa_id', $e->id)->delete();
+			$clasament = new Echipe;
+			$clasament->echipa_id = is_null($check) ? $adauga->id : $check->id;
+			$clasament->liga = 4;
+			$clasament->serie = "juniori";
+			$clasament->sezon = '2019/2020';
+			$clasament->save();
 		}
 
-		/*Etape::where('liga', 4)->where('serie', null)
-								->where('sezon', '2019/2020')
-								->delete();*/
+
+		Etape::where('liga', 4)->where('serie', "juniori")->where('sezon', '2019/2020')->delete();
+
 		foreach ($etape as $etapa) {
+			$gazde = ToateEchipele::where('team', trim($etapa['gazde']))->first();
+			$oaspeti = ToateEchipele::where('team', trim($etapa['oaspeti']))->first();
+
 			$adauga = new Etape;
-			$adauga->gazde     = trim($etapa['gazde']);
-			$adauga->oaspeti   = trim($etapa['oaspeti']);
-			$adauga->g_gazde   = $etapa['g_gazde'];
-			$adauga->g_oaspeti = $etapa['g_oaspeti'];
-			$adauga->liga      = $etapa['liga'];
-			$adauga->serie     = $etapa['serie'];
-			$adauga->etapa     = $etapa['etapa'];
-			$adauga->data      = $etapa['data'] /*!= NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL*/;
-			$adauga->ora       = $etapa['ora'];
-			$adauga->sezon     = $etapa['sezon'];
+			$adauga->gazde_id   = $gazde['id'];
+			$adauga->oaspeti_id = $oaspeti['id'];
+			$adauga->g_gazde    = $etapa['g_gazde'];
+			$adauga->g_oaspeti  = $etapa['g_oaspeti'];
+			$adauga->liga       = $etapa['liga'];
+			$adauga->serie      = $etapa['serie'];
+			$adauga->etapa      = $etapa['etapa'];
+			$adauga->data       = $etapa['data'];
+			$adauga->ora        = $etapa['ora'];
+			$adauga->sezon      = $etapa['sezon'];
 			$adauga->save();
 		}
     }

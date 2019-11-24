@@ -20,12 +20,12 @@ class liga_6_nord extends Seeder
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
 			],[
-				'echipa' => 'Olimpicii Ulmi III',
+				'echipa' => 'STA',
 				'liga'   => 6,
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
 			],[
-				'echipa' => 'Vulcana Pandele',
+				'echipa' => 'ACP Vulcana Bai',
 				'liga'   => 6,
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
@@ -40,7 +40,7 @@ class liga_6_nord extends Seeder
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
 			],[
-				'echipa' => 'Viitorul Pietrari',
+				'echipa' => 'STA',
 				'liga'   => 6,
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
@@ -65,7 +65,7 @@ class liga_6_nord extends Seeder
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
 			],[
-				'echipa' => 'Cetate 1396 Targoviste II',
+				'echipa' => 'Cetatea 1396 Targoviste II',
 				'liga'   => 6,
 				'serie'  => 'NORD',
 				'sezon'  => '2019/2020'
@@ -102,7 +102,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-08-25',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Rapid Gemenea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -113,7 +113,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-08-25',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Comertul 2014 Viisoara',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -157,8 +157,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-08-25',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -169,7 +169,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-01',
 				'ora'       => '14:30',
 				'gazde'     => 'Malu cu Flori',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -180,7 +180,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-01',
 				'ora'       => '14:30',
 				'gazde'     => 'Varcolacii Comisani',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -224,7 +224,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-01',
 				'ora'       => '14:30',
 				'gazde'     => 'Rapid Gemenea',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -235,7 +235,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-01',
 				'ora'       => '14:30',
 				'gazde'     => 'Muscelul Valeni',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -245,7 +245,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-08',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Malu cu Flori',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -256,7 +256,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-08',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Muscelul Valeni',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -300,7 +300,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-08',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Unirea Ogrea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -311,7 +311,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-08',
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Varcolacii Comisani',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -334,7 +334,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-15',
 				'ora'       => '14:30',
 				'gazde'     => 'Unirea Ogrea',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -345,7 +345,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-15',
 				'ora'       => '14:30',
 				'gazde'     => 'Viitorul Gorgota',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -388,8 +388,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-15',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'ACP Vulcana Bai',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -399,7 +399,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-22',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Malu cu Flori',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -411,7 +411,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-22',
 				'ora'       => '14:30',
 				'gazde'     => 'Blue Boys Targoviste',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -443,7 +443,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-22',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Comertul 2014 Viisoara',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -454,7 +454,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-22',
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Viitorul Gorgota',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -499,7 +499,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-29',
 				'ora'       => '14:30',
 				'gazde'     => 'Comertul 2014 Viisoara',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -510,7 +510,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-09-29',
 				'ora'       => '14:30',
 				'gazde'     => 'Rapid Gemenea',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -531,7 +531,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-29',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Petrolul Iedera',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -542,7 +542,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-09-29',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Blue Boys Targoviste',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -565,7 +565,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-10-06',
 				'ora'       => '14:30',
 				'gazde'     => 'Petrolul Iedera',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -576,7 +576,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-10-06',
 				'ora'       => '14:30',
 				'gazde'     => 'Vointa Valea Voievozilor',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -586,7 +586,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-06',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Muscelul Valeni',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -597,7 +597,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-06',
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Rapid Gemenea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -664,7 +664,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-10-13',
 				'ora'       => '14:30',
 				'gazde'     => 'Muscelul Valeni',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -674,8 +674,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-13',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'gazde'     => 'ACP Vulcana Bai',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -685,7 +685,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-13',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Vointa Valea Voievozilor',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -729,8 +729,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-20',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'STA',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -740,8 +740,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-20',
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
-				'oaspeti'   => 'Vulcana Pandele',
+				'gazde'     => 'STA',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -817,7 +817,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-27',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Varcolacii Comisani',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -828,8 +828,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-10-27',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -840,7 +840,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-10-27',
 				'ora'       => '14:30',
 				'gazde'     => 'Blue Boys Targoviste',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -872,7 +872,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-11-03',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Petrolul Iedera',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -883,7 +883,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-11-03',
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Blue Boys Targoviste',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -895,7 +895,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-11-03',
 				'ora'       => '14:30',
 				'gazde'     => 'Varcolacii Comisani',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -906,7 +906,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-11-03',
 				'ora'       => '14:30',
 				'gazde'     => 'Unirea Ogrea',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -960,7 +960,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-11-10',
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Viitorul Gorgota',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -971,7 +971,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-11-10',
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Unirea Ogrea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -994,7 +994,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-11-10',
 				'ora'       => '14:30',
 				'gazde'     => 'Petrolul Iedera',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1005,7 +1005,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-11-10',
 				'ora'       => '14:30',
 				'gazde'     => 'Vointa Valea Voievozilor',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1015,7 +1015,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-11-17',
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Malu cu Flori',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1026,7 +1026,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => '2019-11-17',
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Vointa Valea Voievozilor',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1060,7 +1060,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-11-17',
 				'ora'       => '14:30',
 				'gazde'     => 'Viitorul Gorgota',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1071,7 +1071,7 @@ class liga_6_nord extends Seeder
 				'data'      => '2019-11-17',
 				'ora'       => '14:30',
 				'gazde'     => 'Comertul 2014 Viisoara',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1104,7 +1104,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Rapid Gemenea',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1115,7 +1115,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Comertul 2014 Viisoara',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1158,8 +1158,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1169,7 +1169,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Malu cu Flori',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1180,7 +1180,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Varcolacii Comisani',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1224,7 +1224,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Rapid Gemenea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1235,7 +1235,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Muscelul Valeni',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1247,7 +1247,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Malu cu Flori',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1258,7 +1258,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Muscelul Valeni',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1302,7 +1302,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Unirea Ogrea',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1313,7 +1313,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Varcolacii Comisani',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1334,7 +1334,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Unirea Ogrea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1345,7 +1345,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Viitorul Gorgota',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1389,8 +1389,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
-				'oaspeti'   => 'Vulcana Pandele',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1401,7 +1401,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Malu cu Flori',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1411,7 +1411,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Blue Boys Targoviste',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1445,7 +1445,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Comertul 2014 Viisoara',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1456,7 +1456,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Viitorul Gorgota',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1499,7 +1499,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Comertul 2014 Viisoara',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1510,7 +1510,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Rapid Gemenea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1533,7 +1533,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Petrolul Iedera',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1544,7 +1544,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Blue Boys Targoviste',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1565,7 +1565,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Petrolul Iedera',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1576,7 +1576,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Vointa Valea Voievozilor',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1588,7 +1588,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Muscelul Valeni',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1599,7 +1599,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Rapid Gemenea',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1664,7 +1664,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Muscelul Valeni',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1675,8 +1675,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
-				'oaspeti'   => 'Vulcana Pandele',
+				'gazde'     => 'STA',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1687,7 +1687,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Vointa Valea Voievozilor',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1730,8 +1730,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1741,8 +1741,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'gazde'     => 'ACP Vulcana Bai',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1819,7 +1819,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Varcolacii Comisani',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1829,8 +1829,8 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'STA',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1840,7 +1840,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Blue Boys Targoviste',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1874,7 +1874,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Petrolul Iedera',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1885,7 +1885,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Blue Boys Targoviste',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1895,7 +1895,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Varcolacii Comisani',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1906,7 +1906,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Unirea Ogrea',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -1962,7 +1962,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Viitorul Gorgota',
-				'oaspeti'   => 'Vulcana Pandele',
+				'oaspeti'   => 'ACP Vulcana Bai',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1973,7 +1973,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Unirea Ogrea',
-				'oaspeti'   => 'Cetate 1396 Targoviste II',
+				'oaspeti'   => 'Cetatea 1396 Targoviste II',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -1994,7 +1994,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Viitorul Pietrari',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Petrolul Iedera',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -2005,7 +2005,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Olimpicii Ulmi III',
+				'gazde'     => 'STA',
 				'oaspeti'   => 'Vointa Valea Voievozilor',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -2017,7 +2017,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Malu cu Flori',
-				'oaspeti'   => 'Olimpicii Ulmi III',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -2028,7 +2028,7 @@ class liga_6_nord extends Seeder
 				'data'      => null,
 				'ora'       => '14:30',
 				'gazde'     => 'Vointa Valea Voievozilor',
-				'oaspeti'   => 'Viitorul Pietrari',
+				'oaspeti'   => 'STA',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
 				'liga'      => 6,
@@ -2060,7 +2060,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Cetate 1396 Targoviste II',
+				'gazde'     => 'Cetatea 1396 Targoviste II',
 				'oaspeti'   => 'Viitorul Gorgota',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -2071,7 +2071,7 @@ class liga_6_nord extends Seeder
 			],[
 				'data'      => null,
 				'ora'       => '14:30',
-				'gazde'     => 'Vulcana Pandele',
+				'gazde'     => 'ACP Vulcana Bai',
 				'oaspeti'   => 'Comertul 2014 Viisoara',
 				'g_gazde'   => null,
 				'g_oaspeti' => null,
@@ -2093,33 +2093,42 @@ class liga_6_nord extends Seeder
 			]
 		];
 
-		/*Echipe::where('liga', 6)->where('serie', 'NORD')
+		Echipe::where('liga', 6)->where('serie', 'NORD')
 								->where('sezon', '2019/2020')
-								->delete();*/
+								->delete();
 		foreach ($echipe as $echipa) {
+
 			$adauga = new Echipe;
-			$adauga->echipa = trim($echipa['echipa']);
-			$adauga->liga   = $echipa['liga'];
-			$adauga->serie  = $echipa['serie'];
-			$adauga->sezon  = $echipa['sezon'];
+
+			$echipa_id = DB::table('toate_echipele')->where('team', trim($echipa['echipa']))->first()->id;
+
+			$adauga->echipa_id = $echipa_id;
+			$adauga->liga      = $echipa['liga'];
+			$adauga->serie     = $echipa['serie'];
+			$adauga->sezon     = $echipa['sezon'];
 			$adauga->save();
 		}
 
-		/*Etape::where('liga', 6)->where('serie', 'NORD')
+		Etape::where('liga', 6)->where('serie', 'NORD')
 								->where('sezon', '2019/2020')
-								->delete();*/
+								->delete();
+
 		foreach ($etape as $etapa) {
 			$adauga = new Etape;
-			$adauga->gazde     = trim($etapa['gazde']);
-			$adauga->oaspeti   = trim($etapa['oaspeti']);
-			$adauga->g_gazde   = $etapa['g_gazde'];
-			$adauga->g_oaspeti = $etapa['g_oaspeti'];
-			$adauga->liga      = $etapa['liga'];
-			$adauga->serie     = $etapa['serie'];
-			$adauga->etapa     = $etapa['etapa'];
-			$adauga->data      = $etapa['data']/* != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL*/;
-			$adauga->ora       = $etapa['ora'];
-			$adauga->sezon     = $etapa['sezon'];
+
+			$gazde_id = DB::table('toate_echipele')->where('team', trim($etapa['gazde']))->first()->id;
+			$oaspeti_id = DB::table('toate_echipele')->where('team', trim($etapa['oaspeti']))->first()->id;
+
+			$adauga->gazde_id   = $gazde_id;
+			$adauga->oaspeti_id = $oaspeti_id;
+			$adauga->g_gazde    = $etapa['g_gazde'];
+			$adauga->g_oaspeti  = $etapa['g_oaspeti'];
+			$adauga->liga       = $etapa['liga'];
+			$adauga->serie      = $etapa['serie'];
+			$adauga->etapa      = $etapa['etapa'];
+			$adauga->data       = $etapa['data']/* != NULL ? DateTime::createFromFormat('d-m-Y', ($etapa['data']))->format('Y-m-d') : NULL*/;
+			$adauga->ora        = $etapa['ora'];
+			$adauga->sezon      = $etapa['sezon'];
 			$adauga->save();
 		}
     }
